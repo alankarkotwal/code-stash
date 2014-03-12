@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Functions for programming an ATmega32u4 on Optimus
+# Developed for Optimus, Electronics Club, IIT Bombay
+# Author: Alankar Kotwal
+
+function compile {
+if [ -f $1".c" ];
+	then
+		echo "No such file!"
+	else
+		avr-gcc -Wall -O2 -mmcu=atmega32u4 -o $1 $1.c
+		avr-objcopy -j .text -j .data -O ihex $1 $1.hex
+		avr-objdump -S $1 > $1.lst
+fi
+}
+
+function flash {
+if [ -f $1".hex" ];
+	then
+		echo "No such file!"
+	else
+		sudo dfu-programmer atmega32u4 erase
+		sudo dfu-programmer atmega32u4 flash $1.hex
+fi
+}

@@ -1,0 +1,68 @@
+#include<opencv2/core/core.hpp>
+#include<opencv2/imgproc/imgproc.hpp>
+#include<opencv2/highgui/highgui.hpp>
+#include<cstdlib>
+#include<ctime>
+#include<iostream>
+
+int CLK_DIFF=CLOCKS_PER_SEC;
+
+using namespace cv;
+using namespace std;
+
+int main()
+{
+	VideoCapture cap(0);
+	VideoCapture cap1;
+
+	Mat present;
+	Mat past;
+	Mat diff;
+	Mat temp;
+	Mat diff_hsv;
+	Mat thresh;
+	namedWindow("present", WINDOW_NORMAL);
+	namedWindow("past", WINDOW_NORMAL);
+	namedWindow("diff", WINDOW_NORMAL);
+	namedWindow("thresh", WINDOW_NORMAL);
+
+	cap>>past;
+	imshow("past",past);
+	imwrite("past.jpg",past);
+	cap.release();
+
+	time_t t;
+
+	t=clock();
+
+	while(clock()-t<CLK_DIFF)
+	{
+	}
+
+	cap1.open(0);
+	cap1>>present;
+//	cap1.release();
+//	while(1)
+//	{
+//		cap>>present;
+//		diff=diff+(present-past);
+//		past=present;
+		past=imread("past.jpg");
+		imshow("past",past);
+		diff=past-present;
+//		temp=present-past;
+//		diff=diff+temp;
+		imshow("present",present);
+		imshow("diff",diff);
+		imwrite("present.jpg", present);
+		imwrite("diff.jpg", diff);
+		cvtColor(diff, diff_hsv, CV_BGR2HSV);
+		inRange(diff_hsv, Scalar(0,0,40), Scalar(255,255,255), thresh);
+		Mat element = getStructuringElement( erosion_type,
+		                                       Size( 2*erosion_size + 1, 2*erosion_sPoint(erosion_size, erosion_size));
+		erode(diff_hsv, diff_hsv, element);
+		imshow("thresh",thresh);
+		waitKey(0.01);
+//	}
+	return 0;
+}

@@ -1,0 +1,18 @@
+#!/usr/bin/python
+
+import shutil
+import os
+
+name = raw_input("Enter project name: ")
+
+os.mkdir(name)
+
+shutil.copy("compile","./"+name+"/compile")
+shutil.copy("flash","./"+name+"/flash")
+
+cFile = open("./"+name+"/main.c","w+")
+cFile.write("#include<avr/io.h>\n\nint main()\n{\n\t// Initializations\n\n\twhile(1)\n\t{\n\t\t// Loop Code\n\t}\n}")
+cFile.close()
+
+print "Project "+name+" successfully created!"
+print "The main file is main.c in the "+name+" directory"

@@ -1,0 +1,84 @@
+
+main:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 36 00 	call	0x6c	; 0x6c <main>
+  64:	0c 94 55 00 	jmp	0xaa	; 0xaa <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <main>:
+  6c:	81 e0       	ldi	r24, 0x01	; 1
+  6e:	87 bb       	out	0x17, r24	; 23
+  70:	c0 9a       	sbi	0x18, 0	; 24
+  72:	10 bc       	out	0x20, r1	; 32
+  74:	86 e0       	ldi	r24, 0x06	; 6
+  76:	89 b9       	out	0x09, r24	; 9
+  78:	88 e1       	ldi	r24, 0x18	; 24
+  7a:	8a b9       	out	0x0a, r24	; 10
+  7c:	86 e8       	ldi	r24, 0x86	; 134
+  7e:	80 bd       	out	0x20, r24	; 32
+  80:	91 e0       	ldi	r25, 0x01	; 1
+  82:	5f 9b       	sbis	0x0b, 7	; 11
+  84:	fe cf       	rjmp	.-4      	; 0x82 <main+0x16>
+  86:	8c b1       	in	r24, 0x0c	; 12
+  88:	81 36       	cpi	r24, 0x61	; 97
+  8a:	d9 f7       	brne	.-10     	; 0x82 <main+0x16>
+  8c:	88 b3       	in	r24, 0x18	; 24
+  8e:	89 27       	eor	r24, r25
+  90:	88 bb       	out	0x18, r24	; 24
+  92:	f7 cf       	rjmp	.-18     	; 0x82 <main+0x16>
+
+00000094 <UARTInit>:
+  94:	90 bd       	out	0x20, r25	; 32
+  96:	89 b9       	out	0x09, r24	; 9
+  98:	88 e1       	ldi	r24, 0x18	; 24
+  9a:	8a b9       	out	0x0a, r24	; 10
+  9c:	86 e8       	ldi	r24, 0x86	; 134
+  9e:	80 bd       	out	0x20, r24	; 32
+  a0:	08 95       	ret
+
+000000a2 <UARTReceive>:
+  a2:	5f 9b       	sbis	0x0b, 7	; 11
+  a4:	fe cf       	rjmp	.-4      	; 0xa2 <UARTReceive>
+  a6:	8c b1       	in	r24, 0x0c	; 12
+  a8:	08 95       	ret
+
+000000aa <_exit>:
+  aa:	f8 94       	cli
+
+000000ac <__stop_program>:
+  ac:	ff cf       	rjmp	.-2      	; 0xac <__stop_program>

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+gksudo avrdude -c usbasp -p m32 -U flash:w:main.hex

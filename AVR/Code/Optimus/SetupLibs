@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Setup utility for programming tools and wrappers around dfu-programmer, for ATmega32u4
+# Developed for Optimus, Electronics Club, IIT Bombay
+# Author: Alankar Kotwal
+
+clear
+
+echo "Let's get sudo stuff out of the way:"
+sudo echo
+
+if [ ! -d /usr/lib/Optimus ];
+	then sudo mkdir /usr/lib/Optimus;
+fi
+
+clear
+
+echo "Enter the default directory for your projects: (Leave blank to choose /home/"$USER"/Optimus)"
+read dir
+
+if [ "$dir" == "" ];
+	then dir="/home/"$USER"/Optimus";
+fi
+
+if [ ! -d $dir ];
+	then echo "Invalid directory! Do you want to create it in /home/"$USER"? Enter y to create: ";
+	read flag;
+	if [ "$flag" == "y" ];
+		then mkdir "/home/"$USER"/"$dir;
+		dir="/home/"$USER"/"$dir;
+		else
+		bash SetupLibs;
+		exit;
+	fi
+fi
+
+sudo cp ./functions /usr/lib/Optimus/functions
+sudo echo $dir > /usr/lib/Optimus/Optimus.conf 
+
+echo "source /usr/lib/Optimus/functions" >> /home/$USER/.bashrc
+
+echo "Thank You!"
+
+sudo rm ./SetupLibs
+exit

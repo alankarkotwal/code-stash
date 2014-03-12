@@ -1,0 +1,561 @@
+1.  Using the identity
+
+     sin(x) = 3*sin(x/3) - 4sin^3(x/3)
+
+   and the fact that for small x, sin(x)=x, write a function to
+   calculate the sine of any value.
+
+2.  Using the identity
+
+     e = 1 + 1/1! + 2/2! + 3/3! + .....
+
+   Write a function e(n) to compute the value of e till n terms.
+
+3. Assume that you are given 10 pieces of each the following
+   currencies.
+
+   50p, 25p, 20p, 10p, 5p, 2p, 1p
+
+  Write a function minchange, which will give you the minimum change
+  for a sum m. The function should return a big value, say 9999999,
+  if it is not possible to provide change for the given sum.
+
+
+4. The mathematical definition of the derivative f' of the function f is:
+
+        f'(x) = lim h -> 0 (f (x + h) - f (x))/ h 
+
+    On the basis of this, write a function diff such that 
+
+     diff :: (Float -> Float) -> (Float -> Float) 
+
+    such that diff f = f'
+
+5. Consider a function f of which the zero n is to be found. Make b an
+approximation for the zero.Then the intersection point of the tangent of f in
+b with the x axis is a better approximation for the zero.
+
+  The intersection point to be found is on distance d from the first
+approximation b. The value of dcan be calculated as follows. The slope of the
+tangent of f in b equals f'(b). On the other hand this slope equals f(b)/d. So
+d = f(b)/f'(b).
+
+Write a function zero f which will give the zero of a function f.
+
+
+6. Using zero write the following functions:
+
+   (1) square root 
+
+   (2) cubic root 
+
+   (3) define a function (find-years c p i f) which will calculate the
+number of years that money has to be left in the bank, so that
+starting with a principal amount p and an interest rate i, the final
+amount will be f for a calculational formula c.
+
+7. Write a function integrate, which calculates the integral of a
+function between two given boundaries. The function does this by
+dividing the integration area into a (to be specified) number of
+areas, and then approximating every area by using a linear
+function. In which orderis it best to supply the parameters, to make
+the function useful with partial parametrization?
+
+8. A set can be represented in terms of its characteristic
+  function. The characteristic function of a set F is a function f
+  such that (f x) returns #t if x belongs to F, and #f otherwise. As
+  an example, restricting ourselves to integers, the characteristic
+  function of the set of positive integers can be defined as:
+
+  (define (posint x) (> x 0))  
+
+  For a representation of sets using characteristic functions, answer
+ the following questions: 
+
+  a. Define the empty set.  
+  b. Define a set called random-set having value {2, 9, 22, 5}.  
+  c. How will you define the following operations on sets? 
+     (i)   belongs-to 
+     (ii)  complement 
+     (iii) union  
+     (iv)  difference
+
+
+
+List Problems
+-------------
+
+1.  Write the following list processing functions:
+
+    a. length
+    b. reverse
+    c. concat
+    d. append
+    e. filter
+    f. zip
+    g. foldr, foldl 
+    h. map
+    i. dropwhile
+    j. takewhile 
+    k. merge   merges two sorted lists
+
+  How many of the above functions can be defined using foldr?
+
+
+2. Consider a representation of matrices as lists where the matrix
+
+            | a  b  c |
+            | d  e  f |
+
+is represented as 
+
+    ((a b c) (d e f))
+
+Call this matrix m. Now define the following functions on matrices.
+
+
+   1. A function firstcol, such that (firstcol m) will return ((a) (d)).
+
+   2. A function lastcols, such that (lastcols m) will return ((b c) (e f)).
+
+   5. A function dot-product with the obvious meaning.
+
+   4. A function transpose which will transpose a matrix.
+
+   3. A function matmult which will return the multiplication of two matrices.
+
+
+3.  Write a function called quicksort, which takes a list and sorts it
+in increasing order. The rough idea is that the input list is divided
+into two parts. One consisting of all the elements less than the first
+element and the other consisting of all the elements greater than the
+first element. The two lists are sorted recursively and joined.
+
+   Add a parameter to quicksort so that you can sort it in increasing
+or decreasing order depending on the parameter.
+
+
+4.  (a) Using foldr  write a function called inits which finds all the initial
+    segments of a list.
+
+    Examples:  (inits ()) = (())
+               (inits '(1 2 3 4)) = (()  (1)  (1 2)  (1  2  3)  (1  2  3  4))
+
+    (b) Once again  using foldr  write a function tails which will find all
+    the tail segments of a list.
+
+    Examples:  (tails ()) = (())
+               (tails '(1 2 3 4) = (() (4) (3 4) (2 3 4) (1 2 3 4))}}
+
+    (c) Now  using inits  tails  and map  define a function called sublists
+    which will find all the sublists of a list.
+
+    Example:   (sublist ()) = (())
+               (sublist (1 2 3 4)) = (() (1) (1 2) (1 2 3) (1 2 3 4) (2) (2 3) 
+                                   (2 3 4) (3) ((3 4) (4))
+
+
+5. Design a suitable representation for polynomials such as
+
+             1
+             x
+             2*x + 1
+             5*x^4 + 2*x + 1
+        
+   Now write functions to add and multiply two polynomials. Further
+   write a function evaluate which when given a polynomial and an
+   integer will evaluate the polynomial for the given integer.
+
+
+6. Fractions can be represented by a numerator and a denominator both integer
+ numbers. Fractions should be represented in their simplest form. Write the
+ following functions on fractions rpresented thus:
+
+   (i)  simplify - simplifies a fraction 
+   (ii) fadd, fsub, fmul and fdiv, fgt, feq on fractions
+
+
+7. Suppose we represent sets as lists. Write a function powerset,
+   which will take a set as input and return the powerset (set of all
+   subsets) of the set. powerset should be written using foldr.
+
+   powerset '(1 2 3) = (() (1) (2) (3) (1 2) (1 3) (2 3) (1 2 3))
+
+
+8. Write a function (perm n r) which will behave as follows:
+
+   perm 5 1 = ((1) (2) (3) (4) (5))
+   perm 5 2 = ((1 2) (1 3) (1 4) (1 5) (2 1) (2 3) (2 4) (2 5)
+               (3 1) (3 2) (3 4) (3 5) (4 1) (4 2) (4 3) (4 5)
+               (5 1) (5 2) (5 3) (5 4)
+              )
+   What is an appropriate value of (perm n 0). You can assume that
+   perm is always called with n >= r.
+
+9. The function remdups removes adjacent duplicates from a
+	list. For example, (remdups '(1 2 2 3 3 3 1 1)) is  (1
+	2 3 1). Define remdups using foldr. 
+
+10. The function scan is like foldr except that it accumulates the
+	  intermediate values in a list while folding. Thus:
+     
+	  (scan + 0 '(1 2 3)) => ((+ 1 (+ 2 (+ 3 0))) (+ 2 (+ 3 0)) (+ 3 0) 0)
+                          => (6 5 3 0)
+
+11. Write a function called sort to sort a list using the following
+  idea. First write a function oddlist to create a new list made up of the odd
+  numbered elements from its input list. Next write a similar function
+  evenlist. Now sort generates two lists using oddlist and evenlist,
+  recursively sorts the two lists and merge the results using a function merge
+  that you have to define.  
+
+12. Consider the general tree once again. Recall that this is defined as 
+
+      (define-structure gnode val list)
+
+Given the general tree shown below
+
+ file=atree.eps, height=3cm
+
+a  depth first traversal is a listing of the nodes in this order - 1, 2, 3,
+5, 6, 4, 7, 8, 9, 11, 12, 10. Whereas a  breadth first traversal is a
+listing in the order 1, 2, 7, 8, 3, 4, 9, 10, 5, 6, 11, 12.
+
+Write a function (dft t) which takes a general tree t as an argument and
+produces a list containing the listing produced by a depth-first traversal of
+t. Similarly write a function (bft t) for a breadth-first traversal.
+
+
+13. We want to represent a UNIX-like filesystem in Scheme. For this
+  purpose, we have defined the following structures:
+
+    (define-structure dir info fdlist)
+    (define-structure file info contents)
+
+Here info is a cons-ed pair (name.size), where name is a string representing
+the name of the file or the directory, and  size is an integer
+representing its size. Further  fdlist is a list of files and directories
+and  contents is a string representing the contents of the file.
+
+
+\hspace*-1cm \epsfigfile=dir-example.eps, height=4cm, width=6in
+
+
+
+
+a.  Define the tree shown in the figure and set the variable current-dir to
+  this tree. Set the contents of files to some arbitrary string. Do not worry
+  about the inconsistency between the contents and size of files.
+
+b.  The function cd changes current-dir.  cd comes in two flavours.  (cd
+ ("cs613" "2004")) is the Scheme representation of the Unix command cd
+ cs613/2004.  (cd ("..")) standing for cd .. changes the current directory to
+ its immediate ancestor. Define cd. Note that equality of strings is checked
+ by string=?
+
+ 
+c.  Using map, define a function ls which will list the files and directories
+  immediately within the current directory. As an example, if the current-dir
+  is the entire tree, then (ls) will return ("cs613" "cs152" "cs154").
+
+
+d.  Define a function called total-size which will return the size of all the
+  files and directories in the current directory (including the size of the
+  root). If the current-dir is the entire tree, the (total-size) will return
+  24743.
+
+14.  We want to define regions in a plane. A region will be used only to
+ determine whether it contains a given point. Therefore, the natural
+ representation of a region is a function from points to boolean values.
+
+  As an example, a circle of radius 5 (around the origin) can be thought of as
+a function which will return #t when applied to the point (3.3) and #f when
+applied to (4.4). As you can see, points are being represented as cons-ed
+pairs.
+
+a.  Define a function circle-maker which, given r, will return a circle of
+    radius r around the origin.
+
+b.  Define a function square-maker which, given s, will make a square whose
+side is s. The square is placed around the origin with sides parallel to the
+axes.
+
+c.  Define a function intersection which will find the intersection of two
+regions.
+
+d.  Define a function outside which will take a region and return the
+complement of this region.
+ 
+e.  Define a function annulus which will take two circles around the same
+  center and return the annular region between them.
+
+f.  Define a function translate which will take a displacement (delx.dely) and
+ a region, and translate the region by this amount.
+
+
+Proving properties of programs
+------------------------------
+
+(factorial n) = n!
+
+(map f (append l1 l2)) = (append (map f l1) (map f l2))
+
+(map f (concat l)) = (concat (map (lambda (l) (map f l)) l))
+
+(reverse (reverse l)) = l
+
+(btg (gtob t)) = t
+
+(transpose (transpose l)) = l
+
+(length (append xs ys )) = (length xs) + (length ys)
+
+(length (concat l) = (sum (map length l))
+   where (sum l) = (foldr (+) 0 l)
+
+(sum (append xs ys)) = (sum xs) + (sum ys)
+
+(sum (concat l)) = (sum (map sum l))
+
+(inits (map f l)) = (map (lambda (l) (map f l)) (inits l))  
+  (inits gives all initial segments of a list)
+
+(map f l) = (foldr (lambda (x l) (cons (f x) l)) () l)
+
+Conside binary trees defined as
+
+(define-structure node ltree rtree)
+(define-structure leaf val)
+
+
+define the following functions on binary trees
+
+(define (size t)
+   (if (leaf? t) 1
+       (+ (size (node-ltree t))
+		  (size (node-rtree t)))))
+
+(define (height t)
+   (if (leaf? t) 0
+       (+ 1 (max (height (node-ltree t))
+				 (height (node-rtree t))))))
+
+Now show that:
+
+(height t) < (size t)
+(size t) <= (expt 2 (height xt))
+
+
+
+Problems related to environmental model
+---------------------------------------
+
+
+Explain the following programs through the environmental 
+model of execution:
+
+
+1.  (define (f g x) (g (* x x)))
+    (define x 4)
+    (define (h y) (+ x y))
+    (define w (f h 5))
+
+
+2.  (define (make-account balance) 
+     (lambda  (amount)
+       (bkpt 'in-amount balance)
+       (if (>= balance amount) 
+          (begin
+             (set! balance (- balance amount))
+             balance)
+          "Insufficient funds")))
+
+  (define my-account (make-account 50))
+  (define your-account (make-account 1000))
+
+
+
+3.  (define (s x) (if (= x 5) 2 -1))
+    (set! s (let ((g s)) 
+	  (lambda (x) (if (= x 6) 1 (g x)))))
+
+
+
+  (define (s1 x) (if (= x 5) 2 -1))
+    (set! s1 (lambda (x) (if (= x 6) 1 (s1 x))))
+
+ 
+4.(define (b h)  (h))
+  (define (c) 
+    (define m 4)
+    (define f (lambda () (if (= m 0) m
+			   (begin
+			     (set! m (- m 1))
+			     (+ m (b f)))))
+    (define r (lambda () (let 
+			   ((m 3))
+			 (b f))))
+    (r))
+  (c)
+
+
+
+5.  (define (make-account balance)
+    (define (withdraw amount)
+      (if (>= balance amount)
+      (begin (set! balance (- balance amount))
+           balance)
+      "Insufficient funds"))
+    (define (deposit amount)
+      (set! balance (+ balance amount))
+      balance)
+    (define (dispatch m)
+      (cond ((eq? m `withdraw) withdraw)
+            ((eq? m `deposit) deposit)))
+    dispatch)
+  
+  (define acc (make-account 50))
+  ((acc `deposit) 40)
+
+6.  (define (recurse i q)
+    (define (p) (display i))
+    (if (> i 0) (recurse (- i 1) p)
+      (begin 
+	    (p)
+	    (q))))
+  (define (dummy) (display ""))
+  (define (main) (recurse 1 dummy))
+  (main)
+
+7. A stack is a data structure which has the "last in first out" 
+property, i.e. the thing that you can take out from the stack at any 
+point of time is the last thing you had put in. Using vectors, 
+write a function make-stack with features illustrated by the 
+examples below: 
+
+(define stack1 (make-stack 100))  ; make a stack which can contain 
+ok                                ; 50 things. Name it stack1
+((stack1 'push) 20)               ; put 20 in stack1                
+ok
+((stack1 'push) 30)               ; put 30 in stack1
+ok
+(define stack2 (make-stack 50))   ; create another stack called stack2
+ok
+((stack2 'push) 10)               ; put 10 in stack2
+ok
+((stack1 'pop))                   ; take out from stack1 the last
+30                                ; number put in
+((stack2 'pop))                   ; same for stack2
+10
+((stack2 'pop))                   ; take out once again from stack2
+error -- stack empty              ; sorry - stack2 is empty
+
+
+8. Consider the program function make-account shown below:
+(define (make-account balance)  
+    (define (withdraw amount)    
+       (if (>= balance amount)        
+           (begin (set! balance (- balance amount))               
+                   balance)        
+           "Insufficient funds"))  
+    (define (deposit amount)    
+       (begin
+          (set! balance (+ balance amount))
+           balance)
+    (define (dispatch m)
+       (cond ((eq? m 'withdraw) withdraw)
+             ((eq? m 'deposit) deposit)))
+                
+    dispatch)
+
+a. Modify make-account so that it creates password-protected accounts. 
+That is, make-account should take a symbol as an additional argument, 
+as in
+(define acc (make-account 100 'my-password))
+
+The resulting account object should process a request only if it is 
+accompanied by the password with which the account was created, and 
+should otherwise return a complaint:
+
+((acc 'my-password 'withdraw) 40)
+60
+
+((acc 'some-other-password 'deposit) 50)
+"Incorrect password"
+
+b. Modify the make-account procedure once again so that if an account 
+is accessed more than seven consecutive times with an incorrect 
+password, it executes a function called  call-the-cops.
+
+9. Consider the non-memoised and the memoised version of lcs discussed in the
+class:
+
+(define (lcs l1 l2)
+  (cond ((or (null? l1) (null? l2)) ())
+	    ((eq? (car l1) (car l2)) 
+         (cons (car l1) (lcs (cdr l1) (cdr l2))))
+	    (else (let ((res1 (lcs (cdr l1) l2))
+		            (res2 (lcs l1 (cdr l2))))
+		         (if (>= (length res1) (length res2)) res1 res2)))))
+		   
+(define (memo-lcs l1 l2)
+  (define table (make-2d-vector (length l1) (length l2)))
+  (define (memo-lcs-h l1 l2 n1 n2)
+    (cond ((or (null? l1) (null? l2)) ())                     
+	  ((not (eq? 0 (2d-vector-ref table  n1 n2)))         
+	   (2d-vector-ref table  n1 n2))
+	  (else 
+	   (let ((val 
+		  (cond ((eq? (car l1) (car l2))     
+			 (cons (car l1) 
+			       (memo-lcs-h (cdr l1) (cdr l2) 
+					   (- n1 1) (- n2 1))))
+			(else (let ((res1 (memo-lcs-h (cdr l1) l2 
+						      (- n1 1) n2))
+				    (res2 (memo-lcs-h l1 (cdr l2) 
+						      n1 (- n2 1))))
+				(if (>= (length res1) (length res2))
+				    res1 res2))))))
+	     (begin                                      
+	       (2d-vector-set! table n1 n2 val)
+	       val)))))
+  (memo-lcs-h l1 l2 (- (length l1) 1)  (- (length l2) 1))#)
+  
+ a. Draw the call tree for the call 
+  
+  (lcs '(B B A C B) '(B A C A B))
+  
+ b. How many calls to memo-lcs-h are made if  
+  
+  (memo-lcs '(B B A C B) '(B A C A B)) is called instead of lcs.
+  
+ c. What does table contain at the point marked #? (15 Marks)   
+                        
+
+10. Here is a solution of the minchange problem reproduced:
+
+(define infty 99999999999999)
+(define (minchange m) 
+    (if (= m 0)  0
+    (min (if  (>= m  50) (+ 1 (minchange (- m 50))) infty)
+         (if  (>= m  25) (+ 1 (minchange (- m 25))) infty)
+         (if  (>= m  20) (+ 1 (minchange (- m 20))) infty)
+         (if  (>= m  10) (+ 1 (minchange (- m 10))) infty)
+         (if  (>= m  5) (+ 1 (minchange (- m 5))) infty)
+         (if  (>= m  3) (+ 1 (minchange (- m 3))) infty)
+         (if  (>= m  2) (+ 1 (minchange (- m 2))) infty)
+         (+ 1 (minchange (- m 1))))))
+
+ Write a function memoise which will take a parameter n and produce a memoised
+version of minchange for the argument range 0...n.
+
+   Suppose I now say:
+
+   (define memoised-minchange (memoise 500))
+   (memoised-minchange 10)
+
+
+ How many calls to memoised-minchange would be made? Explain your
+ answer. Remember that min evaluates its arguments from right to left.
+
+

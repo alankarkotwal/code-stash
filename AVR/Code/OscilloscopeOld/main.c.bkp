@@ -1,0 +1,95 @@
+/********************************************************************
+*  Program to make an LCD on an AVR function like an Oscilloscope!  *
+*  			Alankar Kotwal				    *
+* 		     Electronics Club, IITB		       	    *
+********************************************************************/
+
+#include<avr/io.h>
+#include<util/delay.h>
+#include"MrLCD.h"
+#include"AnalogLib.h"
+
+#define size 20
+
+void Line(int);
+void PopLeft(int*, int);
+
+int level[size];
+int temp;
+
+int main()
+{
+	InitializeMrLCD();
+	ADCInit();
+
+	int i = 0;
+	while(i<size)
+	{
+		level[i] = -1;
+		i++;
+	}
+
+	while(1)
+	{
+		temp = (ADCRead()*32/256);
+		if(temp == 0) temp++;
+		PopLeft(level, temp);
+		i = 0;
+		while(i<size)
+		{
+			if(level[i] > 0)
+			{
+				Line(level[i]%8);
+				GotoMrLCDsLocation(i+1,(4-(level[i]/8)));
+				Send_A_Character(0);
+			}
+			i++;
+		}
+
+		_delay_ms(500);
+
+		i = 0;
+		while(i<size)
+		{
+			if(level[i] > 0)
+			{
+				Line(level[i]%8);
+				GotoMrLCDsLocation(i+1,(4-(level[i]/8)));
+				Send_A_String(" ");
+			}
+			i++;
+		}
+	}
+}
+
+void Line(int level)
+{
+	Send_A_Command(0x40);
+
+	int i=8;
+	while(i>level)
+	{
+		Send_A_Character(0x00);
+		i--;
+	}
+
+	Send_A_Character(0x1F);
+
+	i=1;
+	while(i<level)
+	{
+		Send_A_Character(0x00);
+		i++;
+	}
+}
+
+void PopLeft(int* queue, int value)
+{
+	int i = 0;
+	while(i<size-1)
+	{
+		queue[i] = queue[i+1];
+		i++;
+	}
+	queue[size-1] = value;
+}

@@ -1,0 +1,63 @@
+#include<avr/io.h>
+#include<string.h>
+
+void UART_init(int baud)
+{
+	UBRRH=(baud>>8);
+	UBRRL=baud;
+	UCSRB=(1<<RXEN)|(1<<TXEN);
+	UCSRC=(1<<URSEL)|(3<<UCSZ0);
+}
+
+void UART_Transmit(char data)
+{
+	while ( !(UCSRA & (1<<UDRE)) );
+	UDR=data;
+}
+
+
+char UART_Receive()
+{
+	while ( !(UCSRA & (1<<RXC)) );
+//	int i=0;
+//	char text[]="Letter Received";
+//	while(text[i]!='\0')
+//	{
+//		UART_Transmit(text[i]);
+//		i++;
+//	}
+	return UDR;
+}
+
+void transmit_receive(char*);
+
+int main()
+{
+	InitializeMrLCD();
+	UART_init(9600);
+
+	char pokemon[] = "Elec ki saari junta signal bhejne mein lagi hui hai!!";
+	transmit_receive(pokemon);
+
+	return 0;
+}
+
+void transmit_receive(char pokemon[])
+{
+	int i=0;
+	char loo;
+
+	while(i<strlen(pokemon))
+	{
+		UART_Transmit(pokemon[i]);
+		while(!(UCSRA & (1<<TXC))); // Temporary line
+
+		loo=UART_Receive();
+
+		GotoMrLCDsLocation(i+1,1);
+		Send_A_Character(loo);
+
+		i++;
+	}
+
+}

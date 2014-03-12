@@ -1,0 +1,5 @@
+#!/bin/bash
+
+avr-gcc -x assembler main -mmcu=atmega32 -Os -g -o main.out
+avr-objcopy -j .text -j .data -O ihex main main.hex
+avr-objdump -S main > main.lst

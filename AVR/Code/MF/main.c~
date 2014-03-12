@@ -1,0 +1,31 @@
+#include<avr/io.h>
+#include"MrLCD.h"
+
+void MF();
+
+int main()
+{
+	InitializeMrLCD();
+	MF();
+
+	while(1)
+	{
+		// Loop Code
+	}
+}
+
+void MF()
+{
+        Send_A_Command(0x40);
+		Send_A_Character(0x00);
+		Send_A_Character(0x00);
+		Send_A_Character(0x00);
+		Send_A_Character(0x00);
+		Send_A_Character(0x00);
+		Send_A_Character(0x00);
+		Send_A_Character(0x00);
+		Send_A_Character(0x00);
+		
+		GoToMrLCDsLocation(1,1);
+		Send_A_Character(0);
+}

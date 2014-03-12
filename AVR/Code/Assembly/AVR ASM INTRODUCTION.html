@@ -1,0 +1,1046 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0046)https://sites.google.com/site/avrasmintro/home -->
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<script async="" src="./AVR ASM INTRODUCTION_files/analytics.js"></script><script type="text/javascript">/* Copyright 2008 Google. */ (function() { var b=window,e="tick",f="wtsrt_",g="tbsd_",h="tbnd_",k="start",m="_wtsrt",n="_tbnd";(function(){function l(a){this.t={};this.tick=function(a,c,d){this.t[a]=[void 0!=d?d:(new Date).getTime(),c]};this[e](k,null,a)}var a=new l;b.jstiming={Timer:l,load:a};if(b.performance&&b.performance.timing){var a=b.performance.timing,c=b.jstiming.load,d=a.navigationStart,a=a.responseStart;0<d&&a>=d&&(c[e](m,void 0,d),c[e](f,m,a),c[e](g,f))}try{a=null,b.chrome&&b.chrome.csi&&(a=Math.floor(b.chrome.csi().pageT),c&&0<d&&(c[e](n,void 0,b.chrome.csi().startE),c[e](h,n,d))),null==a&&b.gtbExternal&&(a=
+b.gtbExternal.pageT()),null==a&&b.external&&(a=b.external.pageT,c&&0<d&&(c[e](n,void 0,b.external.startE),c[e](h,n,d))),a&&(b.jstiming.pt=a)}catch(p){}})(); })()
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="https://www.google.com/images/icons/product/sites-16.ico">
+<link rel="apple-touch-icon" href="https://ssl.gstatic.com/sites/p/cbb4d4/system/app/images/apple-touch-icon.png" type="image/png">
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { var d=window,e="length",h="",k="__duration__",l="function";function m(c){return document.getElementById(c)}d.byId=m;function n(c){return c.replace(/^\s+|\s+$/g,h)}d.trim=n;var p=[],q=0;d.JOT_addListener=function(c,a,b){var f=new String(q++);c={eventName:c,handler:a,compId:b,key:f};p.push(c);return f};d.JOT_removeListenerByKey=function(c){for(var a=0;a<p[e];a++)if(p[a].key==c){p.splice(a,1);break}};d.JOT_removeAllListenersForName=function(c){for(var a=0;a<p[e];a++)p[a].eventName==c&&p.splice(a,1)};
+d.JOT_postEvent=function(c,a,b){var f={eventName:c,eventSrc:a||{},payload:b||{}};if(d.JOT_fullyLoaded)for(a=p[e],b=0;b<a&&b<p[e];b++){var g=p[b];g&&g.eventName==c&&(f.listenerCompId=g.compId||h,(g=typeof g.handler==l?g.handler:d[g.handler])&&g(f))}else d.JOT_delayedEvents.push({eventName:c,eventSrc:a,payload:b})};d.JOT_delayedEvents=[];d.JOT_fullyLoaded=!1;
+d.JOT_formatRelativeToNow=function(c,a){var b=((new Date).getTime()-c)/6E4;if(1440<=b||0>b)return null;var f=0;60<=b&&(b/=60,f=2);2<=b&&f++;return a?d.JOT_siteRelTimeStrs[f].replace(k,Math.floor(b)):d.JOT_userRelTimeStrs[f].replace(k,Math.floor(b))}; })()
+</script>
+<script>
+
+
+var webspace = {"scottyUrl":"/_/upload","isConsumer":true,"canPublishScriptToAnyone":true,"serverFlags":{"cajaBaseUrl":"//www.gstatic.com/caja","cajaDebugMode":false},"sharingUrlPrefix":"/_/sharing","csiReportUri":"https://gg.google.com/csi","sharingPolicy":"OPENED","analyticsAccountId":"","baseUri":"/site/avrasmintro","name":"avrasmintro","domain":"defaultdomain","features":{"asyncPermanentDelete":false,"horizontalNavLayout":true,"folderEmbed":true,"scottyForTrogImageUpload":false,"skiThemeIsDefault":true,"animateNavigation":true,"pdfEmbedSupport":false,"siteChromeSidebarWidgetsEditDialog":true,"animateToc":true,"canonicalLinkTagInHead":false,"driveImageEmbed":false,"siteChromeSystemFooterDialog":true,"plusOneButtonOptions":true,"plusOneButton":true,"colorsAndFontsRefactor":true,"photoAlbumsInOnePick":true,"docosHideNotificationSettings":true,"newInsertMenu":false,"skiTheme":true,"siteChromeDialogsToolbar":true,"plusBadge":false,"siteChromeHorizontalNavigationDialog":true,"youTubeEmbedSize":true,"adSenseDeprecateMsg":false,"htmlEmbed":true,"siteChromeHeaderDialog":true},"adsensePublisherId":null,"gvizVersion":1,"siteTitle":"AVR ASM INTRODUCTION","pageSharingId":"jotspot_page","plusPageId":"","termsUrl":"http://sites.google.com/site/sites/system/app/pages/meta/terms","enableAnalytics":false,"isPublic":true,"plusPageUrl":"","homePath":"/","sharingId":"jotspot","isAdsenseEnabled":true,"adsensePromoClickedOrSiteIneligible":true,"isStartPageEnabled":false,"domainAnalyticsAccountId":""};
+
+
+
+webspace.gadgets = {"baseUri":"/site/avrasmintro/system/app/pages/gadgets"};
+
+
+webspace.user = {"uid":"","renderMobile":false,"primaryEmail":"guest","sessionIndex":"","namespaceUser":false,"displayNameOrEmail":"guest","namespace":"","hasAdminAccess":false,"guest_":true,"keyboardShortcuts":true,"domain":"","hasWriteAccess":false,"dasherUser":false,"userName":"guest"};
+
+webspace.page = {"canDeleteWebspace":null,"locale":"en","state":"","wuid":"wuid:gx:a92c7afa7b04f0c","pageInheritsPermissions":null,"timeZone":"America/Los_Angeles","properties":{},"type":"text","canChangePath":false,"parentWuid":null,"revision":9,"title":"AVR ASSEMBLER TUTOR","isRtlLocale":false,"bidiEnabled":false,"siteLocale":"en","name":"home","path":"/home","isSiteRtlLocale":false,"parentPath":null};
+webspace.page.breadcrumbs = [{"title":"AVR ASSEMBLER TUTOR","dir":"ltr","path":"/site/avrasmintro/home","deleted":false}];
+
+
+webspace.editorResources = {
+  text: [
+    'https://ssl.gstatic.com/sites/p/cbb4d4/system/js/codemirror.js',
+    'https://ssl.gstatic.com/sites/p/cbb4d4/system/app/css/codemirror_css.css',
+    'https://ssl.gstatic.com/sites/p/cbb4d4/system/js/trog_edit__en.js',
+    'https://ssl.gstatic.com/sites/p/cbb4d4/system/app/css/trogedit.css',
+    '/site/avrasmintro/_/rsrc/1372155770000/system/app/css/editor.css',
+    'https://ssl.gstatic.com/sites/p/cbb4d4/system/app/css/codeeditor.css',
+    '/site/avrasmintro/_/rsrc/1372155770000/system/app/css/camelot/editor-jfk.css'
+  ],
+  sitelayout: [
+    'https://ssl.gstatic.com/sites/p/cbb4d4/system/app/css/sitelayouteditor.css'
+  ]
+};
+
+var JOT_clearDotPath = 'https://ssl.gstatic.com/sites/p/cbb4d4/system/app/images/cleardot.gif';
+
+
+var JOT_userRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+
+webspace.siteTemplateId = false;
+
+
+webspace.page.currentTemplate = {"title":"Web Page","path":"/system/app/pagetemplates/text"};
+
+
+
+var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+</script>
+<script type="text/javascript">
+                window.jstiming.load.tick('scl');
+              </script>
+<meta name="title" content="AVR ASM INTRODUCTION">
+<meta itemprop="name" content="AVR ASM INTRODUCTION">
+<meta property="og:title" content="AVR ASM INTRODUCTION">
+<style type="text/css">
+      
+      @font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url('//themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxjqR_3kx9_hJXbbyU8S6IN0.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url('//themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('//themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url('//themes.googleusercontent.com/static/fonts/opensans/v6/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff') format('woff');
+}
+
+    
+    </style>
+<link rel="stylesheet" type="text/css" href="./AVR ASM INTRODUCTION_files/standard-css-iceberg-ltr-ltr.css">
+<link rel="stylesheet" type="text/css" href="./AVR ASM INTRODUCTION_files/overlay.css">
+<link rel="stylesheet" type="text/css" href="./AVR ASM INTRODUCTION_files/allthemes-view.css">
+<!--[if IE]>
+          <link rel="stylesheet" type="text/css" href="/site/avrasmintro/system/app/css/camelot/allthemes%2die.css" />
+        <![endif]-->
+<title>AVR ASM INTRODUCTION</title>
+<script type="text/javascript">
+                window.jstiming.load.tick('cl');
+              </script>
+<link rel="canonical" href="./AVR ASM INTRODUCTION_files/AVR ASM INTRODUCTION.html"><script src="./AVR ASM INTRODUCTION_files/ga.js"></script></head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" en            ">
+<script src="./AVR ASM INTRODUCTION_files/caja.js"> </script>
+<script src="./AVR ASM INTRODUCTION_files/jot_caja.js"> </script>
+<div id="sites-page-toolbar" class="sites-header-divider">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-status" class="sites-status" style="display:none;"><div id="sites-notice" class="sites-notice" role="status" aria-live="assertive"> </div></div>
+</div>
+<div id="sites-chrome-everything-scrollbar">
+<div id="sites-chrome-everything">
+<div id="sites-chrome-page-wrapper" style="direction: ltr">
+<div id="sites-chrome-page-wrapper-inside">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="">
+<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="">
+<tbody><tr class="sites-header-primary-row" id="sites-chrome-userheader">
+<td id="sites-header-title" class=""><div class="sites-header-cell-buffer-wrapper"><h2><a href="https://sites.google.com/site/avrasmintro/" dir="ltr" id="sites-chrome-userheader-title">AVR ASM INTRODUCTION</a></h2></div></td><td class="sites-layout-searchbox "><div class="sites-header-cell-buffer-wrapper"><form id="sites-searchbox-form" action="https://sites.google.com/site/avrasmintro/system/app/pages/search"><input type="hidden" id="sites-searchbox-scope" name="scope" value="search-site"><input type="text" id="jot-ui-searchInput" name="q" size="20" value="" aria-label="Search this site"><div id="sites-searchbox-button-set" class="goog-inline-block"><div role="button" id="sites-searchbox-search-button" class="goog-inline-block jfk-button jfk-button-standard" tabindex="0" style="-webkit-user-select: none; ">Search this site</div></div></form></div></td>
+</tr>
+<tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+<td colspan="2" id="sites-chrome-header-horizontal-nav-container">
+</td>
+</tr>
+</tbody></table> 
+</div> 
+<div id="sites-chrome-main-wrapper">
+<div id="sites-chrome-main-wrapper-inside">
+<table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tbody><tr>
+<td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left" style="width:150px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_2bd" class="sites-embed"><div class="sites-embed-content sites-sidebar-nav"><ul jotid="navList" class="has-expander"><li class="topLevel nav-first parent " wuid="gx:a92c7afa7b04f0c"><div class="current-bg" jotid="wuid:gx:a92c7afa7b04f0c" dir="ltr" style="padding-left: 0px;"><div class="expander"></div>AVR ASSEMBLER TUTOR</div><ul class="has-expander"><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="https://sites.google.com/site/avrasmintro/home/avr-asm-bit-manipulation" jotid="wuid:gx:449f56313111ef48" class="sites-navigation-link">1. AVR ASM BIT MANIPULATION</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="https://sites.google.com/site/avrasmintro/home/basic-arithmetic" jotid="wuid:gx:5d2684418e29deef" class="sites-navigation-link">2a. BASIC ARITHMETIC</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="https://sites.google.com/site/avrasmintro/home/2b-basic-math" jotid="wuid:gx:4663964bfce64de9" class="sites-navigation-link">2b. BASIC MATH</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="https://sites.google.com/site/avrasmintro/home/2c-logarithms" jotid="wuid:gx:3c04a6a566ab965a" class="sites-navigation-link">2c. LOGARITHMS</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="https://sites.google.com/site/avrasmintro/home/integer-ratios-for-faster-code" jotid="wuid:gx:539dd4ca7687d060" class="sites-navigation-link">2z. INTEGER RATIOS for FASTER CODE</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="https://sites.google.com/site/avrasmintro/home/usisng-the-adc" jotid="wuid:gx:6857de41fe99f412" class="sites-navigation-link">3a. USING THE ADC</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="https://sites.google.com/site/avrasmintro/home/2b-butterfly-adc" jotid="wuid:gx:1bb1815c21fa4e3f" class="sites-navigation-link">3b. BUTTERFLY ADC</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="https://sites.google.com/site/avrasmintro/home/using-the-eeprom" jotid="wuid:gx:60024bf350148199" class="sites-navigation-link">4a. USING THE EEPROM</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="https://sites.google.com/site/avrasmintro/home/2b-butterfly-eeprom" jotid="wuid:gx:7e19e9a2e01ed3bf" class="sites-navigation-link">4b. BUTTERFLY EEPROM</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="https://sites.google.com/site/avrasmintro/home/timer-counters-pwm-1" jotid="wuid:gx:224fbcf7f112f120" class="sites-navigation-link">5. TIMER COUNTERS &amp; PWM</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="https://sites.google.com/site/avrasmintro/home/5-butterfly-lcd-joystick" jotid="wuid:gx:4ddfeeaca23ecda5" class="sites-navigation-link">6. BUTTERFLY LCD &amp; JOYSTICK</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="https://sites.google.com/site/avrasmintro/home/butterfly-spi-at45-dataflash" jotid="wuid:gx:53d2489c64422a76" class="sites-navigation-link">7. BUTTERFLY SPI &amp; AT45 DATAFLASH</a></div></li></ul></li><li class="topLevel "><div dir="ltr" style="padding-left: 19px;"><a href="https://sites.google.com/site/avrasmintro/system/app/pages/sitemap/hierarchy" jotid="wuid:gx:18fff1f88b6c2710" class="sites-navigation-link topLevel">Sitemap</a></div></li></ul></div></div>
+</td>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="" align="left">
+<span id="sites-page-title" dir="ltr">AVR ASSEMBLER TUTOR</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr"><hr>
+<h2><a name="TOC-A-MORON-S-GUIDE-TO-STARTING-IN-AVR-ASSEMBLER-v1.3-by-RetroDan-GMail.com"></a>A MORON'S GUIDE TO STARTING IN AVR ASSEMBLER v1.3<br>
+    by <a href="mailto:RetroDan@GMail.com">RetroDan@GMail.com</a></h2>
+<dl>
+<b>TABLE OF CONTENTS:</b>
+<ul>
+<li>INTRODUCTION</li>
+<li>BASIC AVR ARCHITECTURE</li>
+<li>THE REGISTERS</li>
+<li>REGISTER DEFINITIONS</li>
+<li>CONSTANTS</li>
+<li>THE INCLUDE FILE DIRECTIVE</li>
+<li>INSTALLING THE ASSEMBLER</li>
+<li>BEEP: OUR FIRST PROGRAM</li>
+<li>A BUTTERFLY BEEP</li>
+<li>ADAPTATIONS FOR OTHER AVR CHIPS</li>
+<li>THE ORIGIN DIRECTIVE</li>
+<li>LABELS</li>
+<li>THE LOW &amp; HIGH EXPRESSIONS</li>
+<li>THE STACK POINTER</li>
+<li>THE DATA DIRECTION REGISTERS</li>
+<li>THE CLR &amp; SER COMMANDS</li>
+<li>ACTIVATING THE SPEAKER</li>
+<li>SUBROUTINES AND THE RCALL &amp; RETURN COMMANDS</li>
+<li>THE ADD &amp; SUBTRACT COMMANDS</li>
+<li>JUMPING &amp; BRANCHING</li>
+<li>THE PAUSE ROUTINE</li>
+<li>THE NOP INSTRUCTION</li>
+<li>THE AND INSTRUCTION</li>
+<li>THE OR INSTRUCTION</li>
+<li>THE EOR INSTRUCTION</li>
+<li>AN INVERSE OR “NOT” OPERATION</li>
+<li>THE SBI &amp; CBI INSTRUCTIONS</li>
+<li>THE STACK</li>
+<li>THE PUSH &amp; POP INSTRUCTIONS</li>
+<li>THE INCLUDE FILE DIRECTIVE</li>
+<li>INSTALLING THE ASSEMBLER</li>
+<li>BEEP: OUR FIRST PROGRAM</li>
+<li>A BUTTERFLY BEEP</li>
+<li>ADAPTATIONS FOR OTHER AVR CHIPS</li>
+<li>THE ORIGIN DIRECTIVE</li>
+<li>LABELS</li>
+<li>THE LOW &amp; HIGH EXPRESSIONS</li>
+<li>THE STACK POINTER</li>
+<li>THE DATA DIRECTION REGISTERS</li>
+<li>THE CLR &amp; SER COMMANDS</li>
+<li>ACTIVATING THE SPEAKER</li>
+<li>SUBROUTINES AND THE RCALL &amp; RETURN COMMANDS</li>
+<li>THE ADD &amp; SUBTRACT COMMANDS</li>
+<li>JUMPING &amp; BRANCHING</li>
+<li>THE PAUSE ROUTINE</li>
+<li>THE NOP INSTRUCTION</li>
+<li>THE AND INSTRUCTION</li>
+<li>THE OR INSTRUCTION</li>
+<li>THE EOR INSTRUCTION</li>
+<li>AN INVERSE OR “NOT” OPERATION</li>
+<li>THE SBI &amp; CBI INSTRUCTIONS</li>
+<li>THE STACK</li>
+<li>THE PUSH &amp; POP INSTRUCTIONS</li>
+</ul>
+</dl>
+<hr>
+<h3><a name="TOC-INTRODUCTION:"></a>INTRODUCTION:</h3>
+<p>Conceptually Assembly Language Programming is very simple, you typically move a byte of data into a register, 
+you do something to it, then you write it out. Practically all languages convert their programs to assembly 
+because assembly is close to what the hardware understands, so there is almost a one-to-one relationship between 
+assembly instructions and hardware binary code (machine language).
+</p>
+<p>Assembly may appear difficult to the novice because of the initial steep learning curve, however because of the 
+limited number of instructions, once over-the-hump it is very simple. Before you can start you need a good understanding 
+of the architecture of the machine, the instruction set, the assembler's syntax and a basic understanding of 
+programming principles such as looping and subroutines before you can create your first program.
+</p>
+<p>One of the benefits of learning Assembly is that they are all very similar, so once you learn one, the rest can be 
+picked up easily since most processors do the exact same thing at the hardware level, basically moving bytes around.
+</p>
+<p>Assembly allows you to create the smallest and fastest code possible, however it can be long and tedious for large projects.
+</p>
+<h3><a name="TOC-BASIC-AVR-ARCHITECTURE:"></a>BASIC AVR ARCHITECTURE:</h3>
+<p>In its simplest form the AVRs are made of Registers, Ports and RAM:
+</p>
+<pre>     [REGISTERS]
+     [PORTS]
+     [RAM]
+</pre>
+<p>There are 32 registers which can be though of as fast RAM so it is where most of the work is done. 
+As I mention previously, most of Assembly is moving data into these registers and doing something with them.
+</p>
+<p>RAM is where we store our programs and data.
+</p>
+<p>The ports are how we communicate with the outside world but they appear to the MCU as additional registers.
+</p>
+<h3><a name="TOC-THE-REGISTERS:"></a>THE REGISTERS:</h3>
+<p>The registers are one byte each (eight bits) and are internal to the MCU so they operate quickly. 
+We can think of them as a work space to get things done before they are sent off somewhere. 
+So before we can write assembly programs for the AVR, a good understanding of the registers is important.
+</p>
+<p>There are 32 internal registers in the AVRs typically referred to as R0-R31. 
+The most often used is R16-R31 because they are easier to use. They can be loaded directly with a constant. 
+For example, if you want to load 100 into register R16 with 100 you would use:
+</p>
+<pre>	LDI R16,100   ;LDI = LoaD Immediate 100 into Register 16
+</pre>
+<p>LDI means LoaD Immediate, R16 is the register and 100 is our constant. Anything after the semi-colon “;” 
+is a comment which is ignored by the Assembler.
+</p>
+<p>If you want to move the value of 100 into one of the Registers R0-R15 you CANNOT do this:
+</p>
+<pre>	LDI R1,100  ;This is an ERROR!!!
+</pre>
+<p>To move 100 to one of the registers R0-R15 you would do something like:
+</p>
+<pre>	LDI R16,100    ;Load 100 into Register 16  
+	MOV R1,R16     ;Move the contents of Register 16 to Register 1
+</pre>
+<p>This moves the 100 into Register R16 first, then we move it from R16 then into R0. 
+Note that the operands are read right-to-left. The MOV is from R16 to R1 and not the reverse, 
+even though it may appear to read that way.
+</p>
+<p>So we can see that Registers R16-R31 are easier to use because they are half the work to load. 
+Out of these, Registers R26-R31 are used as two-byte pointers by more advanced commands, 
+so we should stick to the ten Registers R16-R25 as our main workspace to start.
+</p>
+<h3><a name="TOC-REGISTER-DEFINITIONS:"></a>REGISTER DEFINITIONS:</h3>
+<p>We can use the .DEF command to give our registers meaningful names. 
+</p>
+<pre>	.DEF A = R16
+	.DEF B = R18 
+	.DEF N = R20
+	.DEF STUDENT_SCORE = R25
+</pre>
+<p>Now we can load the R16 Register with 100 using the command:
+</p>
+<pre>	LDI A,100
+</pre>
+<h3><a name="TOC-CONSTANTS:"></a>CONSTANTS:</h3>
+<p>Constants are values that do not change value while the program is running. 
+They are defined at the time your program is assembled into machine language (binary code) 
+and do not change when your program is executed.
+</p>
+<p>Constants can be given a name with the .SET (or .EQU) command. 
+In our last example we loaded the R16 register with the value of 100. 
+Instead of using the constant 100 we could give it a name like PERFECT_SCORE with the statements:
+</p>
+<pre>	.SET PERFECT_SCORE = 100
+	.EQU PERFECT_SCORE = 100
+</pre>
+<p>Then later in the program we can load R16 with 100 using the command:
+</p>
+<pre>	LDI R16,PERFECT_SCORE
+</pre>
+<p>Constants can be represented in a number of ways. They can be defined as hexadecimal, octal, binary, etc. 
+All of the following define PERFECT_SCORE as 100:
+</p>
+<pre>	.SET PERFECT_SCORE = 100              ;Decimal notation
+	.SET PERFECT_SCORE = (2000+500)/25    ;2500 divided by 25 = 100
+	.SET PERFECT_SCORE = 0x0064           ;Hexadecimal notation
+	.EQU PERFECT_SCORE = $64              ;Hexadecimal notation
+	.EQU PERFECT_SCORE = 0b0110_0100      ;Binary notation
+	.EQU PERFECT_SCORE = 0144             ;Octal Notation
+	.EQU PERFECT_SCORE = 'd'              ;ASCII Notation
+</pre>
+<p>As we have seen before, a constant can be loaded directly into the Registers from R16 to 31. 
+All of the following will load R16 with 100:
+</p>
+<pre>	LDI R16,100
+	LDI R16,PERFECT_SCORE
+	LDI R16,(2000+500)/25
+	LDI R16,$64
+	LDI R16,0b0110_0100
+	LDI R16,'d'
+	LDI A,PERFECT_SCORE  ;if you have defined A = R16
+</pre>
+<h3><a name="TOC-THE-INCLUDE-FILE-DIRECTIVE:"></a>THE INCLUDE FILE DIRECTIVE:</h3>
+<p>The AVRs include a large family of chips. To help us produce code for the various processors, 
+ATMEL provides a file for each one that contains a series of standard .DEF and .EQU definitions 
+tailored to that specific chip. For example here is a small clip from the M69DEF.INC file for the 
+ATmega169 processor that is used in the AVR Butterflys that defines the R26-R31 Registers as two-byte 
+pointers called X, Y and Z:
+
+</p>
+<pre>	; ***** CPU REGISTER DEFINITIONS *************
+	.def	XH	= r27
+	.def	XL	= r26
+	.def	YH	= r29
+	.def	YL	= r28
+	.def	ZH	= r31
+	.def	ZL	= r30
+</pre>
+<p>The .INCLUDE directive tells the assembler to read in a file as part of our program. 
+For example at the top of a program for the Butterfly you will typically see:
+</p>
+<pre>	.INCLUDE "M169DEF.INC"    ;BUTTERFLY DEFS
+</pre>
+<p>Or for a program for the ATtiny13:
+</p>
+<pre>	.INCLUDE "TN13DEF.INC" 
+</pre>
+<p>You could even create your own libraries of commonly used routine or constants and include them yourself.
+</p>
+<pre>	.INCLUDE “MYFILE.ASM”
+</pre>
+<h3><a name="TOC-INSTALLING-THE-ASSEMBLER:"></a>INSTALLING THE ASSEMBLER:</h3>
+<p>The best way to learn Assembler is by doing Assembler, so if you have not done it yet, 
+we simply download the Studio 4 Software from Atmel.com and install it in Windows. 
+Last time I downloaded it, I had to register first, which is a simple and quick process. 
+If you are using another operating system, I assume you have already figured out how to install 
+the assembler and programmer. We run a cable from a COM port on your PC to either your programmer or chip, 
+and you are ready to go.
+</p>
+<p>We are going to enter an assembly program called BEEP for the Butterfly. 
+If you are not using the Butterfly, keep reading along we'll get into how to adapt the program for 
+other chips soon enough.
+</p>
+<p>If this is the first time you run the software, select “Atmel AVR Assembler.” Select “Assembler 2” 
+if asked. Enter a file name of BEEP or something similar, then you will be presented with a list of chips 
+for which to assemble for, if using the Butterfly choose ATmega169.
+</p>
+<h3><a name="TOC-BEEP-OUR-FIRST-PROGRAM:"></a>"BEEP" OUR FIRST PROGRAM:</h3>
+ 
+
+Here is our first program (A full explanation will follow), if you cut and paste it into the Assembler editor. Then hit the compile button, it will produce a file called BEEP.HEX ready to be programmed into our chip. Then you hit the connect button followed by the program button.
+<pre>   ;--------------------------------------------------;
+   ; BEEP.ASM for AVR BUTTERFLY                       ;
+   ; MAKE THAT FAMOUS SOUND!                          ;
+   ; AUTHOR: DANIEL J. DOREY       RETRODAN@GMAIL.COM ;
+   ; CREATED: 01-MAR-06            UPDATED: 01-MAR-06 ;
+   ; NOTE: SPEAKER APPEARS TO BE ON PB5 IN SCHEMATICS ;
+   ;--------------------------------------------------;
+
+   .INCLUDE "M169DEF.INC" ;(BUTTERFLY DEFINITIONS)
+
+   ;-----------------------------------------;
+   ; FIRST WE'LL DEFINE SOME REGISTER TO USE ;
+   ;-----------------------------------------;
+   .DEF A = R16   ;GENERAL PURPOSE ACCUMULATOR
+   .DEF I = R21   ;INDEXES FOR LOOP CONTROL
+   .DEF J = R22
+
+   .ORG $0000
+
+   ;-----------------------------------------;
+   ; FIRST WE SETUP A STACK AREA THEN SET    ;
+   ; DIRECTION BIT ON PORT-B FOR OUTPUT/SPKR ;
+   ;-----------------------------------------;
+   START:
+     LDI A,LOW(RAMEND)   ;SETUP STACK POINTER
+     OUT SPL,A           ;SO CALLS TO SUBROUTINES
+     LDI A,HIGH(RAMEND)  ;WORK CORRECTLY
+     OUT SPH,A           ;
+     LDI A,0b1111_1111   ;SET ALL PORTB FOR OUTPUT
+     OUT DDRB,A          ;WRITE 1s TO DIRECTN REGS
+
+   ;--------------;
+   ; MAIN ROUTINE ;
+   ;--------------;
+   BEEP: CLR I
+   BLUPE:
+     SER A               ;TURN SPKR ON
+     OUT  PORTB,A
+      RCALL PAUSE        ;WAIT
+     CLR A               ;TURN IT OFF
+     OUT PORTB,A
+      RCALL PAUSE        ;WAIT AGAIN
+     DEC I
+      BRNE BLUPE
+   LOOP: RJMP LOOP         ;STAY HERE WHEN DONE
+
+   ;----------------;
+   ;PAUSE ROUTINE   ;
+   ;----------------;
+   PAUSE:
+     CLR J
+   PLUPE:
+     NOP   
+     DEC J               
+      BRNE PLUPE
+       RET
+</pre>
+<h3><a name="TOC-A-BUTTERFLY-BEEP:"></a>A BUTTERFLY BEEP:</h3>
+<p>If our programming was successful your Butterfly should emit a small beep then stop. 
+If not, be sure to check that the program module is sending the correct file, the assembler-editor 
+does not update the program module when switching between programs.
+</p>
+<p>Now we will look at the program in more detail. By now you should understand the first part of the program.
+ It starts with some comments starting with the “;” which the Assembler will ignore. 
+ Then we use the .INCLUDE directive to tell the Assembler to read in the file M169DEF.INC 
+ which contains definitions for the ATmega169 chip. 
+</p>
+<pre>	;--------------------------------------------------;
+	; BEEP.ASM for AVR BUTTERFLY                       ;
+	; MAKE THAT FAMOUS SOUND!                          ;
+	; AUTHOR: DANIEL J. DOREY       RETRODAN@GMAIL.COM ;
+	; CREATED: 01-MAR-06            UPDATED: 01-MAR-06 ;
+	; NOTE: SPEAKER APPEARS TO BE ON PB5 IN SCHEMATICS ;
+	;--------------------------------------------------;
+
+	.INCLUDE "M169DEF.INC" ;(BUTTERFLY DEFINITIONS)
+</pre>
+<h3><a name="TOC-ADAPTATIONS-FOR-OTHER-AVR-CHIPS:"></a>ADAPTATIONS FOR OTHER AVR CHIPS:</h3>
+<p>If you are using another chip, like the ATtiny13 you would use AT13DEF.INC. 
+If you have done a standard install in Windows XP these files can be found in 
+C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes if you need to look up the name of the file 
+for the chip you are using. 
+</p>
+<p>Next if you are using 3 Volts to power your chip you will need to connect a small 
+speaker to Port B, Pin 5. Check the pin-outs at the top of the data-sheet for your chip 
+which you can download free from Atmel.com. You can use the small PC speaker from an old computer 
+and connect from Port B, Pin 5 to either +3 Volts or to ground. (+3 Volts should be slightly louder). 
+If you are using 5 Volts to power your chip put a small resister in the range of 100 to 220 ohms 
+in series with the speaker to limit the current.
+</p>
+<p>If Port B, Pin 5 is not available, for example on the ATtiny chips it is used as the reset line. 
+Then connect to another pin on Port B like Pin zero and we will change the program later.
+</p>
+<p>
+Back to our program. Next we give our own names (A,I,J) to the registers we will be using. 
+Note they are all in the range of R16 to R25:
+</p>
+<pre>	;-----------------------------------------;
+	; FIRST WE'LL DEFINE SOME REGISTER TO USE ;
+	;-----------------------------------------;
+	.DEF A = R16   ;GENERAL PURPOSE ACCUMULATOR
+	.DEF I = R21   ;INDEXES FOR LOOP CONTROL
+	.DEF J = R22
+</pre>
+<h3><a name="TOC-THE-ORIGIN-DIRECTIVE:"></a>THE ORIGIN DIRECTIVE:</h3>
+<p>Before we can actually create our first lines of code, we have to tell the Assembler, 
+where to put it in program memory. This is done with the Origin Directive “.ORG” and typically AVR programs 
+start at the bottom of memory at location zero because that is where the AVR chip looks when it is fired-up 
+or reset.
+</p>
+<pre>	.ORG $0000
+</pre>
+<p>The $0000 is just another constant like the ones we discussed earlier so we could have used 
+.ORG 0 or even something crazy like .ORG 100-100 however traditionally it is done with the 
+hexadecimal $ notation.
+</p>
+<h3><a name="TOC-LABELS:"></a>LABELS:</h3>
+<p>In order to do jumps, loops and subroutines, we need a way to tell the Assembler where to go. 
+Labels are used for this purpose. They are also used to help us understand what the code is doing. 
+For example, since we are at the beginning of our program, let us label it “START:”.
+</p>
+<p>Labels typically start at the far left of the screen and the rest of the program is indented. 
+Labels are made of numbers and letters, but must start with a letter and when we define them they 
+end with the colon”:” To use a label we do not include the “:”. For example to jump to START: we would code: 
+</p>
+<pre>	RJMP START 
+</pre>
+<h3><a name="TOC-THE-LOW-AND-HIGH-EXPRESSIONS:"></a>THE LOW AND HIGH EXPRESSIONS:</h3>
+<p>Before we can call any subroutines, we need to set-up a memory structure called the stack in memory. 
+Typically our program goes at the bottom-of-memory and the stack goes at the top. 
+Usually programmers set-up the stack at the start of their programs.
+</p>
+<p>Inside the include files (M169DEF.INC in our case) a constant (RAMEND) is defined to the top of 
+memory for us. The problem is that if we have more than 256 bytes of RAM, it is going to be more 
+than we can fit into a single byte. The expressions LOW() and HIGH() will break-down a sixteen-bit 
+number into two bytes for us. LOW(RAMEND) will give us the lower-byte and HIGH(RAMEND) will give us 
+the high-byte. Note that these two bytes are constants, and if we want to write them to the 
+Stack Pointer we must first load them into a register in the R16-R32 range just like any other constant.
+</p>
+<h3><a name="TOC-THE-STACK-POINTER:"></a>THE STACK POINTER:</h3>
+<p>The Stack Pointer is a special two-byte memory location that always points to the top item on the stack. 
+The two memory locations are defined as SPL (low byte) and SPH (high byte). On the AVRs they are treated 
+like a port so the MOV command will not work and we have to use the OUT command. 
+OUT typically send the contents of a register to a port location.
+</p>
+<pre>	START:
+	    LDI A,LOW(RAMEND)   ;SETUP STACK POINTER
+	    OUT SPL,A           ;SO CALLS TO SUBROUTINES
+	    LDI A,HIGH(RAMEND)  ;WORK CORRECTLY
+	    OUT SPH,A           ;
+</pre>
+<h3><a name="TOC-THE-DATA-DIRECTION-REGISTERS:"></a>THE DATA DIRECTION REGISTERS:</h3>
+<p>Each input/output port of the AVRs has an associated Data Direction Register which is defined 
+in our include file (M169DEF.INC). For Port B it is DDRB, for Port C it would be DDRC, etc. 
+If we set a bit in this register to one, then that pin becomes an output pin, on-the-other-hand 
+if we write a zero it becomes and input pin. 
+</p>
+<p>Since we need Port B, Pin 5 to be an output pin and we are not using any other pins on Port B, 
+we can simply make them all output pins by writing all ones. 
+</p>
+<p>Once again we move a constant, this time the value 0b1111_1111 into the R16 Register. 
+Since the Data Direction Registers are Port Registers we cannot use the MOV command, 
+we must use the OUT command again:
+</p>
+<pre>	    LDI A,0b1111_1111   ;SET ALL PORTB FOR OUTPUT
+	    OUT DDRB,A          ;WRITE 1s TO DIRECTN REGS
+</pre>
+<h3><a name="TOC-THE-CLR-AND-SER-COMMANDS:"></a>THE CLR AND SER COMMANDS:</h3>
+<p>Now that all our initializations are done, we get into the main part of our program. 
+Since our program makes a beep on the speaker I have labelled it BEEP, but we could have 
+labelled it MAIN or any name you wish to use.
+</p>
+<p>We don't want our AVR to beep continuously and be a major annoyance, so we are going to set-up 
+a counter to limit how long it will beep. We are going to use register R21 which we have previously 
+given the name “I” and we are going to start it with the value of zero. Normally we might do this 
+by loading it directly with the command LDI I,0 but we are going to use a new command CLR that will 
+set all the bits in a register to zero.
+</p>
+<p>The advantage of the CLR command is that it can be used on ALL the registers from R0 to R31. 
+The opposite of the CLR command is SER (SEt Register) which will set all the bits in a register to one. 
+In fact, previously we used LDI A,0b1111_1111 to set all the bits in Register A to one, but we could 
+have used SER A instead.
+</p>
+<pre>	;--------------;
+	; MAIN ROUTINE ;
+	;--------------;
+	BEEP: CLR I
+</pre>
+<h3><a name="TOC-ACTIVATING-THE-SPEAKER:"></a>ACTIVATING THE SPEAKER:</h3>
+<p>The way we are going to create a sound coming from the speaker is to activate it then deactivate 
+it by sending out a series of ones and zeros like 10101010101... etc. This will cause the speaker to 
+move in and out and thus create a tone. To do this efficiently we will use a loop, and a loop will 
+require a label, so we call this section of code BLUPE (Beep Loop):
+</p>
+<pre>	BLUPE:
+</pre>
+<p>To activate the speaker we need to send out a one to PortB, Pin 5. It is over-kill but since we 
+are not using any of the other pins on Port B we can use the SER A command to set ALL the bits to 
+one then send them out to Port B.
+</p>
+<pre>	    SER  A              ;TURN SPKR ON
+	    OUT  PORTB,A
+</pre>
+<h3><a name="TOC-SUBROUTINES-AND-THE-RCALL-RET-COMMANDS:"></a>SUBROUTINES AND THE RCALL &amp; RET COMMANDS:</h3>
+<p>Since the processor runs very fast, in the Butterfly it is 2MHz and the default on 
+many other chips is 1Mhz, unless we slow things down the tone emitted from our speaker 
+will be too high to hear. So we use a subroutine that we call PAUSE that we jump to with 
+the RCALL command that will simply waste some time for us.
+</p>
+<p>The RCALL command saves our spot on the stack then jumps to the subroutine and continues 
+to execute the commands located there. The opposite of the RCALL command is the RET (RETurn) command, 
+that fetches our previous location from the stack so the program can return to where it came from. 
+So every subroutine must end with a RET command. We indent the RCALL PAUSE command to remind us that 
+the program is jumping to another location.
+</p>
+<pre>	     RCALL PAUSE        ;WAIT
+</pre>
+<p>Previously we activated the speaker by writing all ones to Port B, now we want to do the opposite 
+so we use the CLR command to set all the bits in Register A to zero, then send them out to Port B.
+</p>
+<pre>	    CLR A               ;TURN IT OFF
+	    OUT PORTB,A
+	     RCALL PAUSE        ;WAIT AGAIN
+</pre>
+<h3><a name="TOC-THE-ADD-SUBTRACT-COMMANDS:"></a>THE ADD &amp; SUBTRACT COMMANDS:</h3>
+<p>Previously we set-up Register I as a counter to limit the length of time the speaker will beep. 
+To do this we are going to subtract one from our counter and stop after we have activated &amp; deactivated 
+the speaker 256 times.
+</p>
+<p>To subtract one from Register I we could first LDI A,1 then SUB I,A which will subtract the value in A 
+from the value in I. Similarly we could also ADD I,A if we wanted to add the contents of A to I.
+</p>
+<p>A better way to subtract one from Register I is the SUBtract Immediate command SUBI I,1 that allows 
+us to subtract a constant from a Register. Unfortunately there is not an add immediate command.
+</p>
+<p>An even better way to subtract one from I is to use the DECrement command DEC I. 
+Adding and subtracting one from registers is so common that there are separate commands that do just that. 
+DECrement (DEC I) will subtract one from I and INCrement (INC I) will add one to Register I.
+</p>
+<pre>	    DEC I
+</pre>
+<h3><a name="TOC-JUMPING-BRANCHING:"></a>JUMPING &amp; BRANCHING:</h3>
+<p>Typically when we want to jump to a location and not necessarily return we use the RJMP command, 
+but if we only want to jump based on certain criteria, it is commonly called a BRANCH, 
+like the limb of a tree.
+</p>
+<p>There are many branch instructions, if you have not done so yet, you should check out the entire 
+instruction set found in the Data-Sheet for the chip you are using, where you will find a complete list. 
+</p>
+<p>We are going to decrement the Register I each time through the main loop and stop when it reaches zero. 
+To do this we are going to use the BRanch if Not Equal to zero instruction (BRNE). So that if the I register 
+has not hit zero yet, then we branch back to the start of our main loop (BLUPE). 
+When the Register I hits zero the program will NOT branch, but will continue to the next instruction 
+and exit the loop.
+</p>
+<pre>	     BRNE BLUPE
+</pre>
+<p>If we want to unconditionally jump to another part of the program, we typically use the Relative JuMP 
+command (RJMP). The RJMP instruction will quickly take us to another part of the program, 
+but it is limited in the distance we can go. If we run into an error because the label we want to jump 
+to is too far, then we can use the slower JMP command without any limits on distance.
+</p>
+<p>Some of you may ask, how is it that we start with zero, then subtract one each time through 
+the loop and still stop at zero? The answer is that when we subtract one from zero the eight-bit 
+register will “roll over” to 255, then we continue to subtract one from 255 until we reach zero again.
+</p>
+<p>Once we have produced our beep sound, we don't need the processor to do anything more, 
+so we send it in an infinite loop by having it jump to itself: 
+</p>
+<pre>	LOOP: RJMP LOOP         ;STAY HERE WHEN DONE
+</pre>
+<h3><a name="TOC-THE-PAUSE-ROUTINE:"></a>THE PAUSE ROUTINE:</h3>
+<p>To slow down our program so we can hear the tone emitted, we use a subroutine that does nothing 
+but go in a loop 255 times between activating the speaker and deactivating it. 
+We create this loop by using another Register we have defined as J and decrementing it 
+until it reaches zero, just as we did in our main loop, with the BRanch if Not Equal to zero (BRNE) instruction. 
+</p>
+<h3><a name="TOC-THE-NOP-INSTRUCTION:"></a> THE NOP INSTRUCTION:</h3>
+<p>To slow-down our program even more we can insert a command that does nothing but wait for 
+one clock cycle called a No Operation (NOP). If fact we can change the frequency of our tone 
+by adding even more NOPs. 
+</p>
+<pre>	;----------------;
+	;PAUSE ROUTINE   ;
+	;----------------;
+	PAUSE:
+	    CLR J
+	PLUPE:
+	    NOP   
+	    DEC J               
+	     BRNE PLUPE
+	      RET
+</pre>
+<p>As mentioned earlier, all subroutines must end with a RETurn (RET) instruction.
+</p>
+<h3><a name="TOC-THE-AND-OPERATION:"></a>THE "AND" OPERATION:</h3>
+<p>The "AND" operation can be demonstrated with the following circuit of two switches and a light in series:
+</p>
+<pre>	Switch_1     Switch_2   LED
+	----/ ---------/ --------D
+</pre>
+<p>It is clear to see that the LED will only illuminate when both switches are closed to produce a c
+omplete circuit. Switch one AND switch two both have to be closed before the LED will work. 
+This result can be displayed in a truth table where a zero means off and a one means on: 
+</p>
+<pre>     SW1 SW2 LED
+      0   0 = 0
+      0   1 = 0
+      1   0 = 0
+      1   1 = 1
+</pre>
+<p>The "AND" operation can be used to clear a bit to zero. From the truth table above, 
+you can see that anything that is ANDed with a zero is zero. Lets say you wanted to clear the high bit 
+of a register, the following code will so just that:
+</p>
+<pre>		LDI  A,0b1111_1111     ;A = 11111111
+		ANDI A,0b0111_1111     ;A = 01111111
+</pre>
+<p>"AND" operations can also be used with a "bit-mask" to strip off bits we are interested in. 
+For example if we are only interested in the highest four bits of a byte. 
+We can use the binary number 0b1111_0000 to strip away the high nybble of that register and ignore 
+the remainder:
+</p>
+<pre>		LDI  A,0b1010_1111      ;A = 1111_1111
+		ANDI A,0b1111_0000      ;A = 1010_0000
+</pre>
+<h3><a name="TOC-THE-OR-OPERATION:"></a>THE "OR" OPERATION:</h3>
+<p>The "OR" operation can be demonstrated with the following circuit with two switches in parallel 
+connected to a light:
+</p>
+<pre>	           Switch_1
+	-------------/ ---------+
+	                        |       LED
+	                        +--------D
+	          Switch_2      |
+	------------/ ----------+
+</pre>
+<p>It is clear to see that the LED will light when one "OR" the other switch is closed, 
+and even if both are closed. This can be represented by a truth table:
+</p>
+<p>
+</p>
+<pre>     SW1 SW2 LED
+      0   0 = 0
+      0   1 = 1
+      1   0 = 1
+      1   1 = 1
+</pre>
+<p>The "OR" operation can be used to set a bit to one. From the truth table above, 
+you can see that anything that is ORed with a one is one. Lets say you need to set the high bit 
+of a register, the following code will do that:
+</p>
+<pre>		LDI  A,0b0101_0101     ;A = 0101_0101
+		ORI  A,0b1000_0000     ;A = 1101_0101
+</pre>
+<h3><a name="TOC-THE-EXCLUSIVE-OR-EOR-OPERATION:"></a>THE EXCLUSIVE OR "EOR" OPERATION:</h3>
+<p>The "EOR" operation is the same as the "OR" operation except that it is off when both switches 
+are closed. This means the LED is on if one "OR" the other is on, but not if both are. 
+This can be demonstrated with the following truth table:
+</p>
+<pre>     SW1 SW2 LED
+      0   0 = 0
+      0   1 = 1
+      1   0 = 1
+      1   1 = 0
+</pre>
+<p>If you look at the truth table above, you will see that a one EORed with zero give a one, 
+and a one EORed with a one gives us zero. EORing something with a one gives us the opposite or inverse. 
+This gives us the property of flipping a bit. If you need to "blink" the high bit of a register on and off, 
+the following code will do that without disturbing the other bits of the "A" register:
+</p>
+<pre>		LDI  B,0b1000_0000
+		LDI  A,0b0101_0101     ;A = 0101_0101
+		EOR  A,B               ;A = 1101_0101
+		EOR  A,B               ;A = 0101_0101
+		EOR  A,B               ;A = 1101_0101
+</pre>
+<h3><a name="TOC-AN-INVERSE-OR-NOT-OPERATION:"></a>AN INVERSE OR "NOT" OPERATION:</h3>
+<p>The NOT or inverse operation means you want the opposite, ones become zero and zeros become one. 
+The truth table for this is:
+</p>
+<p>
+</p>
+<pre>           A      NOT_A
+           0        1
+           1        0
+</pre>
+<p>If we think back to the EOR command, we realize that when we EOR something with a one, 
+we flip that bit. So to get the inverse or NOT of an entire value, we can EOR it with all ones:
+</p>
+<pre>       LDI  B,0b1111_1111     ;ALL ONES
+       LDI  A,0b1010_1010     ;A=1010_1010
+       EOR A,B                ;A=0101_0101
+</pre>
+<p>Previously in the main loop of our program, to make the speaker generate a tone we wrote a one 
+to the speaker port, waited a short time, then wrote a zero, and waited a short time, then repeated 
+the cycle 256 times.
+</p>
+<p>Another way to accomplish a similar result would be to read-in the value at the speaker, 
+and if it is a one, invert it to a zero, and if it is a zero, invert it to a one. 
+This is where the Exclusive OR (EOR) instruction can be used because we now know that anything 
+EORed with ones will give us the inverse or opposite. 
+</p>
+<p>In our new version of the main part of our program, we can use the Register J to hold the value 
+of all ones and use it to invert what is on Port B:
+</p>
+<pre>	;--------------;
+	; MAIN ROUTINE ;
+	;--------------;
+	BEEP: CLR I
+	BLUPE:
+	    LDI J,0b1111_1111   ;LOAD BITMASK
+	    IN A,PORTB          ;READ IN PORT B
+	    EOR A,J             ;INVERT/TOGGLE
+	    OUT PORTB,A         ;WRITE OUT TO PORT B
+	     RCALL PAUSE        ;WAIT
+	    DEC I
+	     BRNE BLUPE
+	LOOP: RJMP LOOP         ;STAY HERE WHEN DONE
+</pre>
+<p>We could even further refine our program by only inverting the pin that the speaker is on. 
+Perhaps we might want to use the other pins on Port B for something other than creating a tone.
+</p>
+<p>On the Butterfly the speaker is connected to Pin 5 of Port B, so we could load the Register J 
+with the value 0b0001_0000 instead.
+</p>
+<pre>	    LDI J,0b0001_0000   ;LOAD BITMASK
+	    IN A,PORTB          ;READ IN PORT B
+</pre>
+<h3><a name="TOC-THE-SBI-CBI-INSTRUCTIONS:"></a>THE SBI &amp; CBI INSTRUCTIONS:</h3>
+<p>The Set Bit in I/O Port (SBI) and Clear Bit in I/O Port (CBI) instructions can be used to set 
+or clear bits in an I/O Port that will send a one or zero out on the corresponding pin. 
+For example we could use them in the main loop of our BEEP program to activate the speaker:
+</p>
+<pre>	;--------------;
+	; MAIN ROUTINE ;
+	;--------------;
+	BEEP: CLR I
+	BLUPE:
+	    SBI  PORTB,5        ;ACTIVATE THE SPEAKER
+	     RCALL PAUSE        ;WAIT
+	    CBI PORTB,5         ;SHUT OFF SPEAKER
+	     RCALL PAUSE        ;WAIT AGAIN
+	    DEC I
+	     BRNE BLUPE
+	LOOP: RJMP LOOP         ;STAY HERE WHEN DONE
+</pre>
+<p>The Data-Sheet tells us that we can Toggle an output pin by writing a one to the input pin (PINx). 
+Each output port has an associated input register, for PORTB it would be PINB. 
+We can simplify toggling the speaker:
+</p>
+<pre>	;--------------;
+	; MAIN ROUTINE ;
+	;--------------;
+	BEEP: CLR I
+	BLUPE:
+	    SBI PINB,5          ;TOGGLE SPEAKER
+	     RCALL PAUSE        ;WAIT
+	    DEC I
+	     BRNE BLUPE
+	LOOP: RJMP LOOP         ;STAY HERE WHEN DONE
+</pre>
+<h3><a name="TOC-THE-STACK:"></a>THE STACK:</h3>
+<p>The Stack is a memory structure that is like a stack of plates. You can only ever place new plates 
+on the top of the stack. For example if there were three items on the stack and you added a fourth:
+</p>
+<pre>                         [TOP]          [TOP]
+                          [3]            [4]  &lt;-- NEW
+                          [2]    ==&gt;     [3]
+                          [1]            [2]
+                        [STACK]          [1]
+                                       [STACK]
+</pre>
+<p>Now if we remove [4] from the top of the stack, then [3] become the top of the stack again. 
+Then if we remove [3] then [2] is on the top:
+</p>
+<pre>                         [TOP]           [TOP]        [TOP]
+                          [4]             [3]          [2]
+                          [3]    ==&gt;      [2]   ==&gt;    [1]
+                          [2]             [1]        [STACK]
+                          [1]           [STACK]
+                        [STACK]
+ </pre>
+<h3><a name="TOC-THE-PUSH-POP-INSTRUCTIONS:"></a>THE PUSH &amp; POP INSTRUCTIONS:</h3>
+<p>The PUSH instruction copies a register to the top of the stack, and POP removes a value from the 
+top of the stack and copies it into a register.
+</p>
+<p>One common use is to preserve the value of a Register. For example if we wanted our BEEP program 
+to use only Register A in both the main the loop of our program and in the PAUSE subroutine. 
+We could push A on the stack before we call the PAUSE routine then pop it off the stack after we come back:
+</p>
+<pre>	;--------------;
+	; MAIN ROUTINE ;
+	;--------------;
+	BEEP:  CLR A              ;USE A AS COUNTER
+	BLUPE: SBI PINB,5         ;TOGGLE SPEAKER
+	       PUSH A             ;SAVE CONTENTS OF A
+	       RCALL PAUSE        ;WAIT
+	       POP A              ;RESTORE A
+	       DEC A
+	        BRNE BLUPE
+	LOOP:    RJMP LOOP        ;STAY HERE WHEN DONE
+
+	PAUSE: CLR A
+	PLUPE: NOP   
+	       DEC A               
+	        BRNE PLUPE
+	         RET
+</pre>
+<p>An even better way to do this would be to place the PUSH &amp; POP instructions inside the PAUSE subroutine. 
+The first thing we do is save A on the stack before its value gets changed, then we restore it just 
+before we return. This makes the PAUSE routine reusable and portable because it saves &amp; restores the 
+value of the register it uses:
+</p>
+<pre>	PAUSE: PUSH A        ;SAVE CONTENTS OF A
+	       CLR A
+	PLUPE: NOP   
+	       DEC A               
+	        BRNE PLUPE
+	       POP A         ;RESTORE A
+	        RET
+</pre>
+<p>Now that we have a basic understanding of the AVR Assembler Language it will be easier for you to 
+follow more advanced tutorials. Another great way to learn is to look at others working code and observe 
+the techniques they use. I encourage you to take some working code and play around with it because the 
+best way to learn Assembler is to code in Assembler, learn by doing.
+</p>
+<a href="http://www.hitwebcounter.com/countersiteservices.php" target="_blank" rel="nofollow">
+<img alt="Your Site Visitors" border="0" src="./AVR ASM INTRODUCTION_files/counter.php" title="Your Site Visitors">
+</a>
+<br>
+<a href="http://www.hitwebcounter.com/" style="font-family:Arial,Geneva,Helvetica,sans-serif;font-size:14px;color:#999699;text-decoration:none" target="_blank" title="Free Counter" rel="nofollow"><b>Free Counter</b>
+</a></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-subpages" class="sites-canvas-bottom-panel-wrapper" style="">
+<div class="sites-subpages">
+            Subpages <span id="subpages-total-number">(12):</span>
+<span>
+<a href="https://sites.google.com/site/avrasmintro/home/avr-asm-bit-manipulation" dir="ltr">1. AVR ASM BIT MANIPULATION</a>
+</span>
+<span>
+<a href="https://sites.google.com/site/avrasmintro/home/basic-arithmetic" dir="ltr">2a. BASIC ARITHMETIC</a>
+</span>
+<span>
+<a href="https://sites.google.com/site/avrasmintro/home/2b-basic-math" dir="ltr">2b. BASIC MATH</a>
+</span>
+<span>
+<a href="https://sites.google.com/site/avrasmintro/home/2c-logarithms" dir="ltr">2c. LOGARITHMS</a>
+</span>
+<span>
+<a href="https://sites.google.com/site/avrasmintro/home/integer-ratios-for-faster-code" dir="ltr">2z. INTEGER RATIOS for FASTER CODE</a>
+</span>
+<span>
+<a href="https://sites.google.com/site/avrasmintro/home/usisng-the-adc" dir="ltr">3a. USING THE ADC</a>
+</span>
+<span>
+<a href="https://sites.google.com/site/avrasmintro/home/2b-butterfly-adc" dir="ltr">3b. BUTTERFLY ADC</a>
+</span>
+<span>
+<a href="https://sites.google.com/site/avrasmintro/home/using-the-eeprom" dir="ltr">4a. USING THE EEPROM</a>
+</span>
+<span>
+<a href="https://sites.google.com/site/avrasmintro/home/2b-butterfly-eeprom" dir="ltr">4b. BUTTERFLY EEPROM</a>
+</span>
+<span>
+<a href="https://sites.google.com/site/avrasmintro/home/timer-counters-pwm-1" dir="ltr">5. TIMER COUNTERS &amp; PWM</a>
+</span>
+<span>
+<a href="https://sites.google.com/site/avrasmintro/home/5-butterfly-lcd-joystick" dir="ltr">6. BUTTERFLY LCD &amp; JOYSTICK</a>
+</span>
+<span>
+<a href="https://sites.google.com/site/avrasmintro/home/butterfly-spi-at45-dataflash" dir="ltr">7. BUTTERFLY SPI &amp; AT45 DATAFLASH</a>
+</span>
+</div>
+</div>
+</div>
+</div> 
+</td> 
+</tr>
+</tbody></table> 
+</div> 
+</div> 
+<div id="sites-chrome-footer-wrapper">
+<div id="sites-chrome-footer-wrapper-inside">
+<div id="sites-chrome-footer">
+</div>
+</div>
+</div>
+</div> 
+</div> 
+<div id="sites-chrome-adminfooter-container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-adminfooter"><p><a class="sites-system-link" href="https://www.google.com/a/UniversalLogin?service=jotspot&continue=https://sites.google.com/site/avrasmintro/home">Sign in</a>|<a class="sites-system-link" href="https://sites.google.com/site/avrasmintro/system/app/pages/reportAbuse" target="_blank">Report Abuse</a>|<a class="sites-system-link" href="javascript:;" onclick="window.open(webspace.printUrl)">Print Page</a>|<a class="sites-system-link" href="https://sites.google.com/site/avrasmintro/system/app/pages/removeAccess" target="_blank">Remove Access</a>|<span class="sites-system-link">Powered By</span> <b class="powered-by"><a href="http://sites.google.com/">Google Sites</a></b></p></div>
+</div>
+</div> 
+</div> 
+<div id="sites-chrome-onebar-footer">
+</div>
+
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('sjl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="./AVR ASM INTRODUCTION_files/jot_min_view__en.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('jl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+    
+        sites.core.Analytics.createTracker();
+        sites.core.Analytics.trackPageview();
+      
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+                    sites.Searchbox.initialize(
+                        'sites-searchbox-search-button',
+                        {"object":[]}['object'],
+                        'search-site',
+                        {"label":"Configure search options...","url":"/site/avrasmintro/system/app/pages/admin/settings"});
+                  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+      gsites.HoverPopupMenu.createSiteDropdownMenus('sites-header-nav-dropdown', false);
+    </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+            JOT_setupNav("2bd", "Navigation", true);
+            JOT_addListener('titleChange', 'JOT_NAVIGATION_titleChange', 'COMP_2bd');
+          </script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+                    window.onload = function() {
+                      if (false) {
+                        JOT_setMobilePreview();
+                      }
+                      var loadTimer = window.jstiming.load;
+                      loadTimer.tick("ol");
+                      loadTimer["name"] = "load," + webspace.page.type;
+                      window.jstiming.report(loadTimer, {}, 'https://gg.google.com/csi');
+                    }
+                  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+        JOT_insertAnalyticsCode(false);
+      </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    var maestroRunner = new gsites.pages.view.SitesMaestroRunner(
+        webspace, "en");
+    maestroRunner.initListeners();
+    maestroRunner.installEditRender();
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+  //<![CDATA[
+    // Decorate any fastUI buttons on the page with a class of 'goog-button'.
+    if (webspace.user.hasWriteAccess) {
+      JOT_decorateButtons();
+    }
+
+    // Fires delayed events.
+    (function() {
+      JOT_fullyLoaded = true;
+      var delayedEvents = JOT_delayedEvents;
+      for (var x = 0; x < delayedEvents.length; x++) {
+        var event = delayedEvents[x];
+        JOT_postEvent(event.eventName, event.eventSrc, event.payload);
+      }
+      JOT_delayedEvents = null;
+      JOT_postEvent('pageLoaded');
+    })();
+ //]]>
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    JOT_postEvent('decorateGvizCharts');
+  </script>
+<script type="text/javascript">
+              JOT_postEvent('renderPlus', null, 'sites-chrome-main');
+            </script>
+<div id="server-timer-div" style="display:none"> </div>
+<script>
+          window.jstiming.load.tick('render');
+        </script>
+
+
+</body></html>

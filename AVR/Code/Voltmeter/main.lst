@@ -1,0 +1,342 @@
+
+main:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ee e8       	ldi	r30, 0x8E	; 142
+  68:	f2 e0       	ldi	r31, 0x02	; 2
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	ac 36       	cpi	r26, 0x6C	; 108
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	10 e0       	ldi	r17, 0x00	; 0
+  78:	ac e6       	ldi	r26, 0x6C	; 108
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a0 37       	cpi	r26, 0x70	; 112
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 d3 00 	call	0x1a6	; 0x1a6 <main>
+  8a:	0c 94 45 01 	jmp	0x28a	; 0x28a <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <Check_IF_MrLCD_isBusy>:
+  92:	17 ba       	out	0x17, r1	; 23
+  94:	97 9a       	sbi	0x12, 7	; 18
+  96:	82 b3       	in	r24, 0x12	; 18
+  98:	88 7f       	andi	r24, 0xF8	; 248
+  9a:	82 bb       	out	0x12, r24	; 18
+  9c:	c7 9b       	sbis	0x18, 7	; 24
+  9e:	08 c0       	rjmp	.+16     	; 0xb0 <Check_IF_MrLCD_isBusy+0x1e>
+  a0:	95 9a       	sbi	0x12, 5	; 18
+  a2:	00 00       	nop
+  a4:	00 00       	nop
+  a6:	82 b3       	in	r24, 0x12	; 18
+  a8:	80 7c       	andi	r24, 0xC0	; 192
+  aa:	82 bb       	out	0x12, r24	; 18
+  ac:	c7 99       	sbic	0x18, 7	; 24
+  ae:	f8 cf       	rjmp	.-16     	; 0xa0 <Check_IF_MrLCD_isBusy+0xe>
+  b0:	8f ef       	ldi	r24, 0xFF	; 255
+  b2:	87 bb       	out	0x17, r24	; 23
+  b4:	08 95       	ret
+
+000000b6 <Peek_A_Boo>:
+  b6:	95 9a       	sbi	0x12, 5	; 18
+  b8:	00 00       	nop
+  ba:	00 00       	nop
+  bc:	82 b3       	in	r24, 0x12	; 18
+  be:	80 7c       	andi	r24, 0xC0	; 192
+  c0:	82 bb       	out	0x12, r24	; 18
+  c2:	08 95       	ret
+
+000000c4 <Send_A_Command>:
+  c4:	df 93       	push	r29
+  c6:	cf 93       	push	r28
+  c8:	0f 92       	push	r0
+  ca:	cd b7       	in	r28, 0x3d	; 61
+  cc:	de b7       	in	r29, 0x3e	; 62
+  ce:	89 83       	std	Y+1, r24	; 0x01
+  d0:	0e 94 49 00 	call	0x92	; 0x92 <Check_IF_MrLCD_isBusy>
+  d4:	89 81       	ldd	r24, Y+1	; 0x01
+  d6:	88 bb       	out	0x18, r24	; 24
+  d8:	82 b3       	in	r24, 0x12	; 18
+  da:	8b 77       	andi	r24, 0x7B	; 123
+  dc:	82 bb       	out	0x12, r24	; 18
+  de:	95 9a       	sbi	0x12, 5	; 18
+  e0:	00 00       	nop
+  e2:	00 00       	nop
+  e4:	82 b3       	in	r24, 0x12	; 18
+  e6:	80 7c       	andi	r24, 0xC0	; 192
+  e8:	82 bb       	out	0x12, r24	; 18
+  ea:	18 ba       	out	0x18, r1	; 24
+  ec:	0f 90       	pop	r0
+  ee:	cf 91       	pop	r28
+  f0:	df 91       	pop	r29
+  f2:	08 95       	ret
+
+000000f4 <Send_A_Character>:
+  f4:	df 93       	push	r29
+  f6:	cf 93       	push	r28
+  f8:	0f 92       	push	r0
+  fa:	cd b7       	in	r28, 0x3d	; 61
+  fc:	de b7       	in	r29, 0x3e	; 62
+  fe:	89 83       	std	Y+1, r24	; 0x01
+ 100:	0e 94 49 00 	call	0x92	; 0x92 <Check_IF_MrLCD_isBusy>
+ 104:	89 81       	ldd	r24, Y+1	; 0x01
+ 106:	88 bb       	out	0x18, r24	; 24
+ 108:	97 98       	cbi	0x12, 7	; 18
+ 10a:	92 9a       	sbi	0x12, 2	; 18
+ 10c:	95 9a       	sbi	0x12, 5	; 18
+ 10e:	00 00       	nop
+ 110:	00 00       	nop
+ 112:	82 b3       	in	r24, 0x12	; 18
+ 114:	80 7c       	andi	r24, 0xC0	; 192
+ 116:	82 bb       	out	0x12, r24	; 18
+ 118:	18 ba       	out	0x18, r1	; 24
+ 11a:	0f 90       	pop	r0
+ 11c:	cf 91       	pop	r28
+ 11e:	df 91       	pop	r29
+ 120:	08 95       	ret
+
+00000122 <Send_A_String>:
+ 122:	cf 93       	push	r28
+ 124:	df 93       	push	r29
+ 126:	ec 01       	movw	r28, r24
+ 128:	88 81       	ld	r24, Y
+ 12a:	18 16       	cp	r1, r24
+ 12c:	34 f4       	brge	.+12     	; 0x13a <Send_A_String+0x18>
+ 12e:	21 96       	adiw	r28, 0x01	; 1
+ 130:	0e 94 7a 00 	call	0xf4	; 0xf4 <Send_A_Character>
+ 134:	89 91       	ld	r24, Y+
+ 136:	18 16       	cp	r1, r24
+ 138:	dc f3       	brlt	.-10     	; 0x130 <Send_A_String+0xe>
+ 13a:	df 91       	pop	r29
+ 13c:	cf 91       	pop	r28
+ 13e:	08 95       	ret
+
+00000140 <GotoMrLCDsLocation>:
+ 140:	81 58       	subi	r24, 0x81	; 129
+ 142:	e6 2f       	mov	r30, r22
+ 144:	f0 e0       	ldi	r31, 0x00	; 0
+ 146:	e9 59       	subi	r30, 0x99	; 153
+ 148:	ff 4f       	sbci	r31, 0xFF	; 255
+ 14a:	90 81       	ld	r25, Z
+ 14c:	89 0f       	add	r24, r25
+ 14e:	0e 94 62 00 	call	0xc4	; 0xc4 <Send_A_Command>
+ 152:	08 95       	ret
+
+00000154 <InitializeMrLCD>:
+ 154:	81 b3       	in	r24, 0x11	; 17
+ 156:	84 6a       	ori	r24, 0xA4	; 164
+ 158:	81 bb       	out	0x11, r24	; 17
+ 15a:	85 ea       	ldi	r24, 0xA5	; 165
+ 15c:	9e e0       	ldi	r25, 0x0E	; 14
+ 15e:	01 97       	sbiw	r24, 0x01	; 1
+ 160:	f1 f7       	brne	.-4      	; 0x15e <InitializeMrLCD+0xa>
+ 162:	00 c0       	rjmp	.+0      	; 0x164 <InitializeMrLCD+0x10>
+ 164:	00 00       	nop
+ 166:	81 e0       	ldi	r24, 0x01	; 1
+ 168:	0e 94 62 00 	call	0xc4	; 0xc4 <Send_A_Command>
+ 16c:	83 ef       	ldi	r24, 0xF3	; 243
+ 16e:	91 e0       	ldi	r25, 0x01	; 1
+ 170:	01 97       	sbiw	r24, 0x01	; 1
+ 172:	f1 f7       	brne	.-4      	; 0x170 <InitializeMrLCD+0x1c>
+ 174:	00 c0       	rjmp	.+0      	; 0x176 <InitializeMrLCD+0x22>
+ 176:	00 00       	nop
+ 178:	88 e3       	ldi	r24, 0x38	; 56
+ 17a:	0e 94 62 00 	call	0xc4	; 0xc4 <Send_A_Command>
+ 17e:	90 e1       	ldi	r25, 0x10	; 16
+ 180:	9a 95       	dec	r25
+ 182:	f1 f7       	brne	.-4      	; 0x180 <InitializeMrLCD+0x2c>
+ 184:	00 c0       	rjmp	.+0      	; 0x186 <InitializeMrLCD+0x32>
+ 186:	8c e0       	ldi	r24, 0x0C	; 12
+ 188:	0e 94 62 00 	call	0xc4	; 0xc4 <Send_A_Command>
+ 18c:	80 e1       	ldi	r24, 0x10	; 16
+ 18e:	8a 95       	dec	r24
+ 190:	f1 f7       	brne	.-4      	; 0x18e <InitializeMrLCD+0x3a>
+ 192:	00 c0       	rjmp	.+0      	; 0x194 <InitializeMrLCD+0x40>
+ 194:	08 95       	ret
+
+00000196 <ADCInit>:
+ 196:	37 9a       	sbi	0x06, 7	; 6
+ 198:	87 b1       	in	r24, 0x07	; 7
+ 19a:	80 66       	ori	r24, 0x60	; 96
+ 19c:	87 b9       	out	0x07, r24	; 7
+ 19e:	38 9a       	sbi	0x07, 0	; 7
+ 1a0:	32 9a       	sbi	0x06, 2	; 6
+ 1a2:	36 9a       	sbi	0x06, 6	; 6
+ 1a4:	08 95       	ret
+
+000001a6 <main>:
+ 1a6:	0e 94 aa 00 	call	0x154	; 0x154 <InitializeMrLCD>
+ 1aa:	0e 94 cb 00 	call	0x196	; 0x196 <ADCInit>
+ 1ae:	36 9b       	sbis	0x06, 6	; 6
+ 1b0:	fe cf       	rjmp	.-4      	; 0x1ae <main+0x8>
+ 1b2:	85 b1       	in	r24, 0x05	; 5
+ 1b4:	90 e0       	ldi	r25, 0x00	; 0
+ 1b6:	6c e6       	ldi	r22, 0x6C	; 108
+ 1b8:	70 e0       	ldi	r23, 0x00	; 0
+ 1ba:	4a e0       	ldi	r20, 0x0A	; 10
+ 1bc:	50 e0       	ldi	r21, 0x00	; 0
+ 1be:	0e 94 00 01 	call	0x200	; 0x200 <itoa>
+ 1c2:	86 e0       	ldi	r24, 0x06	; 6
+ 1c4:	64 e1       	ldi	r22, 0x14	; 20
+ 1c6:	0e 94 a0 00 	call	0x140	; 0x140 <GotoMrLCDsLocation>
+ 1ca:	80 e6       	ldi	r24, 0x60	; 96
+ 1cc:	90 e0       	ldi	r25, 0x00	; 0
+ 1ce:	0e 94 91 00 	call	0x122	; 0x122 <Send_A_String>
+ 1d2:	86 e0       	ldi	r24, 0x06	; 6
+ 1d4:	64 e1       	ldi	r22, 0x14	; 20
+ 1d6:	0e 94 a0 00 	call	0x140	; 0x140 <GotoMrLCDsLocation>
+ 1da:	8c e6       	ldi	r24, 0x6C	; 108
+ 1dc:	90 e0       	ldi	r25, 0x00	; 0
+ 1de:	0e 94 91 00 	call	0x122	; 0x122 <Send_A_String>
+ 1e2:	83 e2       	ldi	r24, 0x23	; 35
+ 1e4:	94 ef       	ldi	r25, 0xF4	; 244
+ 1e6:	01 97       	sbiw	r24, 0x01	; 1
+ 1e8:	f1 f7       	brne	.-4      	; 0x1e6 <main+0x40>
+ 1ea:	00 c0       	rjmp	.+0      	; 0x1ec <main+0x46>
+ 1ec:	00 00       	nop
+ 1ee:	36 9a       	sbi	0x06, 6	; 6
+ 1f0:	de cf       	rjmp	.-68     	; 0x1ae <main+0x8>
+
+000001f2 <ADCRead>:
+ 1f2:	36 9b       	sbis	0x06, 6	; 6
+ 1f4:	fe cf       	rjmp	.-4      	; 0x1f2 <ADCRead>
+ 1f6:	85 b1       	in	r24, 0x05	; 5
+ 1f8:	90 e0       	ldi	r25, 0x00	; 0
+ 1fa:	08 95       	ret
+
+000001fc <StartConversion>:
+ 1fc:	36 9a       	sbi	0x06, 6	; 6
+ 1fe:	08 95       	ret
+
+00000200 <itoa>:
+ 200:	fb 01       	movw	r30, r22
+ 202:	9f 01       	movw	r18, r30
+ 204:	e8 94       	clt
+ 206:	42 30       	cpi	r20, 0x02	; 2
+ 208:	c4 f0       	brlt	.+48     	; 0x23a <itoa+0x3a>
+ 20a:	45 32       	cpi	r20, 0x25	; 37
+ 20c:	b4 f4       	brge	.+44     	; 0x23a <itoa+0x3a>
+ 20e:	4a 30       	cpi	r20, 0x0A	; 10
+ 210:	29 f4       	brne	.+10     	; 0x21c <itoa+0x1c>
+ 212:	97 fb       	bst	r25, 7
+ 214:	1e f4       	brtc	.+6      	; 0x21c <itoa+0x1c>
+ 216:	90 95       	com	r25
+ 218:	81 95       	neg	r24
+ 21a:	9f 4f       	sbci	r25, 0xFF	; 255
+ 21c:	64 2f       	mov	r22, r20
+ 21e:	77 27       	eor	r23, r23
+ 220:	0e 94 31 01 	call	0x262	; 0x262 <__udivmodhi4>
+ 224:	80 5d       	subi	r24, 0xD0	; 208
+ 226:	8a 33       	cpi	r24, 0x3A	; 58
+ 228:	0c f0       	brlt	.+2      	; 0x22c <itoa+0x2c>
+ 22a:	89 5d       	subi	r24, 0xD9	; 217
+ 22c:	81 93       	st	Z+, r24
+ 22e:	cb 01       	movw	r24, r22
+ 230:	00 97       	sbiw	r24, 0x00	; 0
+ 232:	a1 f7       	brne	.-24     	; 0x21c <itoa+0x1c>
+ 234:	16 f4       	brtc	.+4      	; 0x23a <itoa+0x3a>
+ 236:	5d e2       	ldi	r21, 0x2D	; 45
+ 238:	51 93       	st	Z+, r21
+ 23a:	10 82       	st	Z, r1
+ 23c:	c9 01       	movw	r24, r18
+ 23e:	0c 94 21 01 	jmp	0x242	; 0x242 <strrev>
+
+00000242 <strrev>:
+ 242:	dc 01       	movw	r26, r24
+ 244:	fc 01       	movw	r30, r24
+ 246:	67 2f       	mov	r22, r23
+ 248:	71 91       	ld	r23, Z+
+ 24a:	77 23       	and	r23, r23
+ 24c:	e1 f7       	brne	.-8      	; 0x246 <strrev+0x4>
+ 24e:	32 97       	sbiw	r30, 0x02	; 2
+ 250:	04 c0       	rjmp	.+8      	; 0x25a <strrev+0x18>
+ 252:	7c 91       	ld	r23, X
+ 254:	6d 93       	st	X+, r22
+ 256:	70 83       	st	Z, r23
+ 258:	62 91       	ld	r22, -Z
+ 25a:	ae 17       	cp	r26, r30
+ 25c:	bf 07       	cpc	r27, r31
+ 25e:	c8 f3       	brcs	.-14     	; 0x252 <strrev+0x10>
+ 260:	08 95       	ret
+
+00000262 <__udivmodhi4>:
+ 262:	aa 1b       	sub	r26, r26
+ 264:	bb 1b       	sub	r27, r27
+ 266:	51 e1       	ldi	r21, 0x11	; 17
+ 268:	07 c0       	rjmp	.+14     	; 0x278 <__udivmodhi4_ep>
+
+0000026a <__udivmodhi4_loop>:
+ 26a:	aa 1f       	adc	r26, r26
+ 26c:	bb 1f       	adc	r27, r27
+ 26e:	a6 17       	cp	r26, r22
+ 270:	b7 07       	cpc	r27, r23
+ 272:	10 f0       	brcs	.+4      	; 0x278 <__udivmodhi4_ep>
+ 274:	a6 1b       	sub	r26, r22
+ 276:	b7 0b       	sbc	r27, r23
+
+00000278 <__udivmodhi4_ep>:
+ 278:	88 1f       	adc	r24, r24
+ 27a:	99 1f       	adc	r25, r25
+ 27c:	5a 95       	dec	r21
+ 27e:	a9 f7       	brne	.-22     	; 0x26a <__udivmodhi4_loop>
+ 280:	80 95       	com	r24
+ 282:	90 95       	com	r25
+ 284:	bc 01       	movw	r22, r24
+ 286:	cd 01       	movw	r24, r26
+ 288:	08 95       	ret
+
+0000028a <_exit>:
+ 28a:	f8 94       	cli
+
+0000028c <__stop_program>:
+ 28c:	ff cf       	rjmp	.-2      	; 0x28c <__stop_program>

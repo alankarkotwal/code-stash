@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( Card )
+find_package( OpenCV REQUIRED )
+add_executable( Card Card.cpp )
+target_link_libraries( Card ${OpenCV_LIBS} )

@@ -1,0 +1,53 @@
+#include<opencv2/core/core.hpp>
+#include<opencv2/imgproc/imgproc.hpp>
+#include<opencv2/highgui/highgui.hpp>
+#include<ctime>
+
+int CLK_DIFF=CLOCKS_PER_SEC;
+
+using namespace cv;
+using namespace std;
+
+int main()
+{
+	VideoCapture cap;
+	VideoCapture cap1;
+
+	Mat present;
+	Mat past;
+	Mat diff;
+	namedWindow("present", WINDOW_NORMAL);
+	namedWindow("past", WINDOW_NORMAL);
+	namedWindow("diff", WINDOW_NORMAL);
+
+	while(1)
+	{
+		cap.open(0);
+		cap>>past;
+		imshow("past",past);
+		imwrite("past.jpg",past);
+		cap.release();
+
+		time_t t;
+
+		t=clock();
+
+		while(clock()-t<CLK_DIFF)
+		{
+		}
+
+		cap1.open(0);
+		cap1>>present;
+		cap1.release();
+		past=imread("past.jpg");
+		imshow("past",past);
+		diff=past-present;
+		diff=diff+(present-past);
+		imshow("present",present);
+		imshow("diff",diff);
+		waitKey(0.01);
+		imwrite("present.jpg", present);
+		imwrite("diff.jpg", diff);
+	}
+	return 0;
+}

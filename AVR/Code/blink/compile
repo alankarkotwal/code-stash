@@ -1,0 +1,5 @@
+#!/bin/bash
+
+avr-gcc -Wall -O2 -mmcu=atmega32 -o main main.c
+avr-objcopy -j .text -j .data -O ihex main main.hex
+avr-objdump -S main > main.lst

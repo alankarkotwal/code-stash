@@ -1,0 +1,46 @@
+#include<avr/io.h>
+#include<avr/interrupt.h>
+#include"MrLCD.h"
+#include<util/delay.h>
+
+void ADCInit(void);
+int ADCRead(void);
+void StartConversion(void);
+
+char result[4];
+
+int main()
+{
+	InitializeMrLCD();
+	ADCInit();
+
+	while(1)
+	{
+		itoa(ADCRead(),result,10);
+		GotoMrLCDsLocation(6,20);
+		Send_A_String("       ");
+		GotoMrLCDsLocation(6,20);
+		Send_A_String(result);
+		_delay_ms(250);
+		StartConversion();
+	}
+}
+
+void ADCInit()
+{
+	ADCSRA |= (1<<ADEN);
+	ADMUX |= (1<<ADLAR|1<<REFS0);
+	ADCSRA |= (1<<ADPS2);
+	ADCSRA |= (1<<ADSC);
+}
+
+int ADCRead()
+{
+	while(!(ADCSRA & (1<<ADSC)));
+	return ADCH;
+}
+
+void StartConversion()
+{
+	ADCSRA |= (1<<ADSC);
+}
