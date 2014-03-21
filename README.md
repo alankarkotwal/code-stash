@@ -1,4 +1,4 @@
 code-stash
 ==========
 
-Random codes backup
+Random codes and documents backup
