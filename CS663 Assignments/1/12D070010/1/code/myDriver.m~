@@ -1,0 +1,40 @@
+% Set path to the 1/ directory here
+
+%myNumOfColors = 200;
+%myColorScale = [ [0:1/(myNumOfColors-1):1]' , [0:1/(myNumOfColors-1):1]' , [0:1/(myNumOfColors-1):1]' ];
+%imagesc(single(phantom));
+%colormap(myColorScale);
+%daspect([1 1 1]);
+%axis tight;
+%colorbar;
+
+[q1aImage,q1aMap] = imread('images/circles_concentric.png');
+q1a2Image = resizeImage(q1aImage,2);
+q1a3Image = resizeImage(q1aImage,3);
+imwrite(q1a2Image,'images/q1a2Image.png')
+save 'images/q1a2Image' q1a2Image
+imwrite(q1a3Image,'images/q1a3Image.png')
+save 'images/q1a3Image' q1a3Image
+
+figure
+subplot(1,3,1), imshow(q1aImage,q1aMap)
+subplot(1,3,2), imshow(q1a2Image,q1aMap)
+subplot(1,3,3), imshow(q1a3Image,q1aMap)
+
+[q1bImage,q1bMap] = imread('images/barbaraSmall.png');
+q1bExpImage = bilinearExpansion(q1bImage);
+imwrite(q1bExpImage,'images/q1bExpImage.png');
+save 'images/q1bExpImage' q1bExpImage
+
+figure
+subplot(1,2,1), imshow(q1bImage,q1bMap)
+subplot(1,2,2), imshow(q1bExpImage,q1bMap)
+
+[q1cImage,q1cMap] = imread('images/barbaraSmall.png');
+q1cExpImage = nearestNeighborInterpolation(q1cImage);
+imwrite(q1cExpImage,'images/q1cExpImage.png');
+save 'images/q1cExpImage' q1cExpImage
+
+figure
+subplot(1,2,1), imshow(q1cImage,q1cMap)
+subplot(1,2,2), imshow(q1cExpImage)

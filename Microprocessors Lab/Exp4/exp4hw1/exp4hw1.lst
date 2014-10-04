@@ -1,0 +1,130 @@
+A51 MACRO ASSEMBLER  EXP4HW1                                                              08/16/2014 19:29:06 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp4\exp4hw1\exp4hw1.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp4\exp4hw1\e
+                      xp4hw1.asm SET(SMALL) DEBUG PRINT(.\exp4hw1.lst) OBJECT(Z:\home\aloo\Documents\Acads\Sem5\EE337 Mi
+                      croprocessors Lab\Exp4\exp4hw1\exp4hw1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; Experiment 4 Homework Problem 1
+                       2     ; Write a program which will light the 4 LEDs on the board in the sequence suggested
+                       3     ; for driving the stepper motor. The time between each successive output should be a
+                       4     ; multiple of 100 ms, as read from the slide switches. Use timer 0 for controlling this tim
+                             e.
+                       5     ; If the slide switches are set to 0000, the program should terminate.
+                       6     
+  0094                 7     c1t1 EQU P1.4                   ; Set macros to the pins used for the motor.
+  0095                 8     c1t2 EQU P1.5                   ; In the form c<coil_number>t<terminal_number>.
+  0096                 9     c2t1 EQU P1.6
+  0097                10     c2t2 EQU P1.7
+  0090                11     port EQU 090h                   ; Set the direct address of the used port for ANL or ORL.
+                      12     
+0000                  13     ORG 000h
+0000 020100           14     LJMP start
+000B                  15     ORG 00Bh
+000B 12012A           16     LCALL timer0_isr
+000E 32               17     RETI
+0100                  18     ORG 100h
+0100                  19     start:
+                      20     
+0100 7581C0           21     MOV SP,#0C0h
+                      22     
+0103 75900F           23     MOV     port,#00Fh                              ; Set switches as inputs, LEDs as outputs.
+0106 439010           24     ORL port,#010h                          ; Change this while changing pins
+                      25     
+0109 D2AF             26     SETB EA                                         ; Enable global interrupts.
+010B D2A9             27     SETB ET0                                        ; Enable timer0 interrupt.
+                      28     
+010D 758901           29     MOV TMOD,#001h
+                      30     
+0110 E590             31     MOV A,P1
+0112 540F             32     ANL A,#00Fh
+0114 6009             33     JZ terminate
+0116 75F003           34     MOV B,#003h
+0119 A4               35     MUL AB
+011A FD               36     MOV R5,A
+011B 312A             37     ACALL timer0_isr
+                      38     
+011D                  39     loop:
+011D 80FE             40             SJMP loop
+                      41     
+011F                  42     terminate:
+011F C2AF             43             CLR EA
+0121 C2A9             44             CLR ET0
+0123 C28C             45             CLR TR0
+0125 53900F           46             ANL port,#00Fh                  ; Change this while changing pins
+0128                  47             endLoop:
+0128 80FE             48                     SJMP endLoop
+                      49     
+012A                  50     timer0_isr:
+012A DD21             51             DJNZ R5,skip
+012C                  52             change:
+012C E590             53                     MOV A,P1
+012E 540F             54                     ANL A,#00Fh
+0130 60ED             55                     JZ terminate
+A51 MACRO ASSEMBLER  EXP4HW1                                                              08/16/2014 19:29:06 PAGE     2
+
+0132 75F003           56                     MOV B,#003h
+0135 A4               57                     MUL AB
+0136 FD               58                     MOV R5,A
+                      59                     
+0137 E590             60                     MOV A,port
+0139 54F0             61                     ANL A,#0F0h
+013B C4               62                     SWAP A
+013C 75F002           63                     MOV B,#002h
+013F A4               64                     MUL AB
+0140 53900F           65                     ANL port,#00Fh
+0143 B41004           66                     CJNE A,#010h,next
+0146 4290             67                     ORL port,A
+0148 8003             68                     SJMP skip
+014A                  69                     next:
+014A C4               70                     SWAP A
+014B 4290             71                     ORL port,A
+                      72                     
+014D                  73             skip:
+014D 758C00           74                     MOV TH0,#000h
+0150 758A00           75                     MOV TL0,#000h
+0153 D28C             76                     SETB TR0
+                      77     
+0155 22               78     RET
+                      79     
+                      80     END
+A51 MACRO ASSEMBLER  EXP4HW1                                                              08/16/2014 19:29:06 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+C1T1 . . . . . . .  B ADDR   0090H.4 A   
+C1T2 . . . . . . .  B ADDR   0090H.5 A   
+C2T1 . . . . . . .  B ADDR   0090H.6 A   
+C2T2 . . . . . . .  B ADDR   0090H.7 A   
+CHANGE . . . . . .  C ADDR   012CH   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ENDLOOP. . . . . .  C ADDR   0128H   A   
+ET0. . . . . . . .  B ADDR   00A8H.1 A   
+LOOP . . . . . . .  C ADDR   011DH   A   
+NEXT . . . . . . .  C ADDR   014AH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+PORT . . . . . . .  N NUMB   0090H   A   
+SKIP . . . . . . .  C ADDR   014DH   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+START. . . . . . .  C ADDR   0100H   A   
+TERMINATE. . . . .  C ADDR   011FH   A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TIMER0_ISR . . . .  C ADDR   012AH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

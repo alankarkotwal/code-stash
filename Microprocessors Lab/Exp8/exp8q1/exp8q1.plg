@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\.uvproj
+Project File Date:  09/25/2014
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling lcd.c...
+compiling main.c...
+compiling watch.c...
+compiling twi_lib.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DISP_WATCH?WATCH
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UPDATE_WATCH?WATCH
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_SEND_MESSAGE_POLLING?TWI_LIB
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_SEND_MESSAGE_INTERRUPT?TWI_LIB
+Program Size: data=86.4 xdata=7 code=2818
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\exp8q1"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\exp8q1" - 0 Error(s), 4 Warning(s).

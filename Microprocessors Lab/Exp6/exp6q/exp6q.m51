@@ -1,0 +1,164 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/01/2014  13:41:35  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp6\exp6q\exp6q.obj TO Z:\home\alo
+>> o\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp6\exp6q\exp6q PRINT (.\exp6q.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp6\exp6q\exp6q.obj (EXP6Q)
+
+
+LINK MAP OF MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp6\exp6q\exp6q (EXP6Q)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     059AH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp6\exp6q\exp6q (EXP6Q)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXP6Q
+  D:00F0H         SYMBOL        B
+  C:0580H         SYMBOL        DELAY_LCD
+  B:00A8H.7       SYMBOL        EA
+  B:00A8H.4       SYMBOL        ES
+  C:0560H         SYMBOL        LCD_COMMAND
+  D:00A0H         SYMBOL        LCD_DATA
+  B:0080H.2       SYMBOL        LCD_EN
+  C:0523H         SYMBOL        LCD_INIT
+  B:0080H.0       SYMBOL        LCD_RS
+  B:0080H.1       SYMBOL        LCD_RW
+  C:056FH         SYMBOL        LCD_SENDDATA
+  C:0521H         SYMBOL        LOOP
+  C:0584H         SYMBOL        LOOP1
+  C:0582H         SYMBOL        LOOP2
+  D:0080H         SYMBOL        P0
+  D:00A0H         SYMBOL        P2
+  D:00D0H         SYMBOL        PSW
+  C:003DH         SYMBOL        RECIEVE
+  B:0098H.4       SYMBOL        REN
+  C:0042H         SYMBOL        RETURNFROMINTERRUPT
+  B:0098H.0       SYMBOL        RI
+  D:0099H         SYMBOL        SBUF
+  D:0098H         SYMBOL        SCON
+  C:0589H         SYMBOL        SERIAL_STRING
+  C:0500H         SYMBOL        START
+  B:0098H.3       SYMBOL        TB8
+  D:008DH         SYMBOL        TH1
+  B:0098H.1       SYMBOL        TI
+  D:0089H         SYMBOL        TMOD
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/01/2014  13:41:35  PAGE 2
+
+
+  B:0088H.6       SYMBOL        TR1
+  C:0026H         SYMBOL        TRANSMIT
+  C:0000H         LINE#         22
+  C:0023H         LINE#         24
+  C:0026H         LINE#         26
+  C:0027H         LINE#         27
+  C:0028H         LINE#         28
+  C:002BH         LINE#         29
+  C:002DH         LINE#         30
+  C:002FH         LINE#         31
+  C:0030H         LINE#         32
+  C:0033H         LINE#         33
+  C:0034H         LINE#         34
+  C:0035H         LINE#         35
+  C:0037H         LINE#         36
+  C:0039H         LINE#         37
+  C:003BH         LINE#         38
+  C:003DH         LINE#         40
+  C:003FH         LINE#         41
+  C:0042H         LINE#         43
+  C:0044H         LINE#         44
+  C:0046H         LINE#         45
+  C:0500H         LINE#         49
+  C:0502H         LINE#         51
+  C:0504H         LINE#         52
+  C:0506H         LINE#         53
+  C:0508H         LINE#         54
+  C:050AH         LINE#         55
+  C:050CH         LINE#         56
+  C:050EH         LINE#         58
+  C:0511H         LINE#         59
+  C:0514H         LINE#         61
+  C:0516H         LINE#         62
+  C:0518H         LINE#         64
+  C:051BH         LINE#         65
+  C:051DH         LINE#         67
+  C:051FH         LINE#         69
+  C:0521H         LINE#         72
+  C:0523H         LINE#         77
+  C:0526H         LINE#         78
+  C:0528H         LINE#         79
+  C:052AH         LINE#         80
+  C:052CH         LINE#         81
+  C:052EH         LINE#         82
+  C:0530H         LINE#         83
+  C:0532H         LINE#         85
+  C:0535H         LINE#         86
+  C:0537H         LINE#         87
+  C:0539H         LINE#         88
+  C:053BH         LINE#         89
+  C:053DH         LINE#         90
+  C:053FH         LINE#         92
+  C:0541H         LINE#         93
+  C:0544H         LINE#         94
+  C:0546H         LINE#         95
+  C:0548H         LINE#         96
+  C:054AH         LINE#         97
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/01/2014  13:41:35  PAGE 3
+
+
+  C:054CH         LINE#         98
+  C:054EH         LINE#         100
+  C:0550H         LINE#         102
+  C:0553H         LINE#         103
+  C:0555H         LINE#         104
+  C:0557H         LINE#         105
+  C:0559H         LINE#         106
+  C:055BH         LINE#         107
+  C:055DH         LINE#         109
+  C:055FH         LINE#         111
+  C:0560H         LINE#         115
+  C:0562H         LINE#         116
+  C:0564H         LINE#         117
+  C:0566H         LINE#         118
+  C:0568H         LINE#         119
+  C:056AH         LINE#         120
+  C:056CH         LINE#         121
+  C:056EH         LINE#         123
+  C:056FH         LINE#         126
+  C:0571H         LINE#         127
+  C:0573H         LINE#         128
+  C:0575H         LINE#         129
+  C:0577H         LINE#         130
+  C:0579H         LINE#         131
+  C:057BH         LINE#         132
+  C:057DH         LINE#         133
+  C:057FH         LINE#         134
+  C:0580H         LINE#         138
+  C:0582H         LINE#         139
+  C:0584H         LINE#         140
+  C:0586H         LINE#         141
+  C:0588H         LINE#         142
+  -------         ENDMOD        EXP6Q
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00C1H BYTE ( 9%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=1434
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

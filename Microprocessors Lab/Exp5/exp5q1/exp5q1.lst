@@ -1,0 +1,53 @@
+C51 COMPILER V9.52.0.0   EXP5Q1                                                            08/25/2014 01:16:56 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE EXP5Q1
+OBJECT MODULE PLACED IN Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q1\exp5q1.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.exe Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q1\exp
+                    -5q1.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\exp5q1.lst) TABS(2) OBJECT(Z:\home\aloo\Documents\Acads\Sem5\EE337 Micropr
+                    -ocessors Lab\Exp5\exp5q1\exp5q1.obj)
+
+line level    source
+
+   1          #include<regx51.h>
+   2          
+   3          sbit pin=P1^4;
+   4          
+   5          int timer0Interrupt_enable=1;
+   6          int timer0_reloadValue=0xF82F;
+   7          
+   8          void timer0() interrupt 1 {
+   9   1        if(timer0Interrupt_enable==1) {
+  10   2          pin=~pin;
+  11   2          TH0=(0xFFFF-timer0_reloadValue)/256;
+  12   2          TL0=(0xFFFF-timer0_reloadValue) & (0xFF);
+  13   2          TR0=1;
+  14   2        }
+  15   1      }
+  16          
+  17          int main() {
+  18   1        TMOD |= 0x01;
+  19   1        IE |= 0x82;
+  20   1        pin=0;
+  21   1        TH0=(0xFFFF-timer0_reloadValue)/256;
+  22   1        TL0=(0xFFFF-timer0_reloadValue) & (0xFF);
+  23   1        TR0=1;
+  24   1        while(1);
+  25   1        return 0;
+  26   1      }
+*** WARNING C294 IN LINE 25 OF Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q1\exp5q1.c: unreach
+             -able code
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    102    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      4    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

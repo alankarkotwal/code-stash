@@ -1,0 +1,393 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/23/2014  14:04:42  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q2\delay.obj, Z:\home\aloo
+>> \Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q2\lcd.obj, Z:\home\aloo\Documents\Acads\Sem5\EE337 Micropro
+>> cessors Lab\Exp8\exp8q2\main.obj, Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q2\watch.obj T
+>> O Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q2\exp8q2 PRINT (.\exp8q2.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q2\delay.obj (DELAY)
+  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q2\lcd.obj (LCD)
+  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q2\main.obj (MAIN)
+  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q2\watch.obj (WATCH)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?SIDIV)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?ILDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?ILDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?ISTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?ISTOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?OFFXADD)
+  C:\KEIL\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?UIDIV)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL\C51\LIB\C51S.LIB (PUTCHAR)
+
+
+LINK MAP OF MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q2\exp8q2 (DELAY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0011H     UNIT         ?DT?WATCH
+                    0019H     0007H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   0000H.7                *** GAP ***
+            DATA    0022H     0019H     UNIT         _DATA_GROUP_
+            DATA    003BH     0008H     UNIT         ?DT?MAIN
+            IDATA   0043H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    0B5CH     01D4H     UNIT         ?C?LIB_CODE
+            CODE    0D30H     01ABH     UNIT         ?PR?_DISP_WATCH?WATCH
+            CODE    0EDBH     015FH     UNIT         ?PR?_UPDATE_WATCH?WATCH
+            CODE    103AH     00D5H     UNIT         ?CO?WATCH
+            CODE    110FH     008CH     UNIT         ?C_C51STARTUP
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/23/2014  14:04:42  PAGE 2
+
+
+            CODE    119BH     002FH     UNIT         ?PR?_SOFTWARE_DELAY?DELAY
+            CODE    11CAH     002FH     UNIT         ?PR?_LCD_STRING?LCD
+            CODE    11F9H     002CH     UNIT         ?PR?MAIN?MAIN
+            CODE    1225H     002CH     UNIT         ?PR?_INIT_WATCH?WATCH
+            CODE    1251H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    1278H     001CH     UNIT         ?PR?INIT_LCD?LCD
+            CODE    1294H     001CH     UNIT         ?PR?_LCD_COMMAND?LCD
+            CODE    12B0H     001CH     UNIT         ?PR?_LCD_DATA?LCD
+            CODE    12CCH     0011H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q2\exp8q2 (DELAY)
+
+
+SEGMENT                              BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT             START    LENGTH     START    LENGTH
+---------------------------------------------------------------------
+?C_C51STARTUP                     -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                     -----    -----      -----    -----
+  +--> ?PR?INIT_LCD?LCD
+  +--> ?PR?_INIT_WATCH?WATCH
+  +--> ?PR?_DISP_WATCH?WATCH
+  +--> ?PR?_UPDATE_WATCH?WATCH
+
+?PR?INIT_LCD?LCD                  -----    -----      -----    -----
+  +--> ?PR?_LCD_COMMAND?LCD
+
+?PR?_LCD_COMMAND?LCD              -----    -----      -----    -----
+  +--> ?PR?_SOFTWARE_DELAY?DELAY
+
+?PR?_SOFTWARE_DELAY?DELAY         -----    -----      002CH    0002H
+
+?PR?_DISP_WATCH?WATCH             -----    -----      0022H    0005H
+  +--> ?PR?_LCD_COMMAND?LCD
+  +--> ?CO?WATCH
+  +--> ?PR?_LCD_STRING?LCD
+  +--> ?PR?PRINTF?PRINTF
+
+?PR?_LCD_STRING?LCD               -----    -----      0027H    0005H
+  +--> ?PR?_LCD_DATA?LCD
+
+?PR?_LCD_DATA?LCD                 -----    -----      -----    -----
+  +--> ?PR?_SOFTWARE_DELAY?DELAY
+
+?PR?PRINTF?PRINTF                 0020H.0  0001H.1    0027H    0014H
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+?PR?_UPDATE_WATCH?WATCH           -----    -----      0022H    0005H
+  +--> ?CO?WATCH
+
+
+
+SYMBOL TABLE OF MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q2\exp8q2 (DELAY)
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/23/2014  14:04:42  PAGE 3
+
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:119BH         PUBLIC        _software_delay
+  -------         PROC          _SOFTWARE_DELAY
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         DO            
+  D:002CH         SYMBOL        j
+  -------         ENDDO         
+  -------         ENDDO         
+  C:119BH         LINE#         3
+  C:119BH         LINE#         4
+  C:119EH         LINE#         5
+  C:11ABH         LINE#         6
+  C:11B0H         LINE#         7
+  C:11B4H         LINE#         9
+  C:11C2H         LINE#         10
+  C:11C9H         LINE#         11
+  -------         ENDPROC       _SOFTWARE_DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        LCD
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:11CAH         PUBLIC        _lcd_string
+  C:12B0H         PUBLIC        _lcd_data
+  C:1278H         PUBLIC        init_lcd
+  C:1294H         PUBLIC        _lcd_command
+  -------         PROC          INIT_LCD
+  C:1278H         LINE#         3
+  C:1278H         LINE#         4
+  C:127FH         LINE#         5
+  C:1286H         LINE#         6
+  C:128DH         LINE#         7
+  -------         ENDPROC       INIT_LCD
+  -------         PROC          _LCD_COMMAND
+  D:0006H         SYMBOL        cmd
+  C:1294H         LINE#         10
+  C:1294H         LINE#         11
+  C:1296H         LINE#         12
+  C:1299H         LINE#         13
+  C:129CH         LINE#         14
+  C:129FH         LINE#         15
+  C:12A6H         LINE#         16
+  C:12A9H         LINE#         17
+  -------         ENDPROC       _LCD_COMMAND
+  -------         PROC          _LCD_DATA
+  D:0006H         SYMBOL        dat
+  C:12B0H         LINE#         20
+  C:12B0H         LINE#         21
+  C:12B2H         LINE#         22
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/23/2014  14:04:42  PAGE 4
+
+
+  C:12B5H         LINE#         23
+  C:12B8H         LINE#         24
+  C:12BBH         LINE#         25
+  C:12C2H         LINE#         26
+  C:12C5H         LINE#         27
+  -------         ENDPROC       _LCD_DATA
+  -------         PROC          _LCD_STRING
+  D:0027H         SYMBOL        ptr
+  -------         DO            
+  D:002AH         SYMBOL        i
+  -------         ENDDO         
+  C:11CAH         LINE#         30
+  C:11D0H         LINE#         31
+  C:11D5H         LINE#         32
+  C:11E7H         LINE#         33
+  C:11EEH         LINE#         34
+  C:11F6H         LINE#         35
+  C:11F8H         LINE#         36
+  -------         ENDPROC       _LCD_STRING
+  -------         ENDMOD        LCD
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:003BH         PUBLIC        watch_state
+  C:11F9H         PUBLIC        main
+  -------         PROC          MAIN
+  C:11F9H         LINE#         8
+  C:11F9H         LINE#         9
+  C:11FCH         LINE#         10
+  C:1205H         LINE#         11
+  C:120EH         LINE#         12
+  C:1211H         LINE#         13
+  C:1211H         LINE#         14
+  C:121AH         LINE#         15
+  C:1223H         LINE#         16
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        WATCH
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:0EDBH         PUBLIC        _update_watch
+  C:1101H         PUBLIC        first_offsets
+  C:10DDH         PUBLIC        months
+  B:0090H.3       PUBLIC        mode
+  C:0D30H         PUBLIC        _disp_watch
+  C:1225H         PUBLIC        _init_watch
+  C:10C8H         PUBLIC        days
+  C:10B0H         PUBLIC        daysInAMonth
+  D:0008H         PUBLIC        temp
+  B:0090H.2       PUBLIC        inc
+  D:000BH         PUBLIC        dayData
+  C:10A2H         PUBLIC        minDayData
+  C:1094H         PUBLIC        maxDayData
+  C:1108H         PUBLIC        lengths
+  -------         PROC          _INIT_WATCH
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/23/2014  14:04:42  PAGE 5
+
+
+  D:0001H         SYMBOL        watch_state
+  C:1225H         LINE#         19
+  C:1225H         LINE#         20
+  C:122FH         LINE#         21
+  C:1238H         LINE#         22
+  C:1243H         LINE#         23
+  -------         ENDPROC       _INIT_WATCH
+  -------         PROC          _DISP_WATCH
+  D:0022H         SYMBOL        watch_state
+  -------         DO            
+  D:0025H         SYMBOL        index
+  -------         ENDDO         
+  C:0D30H         LINE#         26
+  C:0D36H         LINE#         28
+  C:0D3DH         LINE#         29
+  C:0D60H         LINE#         30
+  C:0D69H         LINE#         31
+  C:0D81H         LINE#         32
+  C:0D84H         LINE#         33
+  C:0D8CH         LINE#         34
+  C:0D95H         LINE#         35
+  C:0DB8H         LINE#         36
+  C:0DC1H         LINE#         37
+  C:0DD9H         LINE#         38
+  C:0DDCH         LINE#         39
+  C:0DE4H         LINE#         41
+  C:0DEBH         LINE#         43
+  C:0E03H         LINE#         44
+  C:0E06H         LINE#         45
+  C:0E0EH         LINE#         47
+  C:0E17H         LINE#         48
+  C:0E2FH         LINE#         49
+  C:0E32H         LINE#         50
+  C:0E3AH         LINE#         52
+  C:0E43H         LINE#         53
+  C:0E5BH         LINE#         54
+  C:0E5EH         LINE#         55
+  C:0E66H         LINE#         57
+  C:0E7CH         LINE#         58
+  C:0E88H         LINE#         59
+  C:0E9DH         LINE#         60
+  C:0EC7H         LINE#         61
+  C:0ED0H         LINE#         62
+  C:0EDAH         LINE#         63
+  C:0EDAH         LINE#         64
+  C:0EDAH         LINE#         65
+  -------         ENDPROC       _DISP_WATCH
+  -------         PROC          _UPDATE_WATCH
+  D:0022H         SYMBOL        watch_state
+  -------         DO            
+  D:0025H         SYMBOL        index
+  -------         ENDDO         
+  C:0EDBH         LINE#         67
+  C:0EE1H         LINE#         69
+  C:0EF0H         LINE#         70
+  C:0F1DH         LINE#         71
+  C:0F28H         LINE#         72
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/23/2014  14:04:42  PAGE 6
+
+
+  C:0F28H         LINE#         73
+  C:0F45H         LINE#         74
+  C:0F4AH         LINE#         75
+  C:0F65H         LINE#         76
+  C:0F71H         LINE#         77
+  C:0FD2H         LINE#         78
+  C:0FD4H         LINE#         79
+  C:0FD4H         LINE#         80
+  C:1014H         LINE#         81
+  C:1014H         LINE#         82
+  C:1028H         LINE#         83
+  C:1028H         LINE#         84
+  C:1028H         LINE#         85
+  C:1039H         LINE#         86
+  -------         ENDPROC       _UPDATE_WATCH
+  -------         ENDMOD        WATCH
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0B5CH         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?SIDIV
+  C:0B89H         PUBLIC        ?C?SIDIV
+  -------         ENDMOD        ?C?SIDIV
+
+  -------         MODULE        ?C?ILDPTR
+  C:0BBFH         PUBLIC        ?C?ILDPTR
+  -------         ENDMOD        ?C?ILDPTR
+
+  -------         MODULE        ?C?ILDOPTR
+  C:0BEAH         PUBLIC        ?C?ILDOPTR
+  -------         ENDMOD        ?C?ILDOPTR
+
+  -------         MODULE        ?C?ISTPTR
+  C:0C22H         PUBLIC        ?C?ISTPTR
+  -------         ENDMOD        ?C?ISTPTR
+
+  -------         MODULE        ?C?ISTOPTR
+  C:0C41H         PUBLIC        ?C?ISTOPTR
+  -------         ENDMOD        ?C?ISTOPTR
+
+  -------         MODULE        ?C?OFFXADD
+  C:0C6EH         PUBLIC        ?C?OFFXADD
+  -------         ENDMOD        ?C?OFFXADD
+
+  -------         MODULE        PRINTF
+  D:0027H         PUBLIC        ?_PRINTF517?BYTE
+  D:0027H         PUBLIC        ?_PRINTF?BYTE
+  D:0027H         PUBLIC        ?_SPRINTF517?BYTE
+  D:0027H         PUBLIC        ?_SPRINTF?BYTE
+  C:0862H         PUBLIC        _PRINTF
+  C:0862H         PUBLIC        _PRINTF517
+  C:085CH         PUBLIC        _SPRINTF
+  C:085CH         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?CLDPTR
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/23/2014  14:04:42  PAGE 7
+
+
+  C:0C7AH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:0C93H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?UIDIV
+  C:0CA5H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:0CFAH         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:0D0AH         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PUTCHAR
+  C:1251H         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 04F9H BYTE (62%) *
+******************************************************************************
+
+Program Size: data=60.1 xdata=0 code=2784
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

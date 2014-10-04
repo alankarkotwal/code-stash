@@ -1,0 +1,196 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 08/11/2014 15:04:25 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN main.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE main.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; Experiment 3 Labwork Problem 1
+                       2     ; We want to make a programmable note generator. For this, we shall generate square
+                       3     ; waves whose frequencies are selected from a table. 32 bytes are stored in the program
+                       4     ; memory using the DB directive. These represent 16 values, each being 2 bytes wide.
+                       5     ; (The entries represent candidate values for the half period of a square wave to be gen-
+                       6     ; erated). We shall program a timer for a duration proportional to this 16 bit value and
+                       7     ; toggle a port pin at every timeout. Since two toggles will complete 1 cycle of the square
+                       8     ; wave, the stored value is the half period of the resulting square wave.
+                       9     
+                      10     
+0000                  11     ORG 000h                                                                                ; J
+                             ump to start at 000h
+0000 020200           12     LJMP start
+000B                  13     ORG 00Bh
+000B 12023B           14     LCALL timer0_isr
+000E 32               15     RETI
+001B                  16     ORG 01Bh
+001B 120251           17     LCALL timer1_isr
+001E 32               18     RETI
+0200                  19     ORG 200h                                                                                ; S
+                             tart writing at 200h
+0200                  20     start:
+                      21     
+0200 7581C0           22     MOV SP,#0C0h
+                      23     
+0203 75900F           24     MOV P1,#00Fh                                                                    ; Higher fo
+                             ur bytes outputs, lower four bytes inputs
+                      25     
+0206 E590             26     MOV A,P1                                                                                ; C
+                             lear higher four bits, LEDs
+0208 540F             27     ANL A,#00Fh
+020A F590             28     MOV P1,A
+                      29     
+020C D296             30     SETB P1.6
+                      31     
+020E 7900             32     MOV R1,#000h
+                      33     
+0210 758911           34     MOV TMOD,#011h
+0213 D2AF             35     SETB EA
+0215 D2A9             36     SETB ET0
+0217 D2AB             37     SETB ET1
+                      38     
+0219 7D01             39     MOV R5,#001h
+                      40     
+021B E590             41     MOV A,P1
+021D 64F0             42     XRL A,#0F0h
+021F F590             43     MOV P1,A
+0221 C28D             44     CLR TF0
+0223 7881             45     MOV R0,#081h
+0225 E6               46     MOV A,@R0
+0226 F4               47     CPL A
+0227 F58A             48     MOV TL0,A
+0229 08               49     INC R0
+022A E6               50     MOV A,@R0
+022B F4               51     CPL A   
+022C F58C             52     MOV TH0,A
+022E D28C             53     SETB TR0
+0230 758DFF           54     MOV TH1,#0FFh
+A51 MACRO ASSEMBLER  MAIN                                                                 08/11/2014 15:04:25 PAGE     2
+
+0233 758BFF           55     MOV TL1,#0FFh
+0236 120251           56     LCALL timer1_isr
+                      57     
+0239                  58     loop:
+0239 80FE             59             SJMP loop
+                      60     
+023B                  61     timer0_isr:                                                                             ; T
+                             oggle in the interrupt first
+023B E590             62             MOV A,P1
+023D 64F0             63             XRL A,#0F0h
+023F F590             64             MOV P1,A
+0241 C28D             65             CLR TF0
+0243 7881             66             MOV R0,#081h
+0245 E6               67             MOV A,@R0
+0246 F4               68             CPL A
+0247 F58A             69             MOV TL0,A
+0249 08               70             INC R0
+024A E6               71             MOV A,@R0
+024B F4               72             CPL A   
+024C F58C             73             MOV TH0,A
+024E D28C             74             SETB TR0
+0250 22               75     RET
+                      76     
+0251                  77     timer1_isr:
+0251 DD2A             78             DJNZ R5,skip
+0253                  79             change:
+                      80             
+0253 900550           81                     MOV DPTR,#sequence                                                      ; G
+                             et the value from the sequence
+0256 E9               82                     MOV A,R1
+0257 09               83                     INC R1
+0258 B91902           84                     CJNE R1,#019h,next
+025B 7900             85                     MOV R1,#000h
+025D 93               86                     next: MOVC A,@A+DPTR
+025E FA               87                     MOV R2,A
+025F 540F             88                     ANL A,#00Fh
+                      89                     
+0261 900500           90                     MOV DPTR,#periods                                                       ; A
+                             ccess the appropriate half-period value as #periods+2*(slide-switch value)
+0264 75F002           91                     MOV B,#002h
+0267 A4               92                     MUL AB
+0268 C0E0             93                     PUSH 0E0h
+026A 7881             94                     MOV R0,#081h                                                            ; M
+                             ove the half-period from ROM to indirectly addressable 081h and 082h
+026C 93               95                     MOVC A,@A+DPTR
+026D F6               96                     MOV @R0,A
+026E D0E0             97                     POP 0E0h
+0270 04               98                     INC A
+0271 08               99                     INC R0
+0272 93              100                     MOVC A,@A+DPTR
+0273 F6              101                     MOV @R0,A
+                     102                     
+0274 EA              103                     MOV A,R2
+0275 54F0            104                     ANL A,#0F0h
+0277 C4              105                     SWAP A
+0278 75F003          106                     MOV B,#003h
+027B A4              107                     MUL AB
+027C FD              108                     MOV R5,A
+                     109                     
+027D                 110             skip:
+027D 758D00          111                     MOV TH1,#000h
+0280 758B00          112                     MOV TL1,#000h
+0283 D28E            113                     SETB TR1
+0285 D28C            114                     SETB TR0
+0287 22              115     RET
+                     116     
+A51 MACRO ASSEMBLER  MAIN                                                                 08/11/2014 15:04:25 PAGE     3
+
+0500                 117     ORG 500h
+0500                 118     periods:
+0500 1A112410        119     DB      01Ah, 011h, 024h, 010h, 03Ch, 00Fh, 061h, 00Eh, 093h, 00Dh, 00CFh, 00Ch, 017h, 00Ch
+                             , 06Ah, 00Bh, 0C6h, 00Ah, 02Bh, 00Ah, 099h, 009h, 00Fh, 009h, 08Dh, 008h, 012h, 008h, 09Eh, 007h, 031h, 007h
+0504 3C0F610E                
+0508 930DCF0C                
+050C 170C6A0B                
+0510 C60A2B0A                
+0514 99090F09                
+0518 8D081208                
+051C 9E073107                
+                     120     
+0550                 121     ORG 550h
+0550                 122     sequence:
+0550 F2F4F6F7        123     DB              0F2H, 0F4H, 0F6H, 0F7H, 0F9H, 0FBH, 0FDH, 0FEH, 0FEH, 0FEH, 0FDH, 0FBH, 0F9
+                             H, 0F7H, 0F6H, 0F4H, 0F2H, 0F2H, 02H
+0554 F9FBFDFE                
+0558 FEFEFDFB                
+055C F9F7F6F4                
+0560 F2F202                  
+                     124     
+                     125     END
+A51 MACRO ASSEMBLER  MAIN                                                                 08/11/2014 15:04:25 PAGE     4
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+CHANGE . . . . . .  C ADDR   0253H   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ET0. . . . . . . .  B ADDR   00A8H.1 A   
+ET1. . . . . . . .  B ADDR   00A8H.3 A   
+LOOP . . . . . . .  C ADDR   0239H   A   
+NEXT . . . . . . .  C ADDR   025DH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+PERIODS. . . . . .  C ADDR   0500H   A   
+SEQUENCE . . . . .  C ADDR   0550H   A   
+SKIP . . . . . . .  C ADDR   027DH   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+START. . . . . . .  C ADDR   0200H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TIMER0_ISR . . . .  C ADDR   023BH   A   
+TIMER1_ISR . . . .  C ADDR   0251H   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

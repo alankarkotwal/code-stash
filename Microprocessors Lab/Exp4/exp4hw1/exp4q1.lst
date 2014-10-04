@@ -1,0 +1,282 @@
+A51 MACRO ASSEMBLER  EXP4Q1                                                               08/20/2014 07:18:25 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN ..\exp4q1\exp4q1.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE ..\exp4q1\exp4q1.asm SET(SMALL) DEBUG PRINT(.\exp4q1.lst) OBJECT(..\exp4q1
+                      \exp4q1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; Experiment 4 Labwork Problem 1
+                       2     ; We define 8 speeds for the stepper motor. Speed 0 means 0 speed (static). Speed 7 is
+                       3     ; the highest speed, which should be approximately 100 RPM. Other speed levels should
+                       4     ; be proportionately spaced.
+                       5     ; Define one of the switches on the uC board as the ‘up’ button and another as the ‘down’
+                       6     ; button.
+                       7     ; You can think of speeds as ranging between +7 and -7 with the sign representing the
+                       8     ; direction of rotation. The ‘up’ switch should act as increment and ‘down’ switch should
+                       9     ; act as decrement.
+                      10     ; Each change of the state (‘on’ to ‘off’ or ‘off’ to ‘on’) on the ‘up’ button should incre
+                             ase
+                      11     ; the speed in the clockwise direction and decrease the speed if currently rotating in coun
+                             -
+                      12     ; terclockwise direction. Similarly a change of state on the ‘down’ button should decrease
+                      13     ; the speed in the clockwise direction and increase the speed if the motor is currently ro-
+                      14     ; tating counterclockwise. A toggle on the ‘up’ button should be ignored if one is already
+                      15     ; on maximum speed in the clockwise direction.
+                      16     ; Similarly, a toggle on the ‘down’ button while at speed 0 should take the motor to counte
+                             r
+                      17     ; clockwise rotation with speed 1. Toggles on the ‘down’ button should be ignored if the
+                      18     ; speed is maximum in the counter clockwise direction.
+                      19     
+  0090                20     port EQU 090h
+  0093                21     up EQU P1.3
+  0090                22     down EQU P1.0
+  001F                23     upOld EQU 023h.7
+  0018                24     downOld EQU 023h.0
+  0083                25     c1t1 EQU P0.3
+  0082                26     c1t2 EQU P0.2
+  0080                27     c2t1 EQU P0.0
+  0081                28     c2t2 EQU P0.1
+  0013                29     c1t1t EQU 022h.3
+  0012                30     c1t2t EQU 022h.2
+  0010                31     c2t1t EQU 022h.0
+  0011                32     c2t2t EQU 022h.1
+                      33     
+                      34     
+0000                  35     ORG 000h
+0000 020100           36     LJMP start
+000B                  37     ORG 00Bh
+000B 12013C           38     LCALL timer0_isr
+000E 32               39     RETI
+0100                  40     ORG 100h
+0100                  41     start:
+                      42     
+0100 7581C0           43     MOV SP,#0C0h
+                      44     
+0103 7590FF           45     MOV port,#0FFh                                                          ; Set switches as i
+                             nputs.
+                      46     
+0106 D2AF             47     SETB EA                                                                         ; Enable in
+                             terrupts.
+0108 D2A9             48     SETB ET0
+010A 758901           49     MOV TMOD,#001h                                                          ; Timer0 as timer i
+                             n mode 1.
+010D 758CF8           50     MOV TH0,#0F8h                                                           ; Set for a 1ms-del
+                             ay.
+A51 MACRO ASSEMBLER  EXP4Q1                                                               08/20/2014 07:18:25 PAGE     2
+
+0110 758A2F           51     MOV TL0,#02Fh
+0113 D28C             52     SETB TR0                                                                        ; Start tim
+                             er for first run.
+                      53     
+0115 A290             54     MOV C,down                                                                      ; We will u
+                             se 023h.7 and 023h.0 to keep initial values of the up and down switches to
+0117 9218             55     MOV downOld,C                                                           ; detect toggles.
+0119 A293             56     MOV C,up
+011B 921F             57     MOV upOld,C
+                      58     
+011D 7D01             59     MOV R5,#001h                                                            ; Use this for coun
+                             ting number of ms to run the timer
+                      60     
+011F 7807             61     MOV R0,#007h                                                            ; Denotes the speed
+                              level. 7 is zero on this shifted scale.
+                      62                                                                                             ; 1
+                             4 is maximum forward, 0 is maximum backward.
+                      63     
+0121 758000           64     MOV P0,#000h                                                            ; Set as output por
+                             t
+                      65     
+0124 752100           66     MOV 021h,#000h
+0127 752200           67     MOV 022h,#000h
+                      68     
+012A D283             69     SETB c1t1
+012C C282             70     CLR c1t2
+012E C280             71     CLR c2t1
+0130 C281             72     CLR c2t2
+0132 D213             73     SETB c1t1t
+0134 C212             74     CLR c1t2t
+0136 C210             75     CLR c2t1t
+0138 C211             76     CLR c2t2t
+                      77     
+013A                  78     loop:
+013A 80FE             79             SJMP loop
+                      80     
+013C                  81     timer0_isr:
+013C DD02             82             DJNZ R5,skip
+013E 800B             83             SJMP change
+0140                  84             skip:
+0140 758CF8           85                     MOV TH0,#0F8h
+0143 758A2F           86                     MOV TL0,#02Fh
+0146 D28C             87                     SETB TR0
+0148 020208           88             LJMP return
+014B                  89             change:
+014B A293             90                     MOV C,up
+014D 920F             91                     MOV 021h.7,C
+014F A290             92                     MOV C,down
+0151 9208             93                     MOV 021h.0,C
+0153 E521             94                     MOV A,021h
+0155 6523             95                     XRL A,023h
+0157 F521             96                     MOV 021h,A
+0159 A293             97                     MOV C,up
+015B 921F             98                     MOV upOld,C
+015D A290             99                     MOV C,down
+015F 9218            100                     MOV downOld,C
+0161                 101                     downCheck:
+0161 300806          102                             JNB 021h.0,upCheck
+0164 18              103                             DEC R0
+0165 B8FF02          104                             CJNE R0,#0FFh,upCheck
+0168 7800            105                             MOV R0,#000h
+016A                 106                     upCheck:
+016A 300F06          107                             JNB 021h.7,next
+016D 08              108                             INC R0
+016E B80F02          109                             CJNE R0,#00Fh,next
+0171 780E            110                             MOV R0,#00Eh
+A51 MACRO ASSEMBLER  EXP4Q1                                                               08/20/2014 07:18:25 PAGE     3
+
+0173                 111                     next:
+0173 C3              112                             CLR C
+0174 E8              113                             MOV A,R0
+0175 75F007          114                             MOV B,#007h
+0178 95F0            115                             SUBB A,B
+017A 7015            116                             JNZ notZero
+017C D283            117                             SETB c1t1
+017E C282            118                             CLR c1t2
+0180 C280            119                             CLR c2t1
+0182 C281            120                             CLR c2t2
+0184 D213            121                             SETB c1t1t
+0186 C212            122                             CLR c1t2t
+0188 C210            123                             CLR c2t1t
+018A C211            124                             CLR c2t2t
+018C 7D01            125                             MOV R5,#001h
+018E 020140          126                             LJMP skip
+0191                 127                             notZero:
+0191 403C            128                             JC lessThanSeven
+0193                 129                             greaterThanSeven:
+0193 30130A          130                                     JNB c1t1t,next11
+0196 D280            131                                     SETB c2t1
+0198 D210            132                                     SETB c2t1t
+019A C283            133                                     CLR c1t1
+019C C213            134                                     CLR c1t1t
+019E 8025            135                                     SJMP next14
+01A0                 136                                     next11:
+01A0 30120A          137                                     JNB c1t2t,next12
+01A3 D281            138                                     SETB c2t2
+01A5 D211            139                                     SETB c2t2t
+01A7 C282            140                                     CLR c1t2
+01A9 C212            141                                     CLR c1t2t
+01AB 8018            142                                     SJMP next14
+01AD                 143                                     next12:
+01AD 30100A          144                                     JNB c2t1t,next13
+01B0 D282            145                                     SETB c1t2
+01B2 D212            146                                     SETB c1t2t
+01B4 C280            147                                     CLR c2t1
+01B6 C210            148                                     CLR c2t1t
+01B8 800B            149                                     SJMP next14
+01BA                 150                                     next13:
+01BA 301108          151                                     JNB c2t2t,next14
+01BD D283            152                                     SETB c1t1
+01BF D213            153                                     SETB c1t1t
+01C1 C281            154                                     CLR c2t2
+01C3 C211            155                                     CLR c2t2t
+01C5                 156                                     next14:
+01C5 740F            157                                     MOV A,#00Fh
+01C7 88F0            158                                     MOV B,R0
+01C9 95F0            159                                     SUBB A,B
+01CB FD              160                                     MOV R5,A
+01CC 020140          161                                     LJMP skip
+01CF                 162                             lessThanSeven:
+01CF 30130A          163                                     JNB c1t1t,next21
+01D2 D281            164                                     SETB c2t2
+01D4 D211            165                                     SETB c2t2t
+01D6 C283            166                                     CLR c1t1
+01D8 C213            167                                     CLR c1t1t
+01DA 8025            168                                     SJMP next24
+01DC                 169                                     next21:
+01DC 30120A          170                                     JNB c1t2t,next22
+01DF D280            171                                     SETB c2t1
+01E1 D210            172                                     SETB c2t1t
+01E3 C282            173                                     CLR c1t2
+01E5 C212            174                                     CLR c1t2t
+01E7 8018            175                                     SJMP next24
+01E9                 176                                     next22:
+A51 MACRO ASSEMBLER  EXP4Q1                                                               08/20/2014 07:18:25 PAGE     4
+
+01E9 30100A          177                                     JNB c2t1t,next23
+01EC D283            178                                     SETB c1t1
+01EE D213            179                                     SETB c1t1t
+01F0 C280            180                                     CLR c2t1
+01F2 C210            181                                     CLR c2t1t
+01F4 800B            182                                     SJMP next24
+01F6                 183                                     next23:
+01F6 301108          184                                     JNB c2t2t,next24
+01F9 D282            185                                     SETB c1t2
+01FB D212            186                                     SETB c1t2t
+01FD C281            187                                     CLR c2t2
+01FF C211            188                                     CLR c2t2t
+0201                 189                                     next24:
+0201 850005          190                                     MOV 005h,000h
+0204 0D              191                                     INC R5
+0205 020140          192                                     LJMP skip
+0208                 193     return:
+0208 22              194     RET
+                     195     
+                     196     END
+A51 MACRO ASSEMBLER  EXP4Q1                                                               08/20/2014 07:18:25 PAGE     5
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+C1T1 . . . . . . .  B ADDR   0080H.3 A   
+C1T1T. . . . . . .  B ADDR   0022H.3 A   
+C1T2 . . . . . . .  B ADDR   0080H.2 A   
+C1T2T. . . . . . .  B ADDR   0022H.2 A   
+C2T1 . . . . . . .  B ADDR   0080H.0 A   
+C2T1T. . . . . . .  B ADDR   0022H.0 A   
+C2T2 . . . . . . .  B ADDR   0080H.1 A   
+C2T2T. . . . . . .  B ADDR   0022H.1 A   
+CHANGE . . . . . .  C ADDR   014BH   A   
+DOWN . . . . . . .  B ADDR   0090H.0 A   
+DOWNCHECK. . . . .  C ADDR   0161H   A   
+DOWNOLD. . . . . .  B ADDR   0023H.0 A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ET0. . . . . . . .  B ADDR   00A8H.1 A   
+GREATERTHANSEVEN .  C ADDR   0193H   A   
+LESSTHANSEVEN. . .  C ADDR   01CFH   A   
+LOOP . . . . . . .  C ADDR   013AH   A   
+NEXT . . . . . . .  C ADDR   0173H   A   
+NEXT11 . . . . . .  C ADDR   01A0H   A   
+NEXT12 . . . . . .  C ADDR   01ADH   A   
+NEXT13 . . . . . .  C ADDR   01BAH   A   
+NEXT14 . . . . . .  C ADDR   01C5H   A   
+NEXT21 . . . . . .  C ADDR   01DCH   A   
+NEXT22 . . . . . .  C ADDR   01E9H   A   
+NEXT23 . . . . . .  C ADDR   01F6H   A   
+NEXT24 . . . . . .  C ADDR   0201H   A   
+NOTZERO. . . . . .  C ADDR   0191H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+PORT . . . . . . .  N NUMB   0090H   A   
+RETURN . . . . . .  C ADDR   0208H   A   
+SKIP . . . . . . .  C ADDR   0140H   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+START. . . . . . .  C ADDR   0100H   A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TIMER0_ISR . . . .  C ADDR   013CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+UP . . . . . . . .  B ADDR   0090H.3 A   
+UPCHECK. . . . . .  C ADDR   016AH   A   
+UPOLD. . . . . . .  B ADDR   0023H.7 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

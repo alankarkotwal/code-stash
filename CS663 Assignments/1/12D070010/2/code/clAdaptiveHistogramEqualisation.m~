@@ -1,0 +1,23 @@
+function outputImage = clAdaptiveHistogramEqualisation(origImage, windowSize, clipValue)
+
+origImageSize = size(origImage);
+outputImage = zeros(origImageSize(1), origImageSize(2));
+
+imageHistogram = imhist(image);
+excessMass = 0;
+
+for i = 1:size(imageHistogram(1))
+    if imageHistogram(i) > clipValue
+        excessMass = excessMass + imageHistogram(i) - clipValue;
+        imageHistogram(i) = clipValue
+    end
+end
+
+exce
+
+for i = 1:size(imageHistogram(1))
+    if imageHistogram(i) > clipValue
+        excessMass = excessMass + imageHistogram(i) - clipValue;
+        imageHistogram(i) = clipValue
+    end
+end

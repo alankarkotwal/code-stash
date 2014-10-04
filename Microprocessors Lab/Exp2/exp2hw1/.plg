@@ -1,0 +1,140 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+.uvproj
+Project File Date:  08/01/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling main.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=887
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling main.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=889
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling main.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=895
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling main.asm...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\main.asm(120): error A51: TARGET OUT OF RANGE
+Target not created
+Build target 'Target 1'
+assembling main.asm...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\main.asm(120): error A51: TARGET OUT OF RANGE
+Target not created
+Build target 'Target 1'
+assembling main.asm...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\main.asm(120): error A51: TARGET OUT OF RANGE
+Target not created
+Build target 'Target 1'
+assembling main.asm...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\main.asm(120): error A51: TARGET OUT OF RANGE
+Target not created
+Build target 'Target 1'
+assembling main.asm...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\main.asm(120): error A51: TARGET OUT OF RANGE
+Target not created
+Build target 'Target 1'
+assembling main.asm...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\main.asm(120): error A51: TARGET OUT OF RANGE
+Target not created
+Build target 'Target 1'
+assembling main.asm...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\main.asm(120): error A51: TARGET OUT OF RANGE
+Target not created
+Build target 'Target 1'
+assembling main.asm...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\main.asm(120): error A51: TARGET OUT OF RANGE
+Target not created
+Build target 'Target 1'
+assembling main.asm...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\main.asm(120): error A51: TARGET OUT OF RANGE
+Target not created
+Build target 'Target 1'
+assembling main.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=910
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling main.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=910
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling main.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=788
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling main.asm...
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(30): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(31): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(32): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(33): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(34): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(35): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(42): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(53): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(64): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(75): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(94): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(95): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(96): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(97): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(100): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(101): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(110): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(111): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(112): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(113): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(115): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(117): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(131): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(132): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(137): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(138): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(139): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(140): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(141): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(142): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(143): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(192): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(195): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(196): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(197): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(198): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(199): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+C:\KEIL\C51\INC\ATMEL\AT89C5131.H(263): error A10: ATTEMPT TO DEFINE AN ALREADY DEFINED SYMBOL
+Target not created
+Build target 'Target 1'
+assembling main.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=782
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling main.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=782
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling main.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=783
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2q2\exp2q2" - 0 Error(s), 0 Warning(s).

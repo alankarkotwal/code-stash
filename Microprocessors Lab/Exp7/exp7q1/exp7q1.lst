@@ -1,0 +1,122 @@
+A51 MACRO ASSEMBLER  EXP7Q1                                                               09/22/2014 12:45:39 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp7\exp7q1\exp7q1.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp7\exp7q1\ex
+                      p7q1.asm SET(SMALL) DEBUG PRINT(.\exp7q1.lst) OBJECT(Z:\home\aloo\Documents\Acads\Sem5\EE337 Micro
+                      processors Lab\Exp7\exp7q1\exp7q1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; Experiment 7 Labwork Question 1
+                       2     ; Connect just the DAC chip to Pt51 using the SPI interface. Write a program which
+                       3     ; will generate a stair-step approximation to a triangular wave of 1 KHz. Your program
+                       4     ; should use at least 8 steps on the rising as well as on the falling ramp of the triangula
+                             r
+                       5     ; wave.
+                       6     
+  00C3                 7     SPCON  EQU 0C3h
+  00C4                 8     SPSTA  EQU 0C4h
+  00C5                 9     SPDAT  EQU 0C5h
+  00A0                10     SS_ADC EQU P2.0
+  00A1                11     SS_DAC EQU P2.1
+                      12     
+0000                  13     ORG 000h
+0000 020035           14     LJMP start
+000B                  15     ORG 00Bh
+000B C2A1             16     CLR SS_DAC
+000D E8               17     MOV A,R0
+000E 93               18     MOVC A,@A+DPTR
+000F F5C5             19     MOV SPDAT,A
+0011                  20     stop4:
+0011 A8C4             21             MOV R0,SPSTA
+0013 530080           22             ANL 000h,#080h
+0016 B880F8           23             CJNE R0,#080h,stop4
+0019 08               24     INC R0
+001A E8               25     MOV A,R0
+001B 93               26     MOVC A,@A+DPTR
+001C F5C5             27     MOV SPDAT,A
+001E                  28     stop5:
+001E A8C4             29             MOV R0,SPSTA
+0020 530080           30             ANL 000h,#080h
+0023 B880F8           31             CJNE R0,#080h,stop5
+0026 D2A1             32     SETB SS_DAC
+0028 758CF8           33     MOV TH0,  #0F8h
+002B 758A30           34     MOV TL0,  #030h
+002E 08               35     INC R0
+002F B81E02           36     CJNE R0,#30,return
+0032 7800             37     MOV R0,#000h
+0034                  38     return:
+0034 32               39     RETI
+                      40     
+0035                  41     start:
+                      42     
+0035 75C33F           43     MOV SPCON,#00111111b
+0038 43C340           44     ORL SPCON,#01000000b
+003B 758901           45     MOV TMOD, #00000001b
+003E 758CF8           46     MOV TH0,  #0F8h
+0041 758A30           47     MOV TL0,  #030h
+                      48     
+0044 D2AF             49     SETB EA
+0046 D2A9             50     SETB ET0
+0048 D28C             51     SETB TR0
+                      52     
+004A 900051           53     MOV DPTR,#waveform
+004D 7800             54     MOV R0,#000h
+                      55     
+A51 MACRO ASSEMBLER  EXP7Q1                                                               09/22/2014 12:45:39 PAGE     2
+
+004F                  56     loop:
+004F 80FE             57             SJMP loop
+                      58     
+0051                  59     waveform:
+0051 3000             60     DB 00110000b, 00000000b
+0053 31FF             61     DB 00110001b, 11111111b
+0055 33FE             62     DB 00110011b, 11111110b
+0057 34FD             63     DB 00110100b, 11111101b
+0059 35FC             64     DB 00110101b, 11111100b
+005B 36FB             65     DB 00110110b, 11111011b
+005D 37FA             66     DB 00110111b, 11111010b
+005F 3FFF             67     DB 00111111b, 11111111b
+0061 37FA             68     DB 00110111b, 11111010b
+0063 36FB             69     DB 00110110b, 11111011b
+0065 35FC             70     DB 00110101b, 11111100b
+0067 34FD             71     DB 00110100b, 11111101b
+0069 33FE             72     DB 00110011b, 11111110b
+006B 31FF             73     DB 00110001b, 11111111b
+006D 3000             74     DB 00110000b, 00000000b
+                      75     
+                      76     END
+A51 MACRO ASSEMBLER  EXP7Q1                                                               09/22/2014 12:45:39 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ET0. . . . . . . .  B ADDR   00A8H.1 A   
+LOOP . . . . . . .  C ADDR   004FH   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+RETURN . . . . . .  C ADDR   0034H   A   
+SPCON. . . . . . .  N NUMB   00C3H   A   
+SPDAT. . . . . . .  N NUMB   00C5H   A   
+SPSTA. . . . . . .  N NUMB   00C4H   A   
+SS_ADC . . . . . .  B ADDR   00A0H.0 A   
+SS_DAC . . . . . .  B ADDR   00A0H.1 A   
+START. . . . . . .  C ADDR   0035H   A   
+STOP4. . . . . . .  C ADDR   0011H   A   
+STOP5. . . . . . .  C ADDR   001EH   A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+WAVEFORM . . . . .  C ADDR   0051H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

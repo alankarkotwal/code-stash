@@ -1,0 +1,255 @@
+A51 MACRO ASSEMBLER  EXP6Q                                                                09/01/2014 14:18:16 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN ..\exp6q\exp6q.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE ..\exp6q\exp6q.asm SET(SMALL) DEBUG PRINT(.\exp6q.lst) OBJECT(..\exp6q\exp
+                      6q.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; Experiment 6 Labwork Problem
+                       2     ; Write a program so that two kits can be connected to each other using serial communica-
+                       3     ; tion. Transmit data line of one should be connected to receive data line of the other and
+                              vice
+                       4     ; versa. Each kit should send a 16 character string to the other. Each kit should display t
+                             he
+                       5     ; string it received from the other on the first line of its LCD display and the string it 
+                             sent on
+                       6     ; the second line.
+                       7     ; How will you ensure that the other kit is listening when the first kit starts transmittin
+                             g?
+                       8     ; When the program on either kit starts, it should configure the serial port, enable interr
+                             upts
+                       9     ; and read the slide switches. It should then enter a loop which reads the slide switches a
+                             nd
+                      10     ; compares the recently read value with the previous one. It should quit the loop only when
+                      11     ; the value changes. Only when it quits the loop, it should transmit its 16 bit data charac
+                             ter by
+                      12     ; character. Reception is in interrupt mode and is enabled before entering the wait loop. T
+                             hus
+                      13     ; both kits are ready to receive from the beginning but transmit only when permitted to do 
+                             so
+                      14     ; by changing slide switches.
+                      15     
+  00A0                16     LCD_data equ P2                                                 ; LCD Data port
+  0080                17     LCD_rs   equ P0.0                                               ; LCD Register Select
+  0081                18     LCD_rw   equ P0.1                                               ; LCD Read/Write
+  0082                19     LCD_en   equ P0.2                                               ; LCD Enable
+                      20     
+0000                  21     ORG 000h
+0000 020500           22     LJMP start
+0023                  23     ORG 023h
+0023 209817           24     JB RI,recieve
+0026                  25     transmit:
+0026 C3               26             CLR C
+0027 E8               27             MOV A,R0
+0028 75F010           28             MOV B,#010h
+002B 95F0             29             SUBB A,B
+002D 5013             30             JNC returnFromInterrupt
+002F E8               31             MOV A,R0
+0030 9005A1           32             MOV DPTR,#serial_string
+0033 08               33             INC R0
+0034 93               34             MOVC A,@A+DPTR                                          ; Put transmitted character
+                              into A for parity
+0035 A2D0             35             MOV C,PSW.0
+0037 929B             36             MOV TB8,C                                                       ; Move parity bit t
+                             o TB8
+0039 F599             37             MOV SBUF,A                                                      ; Send character by
+                              putting it in SBUF
+003B 8005             38             SJMP returnFromInterrupt
+003D                  39     recieve:
+003D E599             40             MOV A,SBUF                                                      ; Get data in A
+003F 120587           41             LCALL lcd_senddata                                      ; Send character to LCD
+0042                  42     returnFromInterrupt:
+0042 C299             43             CLR TI                                                          ; Clear the transmi
+                             t flag
+0044 C298             44             CLR RI                                                          ; Clear the recieve
+A51 MACRO ASSEMBLER  EXP6Q                                                                09/01/2014 14:18:16 PAGE     2
+
+                              flag
+0046 32               45     RETI
+0500                  46     ORG 500h
+0500                  47     start:
+                      48     
+0500 7800             49     MOV R0,#000h                                                    ; Counter for characters in
+                              transmit string
+                      50     
+0502 B198             51     ACALL delay_lcd                                                 ; Initial delay for lcd pow
+                             er up
+0504 B198             52     ACALL delay_lcd
+0506 B13B             53     ACALL lcd_init                                                  ; Initialise LCD        
+0508 B198             54     ACALL delay_lcd
+050A B198             55     ACALL delay_lcd
+050C B198             56     ACALL delay_lcd
+                      57     
+050E 758DCC           58     MOV TH1,#204                                                    ; Setup timer in auto-reloa
+                             d
+0511 758920           59     MOV TMOD,#020h
+                      60     
+0514 D2AF             61     SETB EA                                                                 ; Enable interrupts
+0516 D2AC             62     SETB ES
+                      63     
+0518 7598C0           64     MOV SCON,#0C0h                                                  ; Serial in mode 
+051B D29C             65     SETB REN
+                      66     
+051D D28E             67     SETB TR1                                                                ; Run timer
+                      68     
+051F 7590FF           69     MOV P1,#0FFh                                                    ; Configure as input port
+                      70     
+0522 E590             71     MOV A,P1                                                                ; Get P0
+0524 540F             72     ANL A,#00Fh                                                             ; Get only switch v
+                             alues
+0526 F5F0             73     MOV B,A
+                      74     
+0528                  75     loop:
+0528 E590             76             MOV A,P1                                                        ; Get P0
+052A 540F             77             ANL A,#00Fh                                                     ; Get only switch v
+                             alues
+052C 62F0             78             XRL B,A
+052E AFF0             79             MOV R7,B
+0530 BF0004           80             CJNE R7,#000h,start_tx
+0533 F5F0             81             MOV B,A
+0535 80F1             82             SJMP loop
+                      83             
+                      84             
+0537                  85     start_tx:
+0537 D299             86             SETB TI
+                      87     
+0539                  88     endLoop:
+0539 80FE             89             SJMP endLoop                                            ; Stay here
+                      90     
+                      91     
+                      92     ;------------------------LCD Initialisation routine----------------------------------------
+                             ------------
+053B                  93     lcd_init:
+053B 75A038           94              MOV   LCD_data,#38H  ;Function set: 2 Line, 8-bit, 5x7 dots
+053E C280             95              CLR   LCD_rs         ;Selected command register
+0540 C281             96              CLR   LCD_rw         ;We are writing in instruction register
+0542 D282             97              SETB  LCD_en         ;Enable H->L
+0544 B198             98                      ACALL delay_lcd
+0546 C282             99              CLR   LCD_en
+0548 B198            100                  ACALL delay_lcd
+                     101     
+054A 75A00C          102              MOV   LCD_data,#0CH  ;Display on, Curson off
+054D C280            103              CLR   LCD_rs         ;Selected instruction register
+A51 MACRO ASSEMBLER  EXP6Q                                                                09/01/2014 14:18:16 PAGE     3
+
+054F C281            104              CLR   LCD_rw         ;We are writing in instruction register
+0551 D282            105              SETB  LCD_en         ;Enable H->L
+0553 B198            106                      ACALL delay_lcd
+0555 C282            107              CLR   LCD_en
+                     108              
+0557 B198            109                      ACALL delay_lcd
+0559 75A001          110              MOV   LCD_data,#01H  ;Clear LCD
+055C C280            111              CLR   LCD_rs         ;Selected command register
+055E C281            112              CLR   LCD_rw         ;We are writing in instruction register
+0560 D282            113              SETB  LCD_en         ;Enable H->L
+0562 B198            114                      ACALL delay_lcd
+0564 C282            115              CLR   LCD_en
+                     116              
+0566 B198            117                      ACALL delay_lcd
+                     118     
+0568 75A006          119              MOV   LCD_data,#06H  ;Entry mode, auto INCrement with no shift
+056B C280            120              CLR   LCD_rs         ;Selected command register
+056D C281            121              CLR   LCD_rw         ;We are writing in instruction register
+056F D282            122              SETB  LCD_en         ;Enable H->L
+0571 B198            123                      ACALL delay_lcd
+0573 C282            124              CLR   LCD_en
+                     125     
+0575 B198            126                      ACALL delay_lcd
+                     127              
+0577 22              128              RET                  ;RETurn from routine
+                     129     
+                     130     ;-----------------------command sending routine-------------------------------------
+0578                 131      lcd_command:
+0578 F5A0            132              MOV   LCD_data,A     ;MOVe the command to LCD port
+057A C280            133              CLR   LCD_rs         ;Selected command register
+057C C281            134              CLR   LCD_rw         ;We are writing in instruction register
+057E D282            135              SETB  LCD_en         ;Enable H->L
+0580 B198            136                      ACALL delay_lcd
+0582 C282            137              CLR   LCD_en
+0584 B198            138                      ACALL delay_lcd
+                     139         
+0586 22              140              RET  
+                     141     ;-----------------------data sending routine-------------------------------------          
+                                       
+0587                 142      lcd_senddata:
+0587 F5A0            143              MOV   LCD_data,A     ;MOVe the command to LCD port
+0589 D280            144              SETB  LCD_rs         ;Selected data register
+058B C281            145              CLR   LCD_rw         ;We are writing
+058D D282            146              SETB  LCD_en         ;Enable H->L
+058F B198            147                      ACALL delay_lcd
+0591 C282            148              CLR   LCD_en
+0593 B198            149              ACALL delay_lcd
+0595 B198            150                      ACALL delay_lcd
+0597 22              151              RET                  ;RETurn from busy routine
+                     152     
+                     153     ;----------------------delay routine-----------------------------------------------------
+0598                 154     delay_lcd:       
+0598 7A01            155              MOV R2,#1
+059A 79FF            156     loop2:   MOV R1,#255
+059C D9FE            157     loop1:   DJNZ R1, loop1
+059E DAFA            158                      DJNZ R2,loop2
+05A0 22              159                      RET
+                     160                      
+                     161     ;------------- ROM text strings------------------------------------------------------------
+                             ---
+05A1                 162     serial_string:
+05A1 416C616E        163              DB   "Alankar S Kotwal", 00H
+05A5 6B617220                
+05A9 53204B6F                
+05AD 7477616C                
+05B1 00                      
+A51 MACRO ASSEMBLER  EXP6Q                                                                09/01/2014 14:18:16 PAGE     4
+
+                     164     
+                     165     END
+A51 MACRO ASSEMBLER  EXP6Q                                                                09/01/2014 14:18:16 PAGE     5
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E              T Y P E  V A L U E   ATTRIBUTES
+
+B . . . . . . . . .  D ADDR   00F0H   A   
+DELAY_LCD . . . . .  C ADDR   0598H   A   
+EA. . . . . . . . .  B ADDR   00A8H.7 A   
+ENDLOOP . . . . . .  C ADDR   0539H   A   
+ES. . . . . . . . .  B ADDR   00A8H.4 A   
+LCD_COMMAND . . . .  C ADDR   0578H   A   
+LCD_DATA. . . . . .  D ADDR   00A0H   A   
+LCD_EN. . . . . . .  B ADDR   0080H.2 A   
+LCD_INIT. . . . . .  C ADDR   053BH   A   
+LCD_RS. . . . . . .  B ADDR   0080H.0 A   
+LCD_RW. . . . . . .  B ADDR   0080H.1 A   
+LCD_SENDDATA. . . .  C ADDR   0587H   A   
+LOOP. . . . . . . .  C ADDR   0528H   A   
+LOOP1 . . . . . . .  C ADDR   059CH   A   
+LOOP2 . . . . . . .  C ADDR   059AH   A   
+P0. . . . . . . . .  D ADDR   0080H   A   
+P1. . . . . . . . .  D ADDR   0090H   A   
+P2. . . . . . . . .  D ADDR   00A0H   A   
+PSW . . . . . . . .  D ADDR   00D0H   A   
+RECIEVE . . . . . .  C ADDR   003DH   A   
+REN . . . . . . . .  B ADDR   0098H.4 A   
+RETURNFROMINTERRUPT  C ADDR   0042H   A   
+RI. . . . . . . . .  B ADDR   0098H.0 A   
+SBUF. . . . . . . .  D ADDR   0099H   A   
+SCON. . . . . . . .  D ADDR   0098H   A   
+SERIAL_STRING . . .  C ADDR   05A1H   A   
+START . . . . . . .  C ADDR   0500H   A   
+START_TX. . . . . .  C ADDR   0537H   A   
+TB8 . . . . . . . .  B ADDR   0098H.3 A   
+TH1 . . . . . . . .  D ADDR   008DH   A   
+TI. . . . . . . . .  B ADDR   0098H.1 A   
+TMOD. . . . . . . .  D ADDR   0089H   A   
+TR1 . . . . . . . .  B ADDR   0088H.6 A   
+TRANSMIT. . . . . .  C ADDR   0026H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

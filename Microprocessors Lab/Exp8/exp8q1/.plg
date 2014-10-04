@@ -1,0 +1,313 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+.uvproj
+Project File Date:  09/25/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(4): error C202: 'CR2': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(11): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(11): warning C290: missing return value
+linking...
+Program Size: data=9.0 xdata=0 code=25
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(18): warning C290: missing return value
+linking...
+Program Size: data=9.0 xdata=0 code=25
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=33
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(24): error C136: 'twi_interrupt': 'void' on variable
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(24): error C129: missing ';' before '1'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=37
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(24): error C130: 'interrupt': value out of range
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=37
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(14): error C202: 'IE': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(14): error C202: 'IE1': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=38
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=11.0 xdata=0 code=38
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(36): error C202: 'rw': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(40): error C202: 'rw': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(44): error C202: 'rw': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(48): error C202: 'rw': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(52): error C202: 'rw': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=20.1 xdata=0 code=87
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+Program Size: data=25.2 xdata=0 code=339
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(24): error C158: '_twi_read': function contains unnamed parameter
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(24): error C158: '_twi_read': function contains unnamed parameter
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(24): error C132: 'main': not in formal parameter list
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(24): error C141: syntax error near '{'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(25): error C132: 'twi_init': not in formal parameter list
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(27): error C141: syntax error near 'while'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(27): error C141: syntax error near '1'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(57): warning C280: 'arr': unreferenced local variable
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(57): warning C280: 'len': unreferenced local variable
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(58): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+Program Size: data=24.2 xdata=0 code=335
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(58): warning C280: 'arr': unreferenced local variable
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(58): warning C280: 'len': unreferenced local variable
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(59): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+Program Size: data=24.2 xdata=0 code=338
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(56): warning C280: 'arr': unreferenced local variable
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(56): warning C280: 'len': unreferenced local variable
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(57): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+Program Size: data=24.2 xdata=0 code=348
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=20.0 xdata=0 code=443
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=20.0 xdata=0 code=443
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=20.0 xdata=0 code=443
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=20.0 xdata=0 code=443
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(25): warning C206: 'twi_send': missing function-prototype
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(25): error C267: 'twi_send': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(25): warning C182: pointer to different objects
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=30.0 xdata=0 code=468
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=25.0 xdata=0 code=463
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=25.0 xdata=0 code=463
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=25.0 xdata=0 code=471
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=25.0 xdata=0 code=494
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=25.0 xdata=0 code=494
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=25.0 xdata=0 code=499
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=25.0 xdata=0 code=499
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=25.0 xdata=0 code=500
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=25.0 xdata=0 code=500
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=25.0 xdata=0 code=477
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).

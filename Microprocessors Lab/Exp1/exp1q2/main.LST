@@ -1,0 +1,252 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 07/30/2014 11:43:15 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN ..\exp1q2\main.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE main.asm SET(SMALL) DEBUG OBJECT(..\exp1q2\main.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 C294              1     CLR P1.4
+0002 C295              2     CLR P1.5
+0004 C296              3     CLR P1.6
+0006 C297              4     CLR P1.7
+                       5     
+0008 7581C0            6     MOV SP,#0C0H
+                       7     
+000B                   8     loop:
+000B 7820              9             MOV R0,#0020H
+000D 7F0A             10             MOV R7,#000AH
+000F                  11             read:
+000F 209306           12                     check013: JB P1.3,set014
+0012 C294             13                     CLR P1.4
+0014 C2F0             14                     CLR B.0
+0016 8004             15                     JMP check012
+0018 D294             16                     set014: SETB P1.4
+001A D2F0             17                                 SETB B.0
+001C 209206           18                     check012: JB P1.2,set015
+001F C295             19                     CLR P1.5
+0021 C2F1             20                     CLR B.1
+0023 8004             21                     JMP check011
+0025 D295             22                     set015: SETB P1.5
+0027 D2F1             23                                 SETB B.1
+0029 209106           24                     check011: JB P1.1,set016
+002C C296             25                     CLR P1.6
+002E C2F2             26                     CLR B.2
+0030 8004             27                     JMP check010
+0032 D296             28                     set016: SETB P1.6
+0034 D2F2             29                                 SETB B.2
+0036 209006           30                     check010: JB P1.0,set017
+0039 C297             31                     CLR P1.7
+003B C2F3             32                     CLR B.3
+003D 8004             33                     JMP next01
+003F D297             34                     set017: SETB P1.7
+0041 D2F3             35                                 SETB B.3
+0043                  36                     next01:
+0043 7E50             37                     MOV R6,#50H
+0045                  38                     callDelay1:
+0045 120125           39                             LCALL delay1
+0048 DEFB             40                             DJNZ R6,callDelay1
+004A 209306           41                     check113: JB P1.3,set114
+004D C294             42                     CLR P1.4
+004F C2F4             43                     CLR B.4
+0051 8004             44                     JMP check112
+0053 D294             45                     set114: SETB P1.4
+0055 D2F4             46                                     SETB B.4
+0057 209206           47                     check112: JB P1.2,set115
+005A C295             48                     CLR P1.5
+005C C2F5             49                     CLR B.5
+005E 8004             50                     JMP check111
+0060 D295             51                     set115: SETB P1.5
+0062 D2F5             52                                     SETB B.5
+0064 209106           53                     check111: JB P1.1,set116
+0067 C296             54                     CLR P1.6
+0069 C2F6             55                     CLR B.6
+006B 8004             56                     JMP check110
+006D D296             57                     set116: SETB P1.6
+006F D2F6             58                                     SETB B.6
+A51 MACRO ASSEMBLER  MAIN                                                                 07/30/2014 11:43:15 PAGE     2
+
+0071 209006           59                     check110: JB P1.0,set117
+0074 C297             60                     CLR P1.7
+0076 C2F7             61                     CLR B.7
+0078 8004             62                     JMP next2
+007A D297             63                     set117: SETB P1.7
+007C D2F7             64                                     SETB B.7
+007E                  65                     next2:
+007E 7E50             66                     MOV R6,#50H
+0080                  67                     callDelay2:
+0080 120125           68                             LCALL delay1
+0083 DEFB             69                             DJNZ R6,callDelay2
+0085 A6F0             70                     MOV @R0,B
+0087 08               71                     INC R0
+0088 DF85             72                     DJNZ R7,read
+008A 209306           73             check213: JB P1.3,set214
+008D C294             74             CLR P1.4
+008F C2F3             75             CLR B.3
+0091 8004             76             JMP check212
+0093 D294             77             set214: SETB P1.4
+0095 D2F3             78                         SETB B.3
+0097 209206           79             check212: JB P1.2,set215
+009A C295             80             CLR P1.5
+009C C2F2             81             CLR B.2
+009E 8004             82             JMP check211
+00A0 D295             83             set215: SETB P1.5
+00A2 D2F2             84                         SETB B.2
+00A4 209106           85             check211: JB P1.1,set216
+00A7 C296             86             CLR P1.6
+00A9 C2F1             87             CLR B.1
+00AB 8004             88             JMP check210
+00AD D296             89             set216: SETB P1.6
+00AF D2F1             90                         SETB B.1
+00B1 209006           91             check210: JB P1.0,set217
+00B4 C297             92             CLR P1.7
+00B6 C2F0             93             CLR B.0
+00B8 8004             94             JMP next3
+00BA D297             95             set217: SETB P1.7
+00BC D2F0             96                         SETB B.0
+00BE                  97             next3:
+00BE E5F0             98             MOV A,B
+00C0 9509             99             SUBB A,0009H
+00C2 400A            100             JC lessThanNine
+00C4 C294            101             CLR P1.4
+00C6 C295            102             CLR P1.5
+00C8 C296            103             CLR P1.6
+00CA C297            104             CLR P1.7
+00CC 8062            105             JMP endLoop
+00CE                 106             lessThanNine:
+00CE E5F0            107             MOV A,B
+00D0 2420            108             ADD A,#020H
+00D2 F8              109             MOV R0,A
+00D3 86F0            110             MOV B,@R0
+00D5 20F302          111             check313: JB B.3,set314
+00D8 8002            112             JMP check312
+00DA D294            113             set314: SETB P1.4
+00DC 20F202          114             check312: JB B.2,set315
+00DF 8002            115             JMP check311
+00E1 D295            116             set315: SETB P1.5
+00E3 20F102          117             check311: JB B.1,set316
+00E6 8002            118             JMP check310
+00E8 D296            119             set316: SETB P1.6
+00EA 20F002          120             check310: JB B.0,set317
+00ED 8002            121             JMP next4
+00EF D297            122             set317: SETB P1.7
+00F1                 123             next4:
+00F1 7E50            124             MOV R6,#50H
+A51 MACRO ASSEMBLER  MAIN                                                                 07/30/2014 11:43:15 PAGE     3
+
+00F3                 125             callDelay3:
+00F3 120125          126                     LCALL delay1
+00F6 DEFB            127                     DJNZ R6,callDelay3
+00F8 20F302          128             check413: JB B.3,set414
+00FB 8002            129             JMP check412
+00FD D294            130             set414: SETB P1.4
+00FF 20F202          131             check412: JB B.2,set415
+0102 8002            132             JMP check411
+0104 D295            133             set415: SETB P1.5
+0106 20F102          134             check411: JB B.1,set416
+0109 80DF            135             JMP check310
+010B D296            136             set416: SETB P1.6
+010D 20F002          137             check410: JB B.0,set417
+0110 8002            138             JMP next5
+0112 D297            139             set417: SETB P1.7
+0114                 140             next5:
+0114 7E50            141             MOV R6,#50H
+0116                 142             callDelay4:
+0116 120125          143                     LCALL delay1
+0119 DEFB            144                     DJNZ R6,callDelay4
+011B C294            145             CLR P1.4
+011D C295            146             CLR P1.5
+011F C296            147             CLR P1.6
+0121 C297            148             CLR P1.7
+0123 800B            149             JMP endLoop
+                     150     
+                     151     
+0125                 152     delay1:
+0125 7BFF            153             MOV R3,#0FFh
+0127 7AFF            154             MOV R2,#0FFh
+0129                 155             loop11:
+0129 7AFF            156                     MOV R2,#0FFh
+012B                 157                     loop12:
+012B DAFE            158                             DJNZ R2,loop12
+012D DBFA            159                             DJNZ R3,loop11
+012F 22              160             RET
+                     161     
+                     162     
+0130                 163     endLoop:
+0130 80FE            164             JMP endLoop
+                     165     
+                     166     END
+A51 MACRO ASSEMBLER  MAIN                                                                 07/30/2014 11:43:15 PAGE     4
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+CALLDELAY1 . . . .  C ADDR   0045H   A   
+CALLDELAY2 . . . .  C ADDR   0080H   A   
+CALLDELAY3 . . . .  C ADDR   00F3H   A   
+CALLDELAY4 . . . .  C ADDR   0116H   A   
+CHECK010 . . . . .  C ADDR   0036H   A   
+CHECK011 . . . . .  C ADDR   0029H   A   
+CHECK012 . . . . .  C ADDR   001CH   A   
+CHECK013 . . . . .  C ADDR   000FH   A   
+CHECK110 . . . . .  C ADDR   0071H   A   
+CHECK111 . . . . .  C ADDR   0064H   A   
+CHECK112 . . . . .  C ADDR   0057H   A   
+CHECK113 . . . . .  C ADDR   004AH   A   
+CHECK210 . . . . .  C ADDR   00B1H   A   
+CHECK211 . . . . .  C ADDR   00A4H   A   
+CHECK212 . . . . .  C ADDR   0097H   A   
+CHECK213 . . . . .  C ADDR   008AH   A   
+CHECK310 . . . . .  C ADDR   00EAH   A   
+CHECK311 . . . . .  C ADDR   00E3H   A   
+CHECK312 . . . . .  C ADDR   00DCH   A   
+CHECK313 . . . . .  C ADDR   00D5H   A   
+CHECK410 . . . . .  C ADDR   010DH   A   
+CHECK411 . . . . .  C ADDR   0106H   A   
+CHECK412 . . . . .  C ADDR   00FFH   A   
+CHECK413 . . . . .  C ADDR   00F8H   A   
+DELAY1 . . . . . .  C ADDR   0125H   A   
+ENDLOOP. . . . . .  C ADDR   0130H   A   
+LESSTHANNINE . . .  C ADDR   00CEH   A   
+LOOP . . . . . . .  C ADDR   000BH   A   
+LOOP11 . . . . . .  C ADDR   0129H   A   
+LOOP12 . . . . . .  C ADDR   012BH   A   
+NEXT01 . . . . . .  C ADDR   0043H   A   
+NEXT2. . . . . . .  C ADDR   007EH   A   
+NEXT3. . . . . . .  C ADDR   00BEH   A   
+NEXT4. . . . . . .  C ADDR   00F1H   A   
+NEXT5. . . . . . .  C ADDR   0114H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+READ . . . . . . .  C ADDR   000FH   A   
+SET014 . . . . . .  C ADDR   0018H   A   
+SET015 . . . . . .  C ADDR   0025H   A   
+SET016 . . . . . .  C ADDR   0032H   A   
+SET017 . . . . . .  C ADDR   003FH   A   
+SET114 . . . . . .  C ADDR   0053H   A   
+SET115 . . . . . .  C ADDR   0060H   A   
+SET116 . . . . . .  C ADDR   006DH   A   
+SET117 . . . . . .  C ADDR   007AH   A   
+SET214 . . . . . .  C ADDR   0093H   A   
+SET215 . . . . . .  C ADDR   00A0H   A   
+SET216 . . . . . .  C ADDR   00ADH   A   
+SET217 . . . . . .  C ADDR   00BAH   A   
+SET314 . . . . . .  C ADDR   00DAH   A   
+SET315 . . . . . .  C ADDR   00E1H   A   
+SET316 . . . . . .  C ADDR   00E8H   A   
+SET317 . . . . . .  C ADDR   00EFH   A   
+SET414 . . . . . .  C ADDR   00FDH   A   
+SET415 . . . . . .  C ADDR   0104H   A   
+SET416 . . . . . .  C ADDR   010BH   A   
+SET417 . . . . . .  C ADDR   0112H   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

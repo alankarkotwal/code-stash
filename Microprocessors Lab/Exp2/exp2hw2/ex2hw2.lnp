@@ -1,0 +1,3 @@
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2hw2\main.obj" 
+TO "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2hw2\ex2hw2" 
+PRINT(".\ex2hw2.m51") RAMSIZE(256) 

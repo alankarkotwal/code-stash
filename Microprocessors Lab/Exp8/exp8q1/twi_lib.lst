@@ -1,0 +1,972 @@
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE TWI_LIB
+OBJECT MODULE PLACED IN Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\twi_lib.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.exe Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\twi
+                    -_lib.c BROWSE DEBUG OBJECTEXTEND PRINT(.\twi_lib.lst) TABS(2) OBJECT(Z:\home\aloo\Documents\Acads\Sem5\EE337 Microproces
+                    -sors Lab\Exp8\exp8q1\twi_lib.obj)
+
+line level    source
+
+   1          /*C**************************************************************************
+   2          * NAME:         twi_lib.c
+   3          *----------------------------------------------------------------------------
+   4          * Copyright (c) 2004 Atmel.
+   5          *----------------------------------------------------------------------------
+   6          * RELEASE:      c51-twi-lib-1_0_2      
+   7          * REVISION:     1.21.2.2     
+   8          *----------------------------------------------------------------------------
+   9          * PURPOSE: 
+  10          * This file provides all minimal functionnal access to the TWI interface 
+  11          * for T89C51Ix2 products.
+  12          *****************************************************************************/
+  13          
+  14          
+  15          /*_____ I N C L U D E S ____________________________________________________*/
+  16          #include "config.h"
+  17          #include "twi_lib.h"
+  18          #if (!defined IRQ_TWI) && (defined FILE_BOARD_H)
+              #include FILE_BOARD_H // For SDA/SCL Pin Assignment
+              #endif
+  21          
+  22          #ifdef IRQ_TWI  // HARDWARE TWI AUTODETECTION !
+  23          /****************************************************************************
+  24          *****************************************************************************
+  25          **********        STUFF WITH ON-CHIP HARDWARE TWI          ******************
+  26          *****************************************************************************
+  27          *****************************************************************************/
+  28          /*_____ G L O B A L    D E F I N I T I O N _________________________________*/
+  29          volatile bit                twi_busy;
+  30          volatile unsigned char      twi_err;
+  31          volatile Length_TWI_frame   twi_nb_transmited;
+  32          volatile unsigned char      twi_recptr;
+  33          /*V**************************************************************************
+  34          * NAME: twi_slave_data[TWI_NB_SLAVE_DATA] 
+  35          *----------------------------------------------------------------------------
+  36          * PURPOSE: 
+  37          * Global public Variable for TWI message in slave mode
+  38          *****************************************************************************/
+  39          volatile unsigned char xdata twi_slave_data[TWI_NB_SLAVE_DATA];
+  40          
+  41          /*V**************************************************************************
+  42          * NAME: twi_message
+  43          *----------------------------------------------------------------------------
+  44          * PURPOSE: 
+  45          * Global public Variable for TWI message in master mode
+  46          *****************************************************************************/
+  47          volatile TWI_message xdata  twi_message;
+  48          
+  49          /*_____ D E F I N I T I O N ________________________________________________*/
+  50          #define TWI_RATIO_256       0x00
+  51          #define TWI_RATIO_224       0x01
+  52          #define TWI_RATIO_192       0x02
+  53          #define TWI_RATIO_160       0x03
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 2   
+
+  54          #define TWI_RATIO_960       0x80
+  55          #define TWI_RATIO_120       0x81
+  56          #define TWI_RATIO_60        0x82
+  57          #define TWI_RATIO_TIMER1    0x83
+  58          
+  59          #define TWI_CR2             0x80
+  60          #define TWI_SSIE            0x40
+  61          #define TWI_STA             0x20
+  62          #define TWI_STO             0x10
+  63          #define TWI_SI              0x08
+  64          #define TWI_AA              0x04
+  65          #define TWI_CR1             0x02
+  66          #define TWI_CR0             0x01
+  67          
+  68          #define TWI_WAIT_EVENT()    while ( !(SSCON & TWI_SI) ) 
+  69          #define TWI_WAIT_HW_STOP()  while ( SSCON & TWI_STO )
+  70          #define TWI_SET_START()     ( SSCON |= TWI_STA   ) 
+  71          #define TWI_CLEAR_START()   ( SSCON &= ~TWI_STA  )
+  72          #define TWI_SET_STOP()      ( SSCON |= TWI_STO   )
+  73          #define TWI_SET_AA()        ( SSCON |= TWI_AA    ) 
+  74          #define TWI_CLEAR_AA()      ( SSCON &= ~TWI_AA   )
+  75          #define TWI_CLEAR_SI()      ( SSCON &= ~TWI_SI   )
+  76          
+  77          /*_____ M A C R O S ________________________________________________________*/
+  78          #ifndef TWI_SCAL
+                #error You must set TWI_SCAL in config.h
+              #elif TWI_SCAL == 256
+  81            #define TWI_SCAL_VALUE    TWI_RATIO_256
+  82          #elif TWI_SCAL == 224
+                #define TWI_SCAL_VALUE    TWI_RATIO_224
+              #elif TWI_SCAL == 192
+                #define TWI_SCAL_VALUE    TWI_RATIO_192
+              #elif TWI_SCAL == 160
+                #define TWI_SCAL_VALUE    TWI_RATIO_160
+              #elif TWI_SCAL == 960
+                #define TWI_SCAL_VALUE    TWI_RATIO_960
+              #elif TWI_SCAL == 120
+                #define TWI_SCAL_VALUE    TWI_RATIO_120
+              #elif TWI_SCAL == 60
+                #define TWI_SCAL_VALUE    TWI_RATIO_60
+              #else 
+                #error Incorrect TWI_SCAL value, should be: 256 224 192 160 960 120 60
+                #define TWI_SCAL_VALUE
+              #endif
+  98          
+  99          
+ 100          void twi_lib_init(void)
+ 101          {
+ 102   1      SSCON|=TWI_SSIE|TWI_SCAL_VALUE;
+ 103   1      }
+ 104          
+ 105          
+ 106          /*F**************************************************************************
+ 107          * NAME: twi_decode_status 
+ 108          *----------------------------------------------------------------------------
+ 109          * PARAMS:
+ 110          * return:  none
+ 111          *----------------------------------------------------------------------------
+ 112          * PURPOSE: 
+ 113          * main processing state machine for TWI message reception transmission
+ 114          * in slave or master mode.
+ 115          * This function is called when an event occured on the TWI interface.
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 3   
+
+ 116          * Can be used both in polling or interrupt mode.
+ 117          *----------------------------------------------------------------------------
+ 118          * EXAMPLE:
+ 119          *----------------------------------------------------------------------------
+ 120          * NOTE: 
+ 121          *----------------------------------------------------------------------------
+ 122          * REQUIREMENTS: 
+ 123          *****************************************************************************/
+ 124          void twi_decode_status()
+ 125          {
+ 126   1      switch ( SSSTA )
+ 127   1          {
+ 128   2          //  STATE 00h: Bus Error has occurred 
+ 129   2          //  ACTION:    Enter not addressed SLV mode and release bus
+ 130   2          case  0x00 :
+ 131   2          twi_busy = FALSE;
+ 132   2          twi_err  = TWI_BUS_ERROR;
+ 133   2          break;
+ 134   2      
+ 135   2      #ifdef TWI_MASTER
+ 136   2          //STATE 08h: A start condition has been sent
+ 137   2          //ACTION:    SLR+R/W are transmitted, ACK bit received
+ 138   2          case 0x08 :
+ 139   2          TWI_CLEAR_START();
+ 140   2          SSDAT = twi_message.address<<1;
+ 141   2          if ( twi_message.rw == TWI_READ ) SSDAT++; // Add 1 for Read bit in AdrWord
+ 142   2          TWI_SET_AA(); //from here to 0x18 transmit or 0x40 receive                 
+ 143   2          break;
+ 144   2      
+ 145   2          //STATE 10h: A repeated start condition has been sent
+ 146   2          //ACTION:    SLR+R/W are transmitted, ACK bit received
+ 147   2          case 0x10 :
+ 148   2          TWI_CLEAR_START();          // Reset STA bit in SSCON
+ 149   2          SSDAT = twi_message.address<<1;
+ 150   2          if ( twi_message.rw == TWI_READ ) SSDAT++; // Add 1 for Read bit in AdrWord
+ 151   2          TWI_SET_AA();               // wait on ACK bit
+ 152   2          break;
+ 153   2      
+ 154   2          //STATE 18h:   SLR+W was transmitted, ACK bit received 
+ 155   2          //ACTION:      Transmit data byte, ACK bit received
+ 156   2          //PREVIOUS STATE: 0x08 or 0x10                     
+ 157   2          case 0x18 :                 // master transmit, after sending
+ 158   2          twi_nb_transmited=0;        // slave address, now load data
+ 159   2          SSDAT = *(twi_message.buf); // byte and send it              
+ 160   2          TWI_SET_AA();               // wait on ACK bit
+ 161   2          if (twi_message.nbbytes==0) // no datas to transmit
+ 162   2              {                    
+ 163   3              TWI_SET_STOP();
+ 164   3              twi_err  = TWI_OK;
+ 165   3              twi_busy = FALSE;       // transfer complete, clear twi_busy
+ 166   3              }
+ 167   2          break;
+ 168   2      
+ 169   2          //STATE 20h:   SLR+W was transmitted, NOT ACK bit received
+ 170   2          //ACTION:      Transmit STOP
+ 171   2          case 0x20 :
+ 172   2          TWI_SET_STOP();
+ 173   2          twi_busy = FALSE;
+ 174   2          twi_err  = TWI_HOST_ADR_NACK;
+ 175   2          break;
+ 176   2      
+ 177   2          //STATE 28h:   DATA was transmitted, ACK bit received 
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 4   
+
+ 178   2          //ACTION:      If last byte, send STOP, else send more data bytes 
+ 179   2          case 0x28:                  // master transmit, after sending ; data byte, ACK received
+ 180   2          twi_nb_transmited++;        // inc nb data transmit on message 
+ 181   2          twi_message.buf++;          // inc pointer ti data to be transmited
+ 182   2          if ( twi_nb_transmited < twi_message.nbbytes  ) // if there are still bytes to send
+ 183   2              {
+ 184   3              SSDAT = *(twi_message.buf);
+ 185   3              TWI_SET_AA();           // wait on ACK bit
+ 186   3              }
+ 187   2          else 
+ 188   2              {                    //run out of data, send stop,
+ 189   3              TWI_SET_STOP();
+ 190   3              twi_err  = TWI_OK;
+ 191   3              twi_busy = FALSE;         //transfer complete, clear twi_busy
+ 192   3              }
+ 193   2          break;
+ 194   2      
+ 195   2          //STATE 30h:   DATA was transmitted, NOT ACK bit received 
+ 196   2          //ACTION:      Transmit STOP     
+ 197   2          case 0x30 :
+ 198   2          TWI_SET_STOP();
+ 199   2          twi_busy = FALSE;
+ 200   2          twi_err  = TWI_HOST_ADR_NACK;
+ 201   2          break;
+ 202   2      
+ 203   2          //STATE 38h:   Arbitration lost in SLA+W or DATA.  
+ 204   2          //ACTION:      Release bus, enter not addressed SLV mode
+ 205   2          //             Wait for bus lines to be free 
+ 206   2          case 0x38 :
+ 207   2          twi_busy = FALSE;
+ 208   2          twi_err  = TWI_ARBITRATION_LOST;
+ 209   2          // #ifdef USER_TWI_FCT_ARBITRATION_LOST_IN_SLA+W_OR_DATA
+ 210   2          // TWI_fct_arb_lostinSLAorDATA();
+ 211   2          // #endif
+ 212   2          break;
+ 213   2      
+ 214   2         //MASTER RECEIVER MODE FOLLOWS 
+ 215   2         //STATE 40h:   SLA+R transmitted, ACK received 
+ 216   2         //ACTION:      Receive DATA, ACK to be returned 
+ 217   2         //PREVIOS STATE: 0x08 or 0x10
+ 218   2          case 0x40 :               //master receive, after sending
+ 219   2               if ( twi_message.nbbytes == 1 ) TWI_CLEAR_AA(); // only one data to receive, noACK to be send aft
+             -er the fisrt incoming data
+ 220   2          else if (!twi_message.nbbytes      ) TWI_SET_STOP(); // special case: no data to read !
+ 221   2          else
+ 222   2              {
+ 223   3              TWI_SET_AA();      //wait on ACK bit 
+ 224   3              twi_nb_transmited=0;      //data byte to be received, NOT ACK bit to follow  --> 0x58    
+ 225   3              }
+ 226   2          break;
+ 227   2      
+ 228   2          //STATE 48h:   SLA+R transmitted, NOT ACK received 
+ 229   2          //ACTION:      Transmit STOP 
+ 230   2          case 0x48 :
+ 231   2          TWI_SET_STOP();
+ 232   2          twi_busy = FALSE;
+ 233   2          twi_err  = TWI_HOST_ADR_NACK;
+ 234   2          break;
+ 235   2      
+ 236   2          //STATE 50h:   Data has been received, ACK returned 
+ 237   2          //ACTION:      Read DATA. If expecting more continue else STOP 
+ 238   2          case 0x50 : //master receive, received data 
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 5   
+
+ 239   2                      //byte and ACK, copy it into
+ 240   2          *(twi_message.buf+twi_nb_transmited) = SSDAT;      //buffer 
+ 241   2          twi_nb_transmited++;
+ 242   2          if ( twi_nb_transmited < (twi_message.nbbytes-1) ) TWI_SET_AA(); // get more bytes 
+ 243   2          else TWI_CLEAR_AA();           //only one more byte to come 
+ 244   2          break;
+ 245   2      
+ 246   2          //STATE 58h:   Data has been received, NOT ACK returned 
+ 247   2          //ACTION:      Read DATA. Generate STOP     
+ 248   2          case 0x58 :
+ 249   2          *(twi_message.buf+twi_nb_transmited) = SSDAT;
+ 250   2          TWI_SET_STOP();
+ 251   2          twi_busy = FALSE;
+ 252   2          twi_err  = TWI_OK;
+ 253   2          break;
+ 254   2      #endif
+ 255   2      
+ 256   2      
+ 257   2      #ifdef TWI_SLAVE
+                  //STATE 60h:   Own SLA+W has been received,ACK returned 
+                  //ACTION:      Read DATA. return ACK    
+                  case 0x60 :
+                  TWI_SET_AA();
+                  twi_busy = TRUE;
+                  twi_recptr=0;
+                  break;
+              
+                  //STATE 68h:   Arbitration lost in SLA and R/W as MASTER. Own SLA + W has been received. ACK returned 
+             -  
+                  //ACTION:      Read DATA. return ACK ;re-start MASTER,
+                  case 0x68 :
+                  TWI_SET_START();
+                  break;
+              
+                  //STATE 70h:   General call received, ACK returned
+                  //ACTION:      Receive DATA. return ACK
+                  case 0x70 :
+                  TWI_SET_AA();
+                  twi_busy = TRUE;
+                  break;
+              
+                  //STATE 78h:   Arbitration lost in SLA+R/W as MASTER. General call has arrived ack returned
+                  //ACTION:      Receive DATA. return ACK. Restart master
+                  case 0x78 :
+                  TWI_SET_START();
+                  twi_busy = TRUE;
+                  break;
+              
+                  //STATE 80h:   Previously addressed with own SLA. Data received and ACK returned 
+                  //ACTION:      Read DATA. 
+                  case 0x80 :
+                  twi_slave_data[twi_recptr] = SSDAT;
+                  twi_recptr ++;
+                  if ( twi_recptr < TWI_NB_SLAVE_DATA ) TWI_SET_AA();  // ACK will be returned
+                  else TWI_CLEAR_AA(); // it was last data not ACK will be returned ( buffer full )
+                  break;
+              
+                  //STATE 88h:   Previously addressed with own SLA. Data received and NOT ACK returned                  
+             -               
+                  //ACTION:      Dont' Read DATA. Enter NOT addressed SLV mode        
+                  case 0x88 :
+                  //STATE 98h:   Previously addressed with general call. Data arrved and NOT ACK returned 
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 6   
+
+                  //ACTION:      Dont Read DATA. Enter NOT addressed SLV mode
+                  case 0x98 :
+                  TWI_SET_AA();  // ready to send another ACK if addresed as slave
+                  break;
+                  
+                  //STATE 90h:   Previously addressed with general call. Data received and ACK returned                 
+             -                    
+                  //ACTION:      Read DATA.                                           
+                  case 0x90 :
+                  twi_slave_data[twi_recptr] = SSDAT;
+                  twi_recptr = twi_recptr + 1;
+                  break;
+              
+                  //STATE A0h:   A stop or repeated start has arrived, whilst still addressed as SLV/REC or SLV/TRX
+                  //ACTION:      Dont Read DATA. Enter NOT addressed SLV mode
+                  case 0xA0 :
+                  TWI_SET_AA();
+                  twi_busy = FALSE;
+                  twi_err = TWI_OK;
+                  break;
+              
+                  //STATE A8h:   addressed with own SLA+R
+                  //ACTION:      Prepare first data to be transmited
+                  case 0xA8 :
+                  TWI_SET_AA();
+                  twi_busy = TRUE;
+                  twi_recptr=0;
+                  SSDAT = twi_slave_data[0]; // Prepare next data
+                  break;
+              
+              
+                  //STATE B8h:   Previously addressed with own SLA. Data sent 
+                  //             and ACK returned 
+                  //ACTION:      Write DATA. 
+                  case 0xB8 :
+                  twi_recptr++;
+                  if ( twi_recptr < TWI_NB_SLAVE_DATA ) SSDAT = twi_slave_data[twi_recptr];
+                  else ///////// FIX ME : addressed with as slave + R : but not enought data"
+                       TWI_CLEAR_AA(); // it was last data not ACK will be returned ( buffer full )
+                  break;
+              
+              
+                  //STATE C0h:   Previously addressed with own SLA. Data sent and NACK returned 
+                  //ACTION:      It was last data to be sent 
+                  case 0xC0 :
+                  twi_busy=FALSE;
+                  twi_err  = TWI_OK;
+                  break;
+              #endif
+ 347   2      
+ 348   2          //if we arrived here, unknown state has occurred..... 
+ 349   2          default :
+ 350   2          TWI_SET_STOP();
+ 351   2          twi_busy = FALSE;
+ 352   2          twi_err  = TWI_UNKNOWN;
+ 353   2          break;
+ 354   2          }
+ 355   1      }
+ 356          
+ 357          
+ 358          #ifdef TWI_MASTER
+ 359          unsigned char twi_send_message_polling( unsigned char slave_addr,bit rw, Length_TWI_frame nbbytes, unsigne
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 7   
+
+             -d char *info )
+ 360          {
+ 361   1      twi_message.address = slave_addr;
+ 362   1      twi_message.rw = rw;
+ 363   1      twi_message.nbbytes = nbbytes;
+ 364   1      twi_message.buf = info;
+ 365   1      TWI_WAIT_HW_STOP();
+ 366   1      Disable_twi_interrupt(); //FIXME
+ 367   1      twi_nb_transmited=0;
+ 368   1      if (!twi_busy)
+ 369   1          {
+ 370   2          twi_busy =1;
+ 371   2          twi_err = TWI_OK;
+ 372   2          TWI_SET_START();
+ 373   2          while (twi_busy)
+ 374   2              {
+ 375   3              TWI_WAIT_EVENT();
+ 376   3              twi_decode_status();
+ 377   3              TWI_CLEAR_SI();
+ 378   3              }
+ 379   2          TWI_SET_STOP();
+ 380   2          return twi_err;
+ 381   2          }
+ 382   1      TWI_SET_STOP();
+ 383   1      return TWI_NOT_FREE;
+ 384   1      }
+ 385          #endif
+ 386          
+ 387          
+ 388          
+ 389          #ifdef TWI_MASTER
+ 390          #ifndef DO_NOT_USE_TWI_INTERRUPT
+ 391          /*F**************************************************************************
+ 392          * NAME: twi_send_message_interrupt 
+ 393          *----------------------------------------------------------------------------
+ 394          * PARAMS:
+ 395          * *slave_addr:  The slave component address
+ 396          * rw: Read or write operation flag ( read = 1 )
+ 397          * nbbytes: number of bytes to be read or write 
+ 398          * *info: pointer to the data to be processed
+ 399          * return:  TWI error code state
+ 400          *----------------------------------------------------------------------------
+ 401          * PURPOSE: 
+ 402          * This function can be used to send an TWI message to a slave 
+ 403          * in interrupt mode.
+ 404          *----------------------------------------------------------------------------
+ 405          * EXAMPLE:
+ 406          *----------------------------------------------------------------------------
+ 407          * NOTE: 
+ 408          *----------------------------------------------------------------------------
+ 409          * REQUIREMENTS: 
+ 410          *****************************************************************************/
+ 411          unsigned char twi_send_message_interrupt( unsigned char slave_addr,bit rw, Length_TWI_frame nbytes, unsign
+             -ed char *info)
+ 412          {
+ 413   1      twi_message.address = slave_addr;
+ 414   1      twi_message.rw = rw;
+ 415   1      twi_message.nbbytes = nbytes;
+ 416   1      twi_message.buf = info;
+ 417   1      TWI_WAIT_HW_STOP();
+ 418   1      twi_nb_transmited=0;
+ 419   1      if (!twi_busy)
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 8   
+
+ 420   1          {
+ 421   2          twi_err = TWI_OK;
+ 422   2          twi_busy =1;
+ 423   2          Enable_twi_interrupt();
+ 424   2          TWI_SET_START(); 
+ 425   2          return twi_err;
+ 426   2          }
+ 427   1      TWI_SET_STOP();
+ 428   1      return TWI_NOT_FREE;
+ 429   1      }
+ 430          #endif
+ 431          #endif
+ 432          
+ 433          
+ 434          #ifdef TWI_SLAVE
+              /*F**************************************************************************
+              * NAME: twi_slave_polling 
+              *----------------------------------------------------------------------------
+              * PARAMS:
+              * return:  TWI error code state
+              *----------------------------------------------------------------------------
+              * PURPOSE: 
+              * This function can be called to be able to answer another master request
+              * in polling mode.
+              *----------------------------------------------------------------------------
+              * EXAMPLE:
+              *----------------------------------------------------------------------------
+              * NOTE: 
+              *----------------------------------------------------------------------------
+              * REQUIREMENTS: 
+              *****************************************************************************/
+              unsigned char twi_slave_polling(void)
+              {
+              TWI_WAIT_EVENT();
+              twi_decode_status();
+              TWI_CLEAR_SI();
+              while (twi_busy)
+                {
+                TWI_WAIT_EVENT();
+                twi_decode_status();
+                TWI_CLEAR_SI();
+                }
+              return twi_err;
+              }
+              
+              /*F**************************************************************************
+              * NAME: twi_slave_interrupt 
+              *----------------------------------------------------------------------------
+              * PARAMS:
+              * return:  none
+              *----------------------------------------------------------------------------
+              * PURPOSE: 
+              * This function can be called to be able to answer another master request
+              * in interrupt mode (stand alone mode).
+              *----------------------------------------------------------------------------
+              * EXAMPLE:
+              *----------------------------------------------------------------------------
+              * NOTE: 
+              *----------------------------------------------------------------------------
+              * REQUIREMENTS: 
+              *****************************************************************************/
+              void twi_slave_interrupt(void)
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 9   
+
+              {
+              Enable_interrupt();
+              Enable_twi_interrupt();
+              }
+              #endif
+ 487          
+ 488          Byte  twi_putchar(Byte addr, Byte b)
+ 489          {
+ 490   1      TWI_WAIT_HW_STOP();
+ 491   1      TWI_SET_START();
+ 492   1      TWI_WAIT_EVENT();
+ 493   1      if (SSSTA == 0x08)     //start sent
+ 494   1        {
+ 495   2      
+ 496   2        TWI_CLEAR_START();
+ 497   2        SSDAT=addr<<1;
+ 498   2        TWI_SET_AA();
+ 499   2        TWI_CLEAR_SI();
+ 500   2        TWI_WAIT_EVENT();
+ 501   2        if (SSSTA == 0x18)   //ADR+W sent
+ 502   2          {
+ 503   3          SSDAT=b; 
+ 504   3          TWI_CLEAR_SI();
+ 505   3          TWI_WAIT_EVENT();
+ 506   3          if (SSSTA == 0x28) //data sent
+ 507   3            {
+ 508   4            TWI_SET_STOP();
+ 509   4            TWI_CLEAR_SI();
+ 510   4            return TWI_OK;
+ 511   4            } 
+ 512   3          }
+ 513   2      //   else  {TWI_CLEAR_START(); TWI_SET_STOP();}
+ 514   2        }
+ 515   1      TWI_CLEAR_START();
+ 516   1      TWI_CLEAR_SI();
+ 517   1      return TWI_UNKNOWN;
+ 518   1      }
+ 519          
+ 520          
+ 521          Uint16  twi_getchar(Byte addr)
+ 522          {
+ 523   1      Union16 data ret;
+ 524   1      
+ 525   1      ret.b[0] = TWI_UNKNOWN;
+ 526   1      ret.b[1] = 0;
+ 527   1      TWI_WAIT_HW_STOP();
+ 528   1      TWI_SET_START();
+ 529   1      TWI_WAIT_EVENT();
+ 530   1      if (SSSTA == 0x08)     //start sent
+ 531   1        {
+ 532   2        TWI_CLEAR_START();
+ 533   2        SSDAT=(addr<<1)+1;   //ADR+R
+ 534   2        TWI_SET_AA();
+ 535   2        TWI_CLEAR_SI();
+ 536   2        TWI_WAIT_EVENT();
+ 537   2        if (SSSTA == 0x40)   //ADR+R sent
+ 538   2          {
+ 539   3          TWI_CLEAR_AA();    //only one byte t receive: NACK after
+ 540   3          TWI_CLEAR_SI();
+ 541   3          TWI_WAIT_EVENT();
+ 542   3          if (SSSTA == 0x58) //data received
+ 543   3            {
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 10  
+
+ 544   4            ret.b[1] = SSDAT;
+ 545   4            TWI_SET_STOP();
+ 546   4            TWI_CLEAR_SI();
+ 547   4            ret.b[0] = TWI_OK;
+ 548   4            } 
+ 549   3          }
+ 550   2      //   else  {TWI_CLEAR_START(); TWI_SET_STOP();}
+ 551   2        }
+ 552   1      return ret.w;
+ 553   1      }
+ 554          
+ 555          
+ 556          
+ 557          /*F**************************************************************************
+ 558          * NAME: twi_interrupt 
+ 559          *----------------------------------------------------------------------------
+ 560          * PARAMS:
+ 561          * return:  none
+ 562          *----------------------------------------------------------------------------
+ 563          * PURPOSE: 
+ 564          * TWI interrupt routine service
+ 565          *----------------------------------------------------------------------------
+ 566          * EXAMPLE:
+ 567          *----------------------------------------------------------------------------
+ 568          * NOTE: 
+ 569          *----------------------------------------------------------------------------
+ 570          * REQUIREMENTS: 
+ 571          *****************************************************************************/
+ 572          #ifdef IRQ_TWI
+ 573          void twi_interrupt(void) interrupt 8 using 1
+ 574          {
+ 575   1        twi_decode_status();
+ 576   1        TWI_CLEAR_SI();
+ 577   1      }
+ 578          #endif
+ 579          
+ 580          #else
+              /****************************************************************************
+              *****************************************************************************
+              **********            STUFF WITH SOFTWARE TWI              ******************
+              *****************************************************************************
+              *****************************************************************************/
+              
+              /*_____ D E F I N I T I O N ________________________________________________*/
+              #ifndef SDA_SOFT
+              #error Define SDA_SOFT (SDA soft I/O pin) in config.h
+              #define SDA_SOFT    P1_0 // to reduce number of errors
+              #endif
+              #ifndef SCL_SOFT
+              #error Define SCL_SOFT (SCL soft I/O pin) in config.h
+              #define SCL_SOFT    P1_0 // to reduce number of errors
+              #endif
+              
+              /*M**************************************************************************
+              * NAME: twi_start
+              *----------------------------------------------------------------------------
+              * PARAMS:
+              * none
+              *----------------------------------------------------------------------------
+              * PURPOSE: 
+              * Generate a start condition
+              *****************************************************************************/
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 11  
+
+              #ifndef Twi_level_delay
+              #define twi_start()     (SDA_SOFT=0,SCL_SOFT=0)
+              #else
+              #define twi_start()     (SDA_SOFT=0,Twi_level_delay(),SCL_SOFT=0)
+              #endif
+              
+              
+              
+              /*M**************************************************************************
+              * NAME: Twi_level_delay
+              *----------------------------------------------------------------------------
+              * PARAMS:
+              * none
+              *----------------------------------------------------------------------------
+              * PURPOSE: 
+              * Define this macro to increase bit time (or decrease bitrate) on software TWI
+              *****************************************************************************/
+              #ifndef Twi_level_delay
+              #define Twi_level_delay()
+              #endif
+              
+              
+              /*_____ G L O B A L    D E F I N I T I O N _________________________________*/
+              /*F**************************************************************************
+              * NAME: twi_lib_init
+              *----------------------------------------------------------------------------
+              * PARAMS:
+              * 
+              *----------------------------------------------------------------------------
+              * PURPOSE: 
+              * This routine performs a TWI software reset of a TWI slave device in order to 
+              * re-initialize the device's state machine before each data transfer. This 
+              * routine is very usefull to recover devices for which the TWI protocol was not
+              * completed properly due to a special event like an asynchronous reset of the
+              * TWI master.
+              *----------------------------------------------------------------------------
+              * NOTE: 
+              * Refer to ANALOG DEVICE's application note AN-686 and Memory reset paragraph
+              * in Atmel's E2P datasheets
+              *****************************************************************************/
+              void twi_lib_init(void)
+              {
+                SDA_SOFT=1;                           //Reset TWI ports
+                SCL_SOFT=1;  
+                while(!SDA_SOFT)                      //A low condition on SDA line means
+                {                                     //that device state machine is not reset
+                  SCL_SOFT=0;                         //generate clock pulses
+                  _nop_();_nop_();_nop_();_nop_();_nop_();  
+                  SCL_SOFT=1;                         //until device releases the SDA line
+                  while (!SCL_SOFT);
+                };
+                twi_start();                          //Perform a start and stop operation
+                twi_stop();                           //to garantee that the device's state
+              }                                       //machine is properly reset.
+              
+              #ifdef TWI_CUSTOM_SHORT_TEMPO
+              /*F**************************************************************************
+              * NAME: twi_short_tempo
+              *----------------------------------------------------------------------------
+              * PARAMS:
+              * n: number of wait state
+              *----------------------------------------------------------------------------
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 12  
+
+              * PURPOSE: 
+              * Short tempo <=> (n-2)/2 * _nop_()
+              *----------------------------------------------------------------------------
+              * NOTE: 
+              * ASM source:
+              * DJNZ R7,$
+              * RET
+              *****************************************************************************/
+              void twi_short_tempo (Byte n)
+              {
+              for (;--n;);
+              }
+              #endif
+              
+              /*F**************************************************************************
+              * NAME: twi_put 
+              *----------------------------------------------------------------------------
+              * PARAMS:
+              * b: byte to send
+              * return: bool for ACK receive
+              *----------------------------------------------------------------------------
+              * PURPOSE: 
+              * Send a byte through software TWI
+              * The routine returns 1 when ACK received and 0 when no ACK received
+              *----------------------------------------------------------------------------
+              * NOTE: ASM expected source code like
+              * twi_put:
+              *   MOV     R2,#8       ;Send 8 bits
+              * putc1:
+              *   RLC     A           ;Move next bit into carry
+              *   CLR     SCL
+              *   MOV     SDA,C       ;Write next bit
+              *   SETB    SCL
+              *   DJNZ    R2,putc1    ;write 8 bits
+              *   CLR     SCL
+              *   SETB    SDA         ;SDA entry mode
+              *   SETB    SCL
+              *   JNB     SDA, ack_received   ;test for ACK
+              *   MOV     A, #0FFh
+              * ack_received:
+              *   CLR     SCL
+              *   RET
+              *****************************************************************************/
+              bit twi_put (Byte b)
+              {
+              register Byte   c;
+              ACC=b;
+              SCL_SOFT=0;
+              #ifdef ENABLE_TWI_SOFT_PULL_UP
+              SDA_SOFT=0; // Rising Edge on bi-dir port => // Force Strong & week pull-up
+              #endif
+              for (c=8;c;c--)
+                {
+                ACC<<=1;
+                SDA_SOFT=CY;
+                Twi_level_delay();
+                SCL_SOFT=1;
+                Twi_level_delay();
+                while (!SCL_SOFT); // basic TWI handshake / flow-control
+                SCL_SOFT=0;
+                }
+              #ifdef ENABLE_TWI_SOFT_PULL_UP
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 13  
+
+              SDA_SOFT=0; // Rising Edge on bi-dir port => // Force Strong & week pull-up
+              #endif
+              SDA_SOFT=1;
+              Twi_level_delay();
+              SCL_SOFT=1;
+              Twi_level_delay();
+              CY=SDA_SOFT;
+              SCL_SOFT=0;
+              return !CY;
+              }
+              
+              
+              /*F**************************************************************************
+              * NAME: twi_get 
+              *----------------------------------------------------------------------------
+              * PARAMS:
+              * return: byte receive
+              *----------------------------------------------------------------------------
+              * PURPOSE: 
+              * Receive a byte and generate ACK through software TWI
+              * The received byte is put into ACC
+              *----------------------------------------------------------------------------
+              * NOTE: ASM expected source code like
+              * get_twi:
+              *   MOV     R2,#8       ;Receive 8 bits
+              *   CLR     A
+              *   SETB    SDA         ;SDA port entry mode
+              * getc1:
+              *   SETB    SCL
+              *   JNB     SCL, $
+              *   MOV     C,SDA       ;get next bit
+              *   RLC     A           ;Move next bit into carry
+              *   CLR     SCL
+              *   DJNZ    R2,getc1    ;write 8 bits
+              *   CLR     SDA         ;generate ACK
+              *   SETB    SCL
+              *   NOP
+              *   NOP
+              *   NOP
+              *   CLR     SCL
+              *   SETB    SDA
+              *   RET
+              *****************************************************************************/
+              Byte twi_get (void)
+              {
+              register Byte   c;
+              ACC=0;
+              SDA_SOFT=1;
+              for (c=8;c;c--)
+                {
+                ACC<<=1;
+                #ifdef ENABLE_TWI_SOFT_PULL_UP
+                SDA_SOFT=0; // Rising Edge on bi-dir port =>
+                SDA_SOFT=1; // Force Strong & week pull-up
+                #endif
+                Twi_level_delay();
+                SCL_SOFT=1;
+                Twi_level_delay();
+                while (!SCL_SOFT); // basic TWI handshake / flow-control
+                if (SDA_SOFT) ACC++;
+                SCL_SOFT=0;
+                }
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 14  
+
+              c=ACC;
+              SDA_SOFT=0;
+              Twi_level_delay();
+              SCL_SOFT=1;
+              _nop_();
+              _nop_();
+              _nop_();
+              Twi_level_delay();
+              SCL_SOFT=0;
+              SDA_SOFT=1;
+              return c;
+              }
+              
+              
+              
+              /*F**************************************************************************
+              * NAME: twi_get_nack
+              *----------------------------------------------------------------------------
+              * PARAMS:
+              * return: byte receive
+              *----------------------------------------------------------------------------
+              * PURPOSE: 
+              * Receive a byte and generate NACK through software TWI
+              * The received byte is put into ACC
+              *****************************************************************************/
+              Byte twi_get_nack (void)
+              {
+              register Byte   c;
+              
+              ACC=0;
+              SDA_SOFT=1;
+              for (c=8;c;c--)
+                {
+                ACC<<=1;
+                #ifdef ENABLE_TWI_SOFT_PULL_UP
+                SDA_SOFT=0; // Rising Edge on bi-dir port =>
+                SDA_SOFT=1; // Force Strong & week pull-up
+                #endif
+                Twi_level_delay();
+                SCL_SOFT=1;
+                Twi_level_delay();
+                while (!SCL_SOFT); // basic TWI handshake / flow-control
+                if (SDA_SOFT) ACC++;
+                SCL_SOFT=0;
+                }
+              c=ACC;
+              #ifdef ENABLE_TWI_SOFT_PULL_UP
+              SDA_SOFT=0; // Rising Edge on bi-dir port => // Force Strong & week pull-up
+              #endif
+              SDA_SOFT=1;
+              Twi_level_delay();
+              SCL_SOFT=1;
+              _nop_();
+              _nop_();
+              _nop_();
+              Twi_level_delay();
+              SCL_SOFT=0;
+              return c;
+              }
+              
+              bit twi_open (unsigned char slave_addr, bit rw)
+              {
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 15  
+
+              twi_start();
+              slave_addr<<=1;
+              if (rw==TWI_READ) slave_addr++;
+              return twi_put (slave_addr);
+              }
+              
+              unsigned char twi_send_message_polling ( unsigned char slave_addr,bit rw, Length_TWI_frame nbbytes, unsign
+             -ed char *info )
+              {
+              if (!twi_open(slave_addr,rw))
+                {
+                twi_stop();
+                return TWI_HOST_ADR_NACK;
+                }
+              if (rw==TWI_WRITE) for (;nbbytes--;) twi_put(*info++);
+              else if (nbbytes)
+                { // nbbytes must be > 0 !!
+                for (;--nbbytes;info++) *info=twi_get();
+                *info=twi_get_nack();
+                }
+              twi_stop();
+              return TWI_OK;
+              }
+              
+              
+              
+              
+              Byte twi_putchar(Byte addr, Byte b)
+              {
+              register Byte status=TWI_HOST_ADR_NACK;
+              
+              twi_start();
+              if (twi_put(addr<<1)) //ok ACK receive
+                {
+                twi_put(b);
+                status=TWI_OK;
+                }
+              twi_stop();
+              return status;
+              }
+              
+              
+              Uint16 twi_getchar(Byte addr)
+              {
+              register Union16 ret; // b[0]=status b[1]=data
+              
+              twi_start();
+              if (twi_put(1+(addr<<1))) //ok ACK receive
+                {
+                ret.b[0]=TWI_OK;
+                ret.b[1]=twi_get_nack();
+                }
+              else ret.b[0]=TWI_HOST_ADR_NACK;
+              twi_stop();
+              return ret.w;
+              }
+              #endif
+ 910          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    646    ----
+C51 COMPILER V9.52.0.0   TWI_LIB                                                           09/28/2014 17:32:18 PAGE 16  
+
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      7    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3      16
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1       2
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

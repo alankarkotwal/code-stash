@@ -1,0 +1,46 @@
+function outputImage = linearContrastStretchingRGB(imageName)
+
+origImage = imread(imageName);
+origImageSize = size(origImage);
+origImageR = origImage(:,:,1);
+origImageG = origImage(:,:,2);
+origImageB = origImage(:,:,3);
+
+outputImageR = double(zeros(origImageSize(1),origImageSize(2)));
+outputImageG = double(zeros(origImageSize(1),origImageSize(2)));
+outputImageB = double(zeros(origImageSize(1),origImageSize(2)));
+
+minPixelValue = double(min(min(origImageR)));
+maxPixelValue = double(max(max(origImageR)));
+
+figure
+subplot(1,3,1),imshow(origImageR)
+subplot(1,3,2),imshow(origImageG)
+subplot(1,3,3),imshow(origImageB)
+
+for i = 1:(origImageSize(1))
+    for j = 1:(origImageSize(2))
+        outputImageR(i,j) = (double(origImageR(i,j)) - minPixelValue)/(maxPixelValue - minPixelValue)*255;
+    end
+end
+ed
+
+minPixelValue = double(min(min(origImageG)));
+maxPixelValue = double(max(max(origImageG)));
+
+for i = 1:(origImageSize(1))
+    for j = 1:(origImageSize(2))
+        outputImageG(i,j) = (double(origImageG(i,j)) - minPixelValue)/(maxPixelValue - minPixelValue)*255;
+    end
+end
+
+minPixelValue = double(min(min(origImageB)));
+maxPixelValue = double(max(max(origImageB)));
+
+for i = 1:(origImageSize(1))
+    for j = 1:(origImageSize(2))
+        outputImageB(i,j) = (double(origImageB(i,j)) - minPixelValue)/(maxPixelValue - minPixelValue)*255;
+    end
+end
+
+outputImage = cat(3,outputImageR,outputImageG,outputImageB);

@@ -1,0 +1,86 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 07/30/2014 11:26:31 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN ..\exp1q2\main.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE main.asm SET(SMALL) DEBUG OBJECT(..\exp1q2\main.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 C294              1     CLR P1.4
+0002 C295              2     CLR P1.5
+0004 C296              3     CLR P1.6
+0006 C297              4     CLR P1.7
+                       5     
+0008 7581C0            6     MOV SP,#0C0H
+                       7     
+000B 7881              8     MOV R0,#0081H
+000D 7982              9     MOV R1,#0082H
+000F 76FF             10     MOV @R0,#00FFh
+0011 77FF             11     MOV @R1,#00FFh
+                      12     
+                      13     
+0013                  14     loop:
+0013 D294             15             SETB P1.4
+0015 D295             16             SETB P1.5
+0017 D296             17             SETB P1.6
+0019 D297             18             SETB P1.7
+001B 7E45             19             MOV R6,#45H
+001D                  20             callDelay1:
+001D 120033           21                     LCALL delay1
+0020 DEFB             22                     DJNZ R6,callDelay1
+0022 C294             23             CLR P1.4
+0024 C295             24             CLR P1.5
+0026 C296             25             CLR P1.6
+0028 C297             26             CLR P1.7
+002A 7E45             27             MOV R6,#45H
+002C                  28             callDelay2:
+002C 120033           29                     LCALL delay1
+002F DEFB             30                     DJNZ R6,callDelay2
+0031 80E0             31             JMP loop
+                      32     
+                      33     
+0033                  34     delay1:
+0033 E6               35             MOV A,@R0
+0034 FB               36             MOV R3,A
+0035 E7               37             MOV A,@R1
+0036 FA               38             MOV R2,A
+0037 EB               39             MOV A,R3
+0038                  40             loop11:
+0038 B50206           41                     CJNE A,002H,loadFF
+003B                  42                     loop12:
+003B DAFE             43                             DJNZ R2,loop12
+003D DBF9             44                             DJNZ R3,loop11
+003F 8004             45             JMP return
+0041                  46             loadFF:
+0041 7AFF             47                     MOV R2,#00FFH
+0043 80F6             48                     JMP loop12
+                      49                     
+0045 22               50             return: RET
+                      51     
+                      52     
+                      53     END
+A51 MACRO ASSEMBLER  MAIN                                                                 07/30/2014 11:26:31 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CALLDELAY1 . . . .  C ADDR   001DH   A   
+CALLDELAY2 . . . .  C ADDR   002CH   A   
+DELAY1 . . . . . .  C ADDR   0033H   A   
+LOADFF . . . . . .  C ADDR   0041H   A   
+LOOP . . . . . . .  C ADDR   0013H   A   
+LOOP11 . . . . . .  C ADDR   0038H   A   
+LOOP12 . . . . . .  C ADDR   003BH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+RETURN . . . . . .  C ADDR   0045H   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

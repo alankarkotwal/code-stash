@@ -1,0 +1,13 @@
+function resizeImage(imageName, shrinkFactor)
+
+origImage=imread(imageName);
+origImageSize=size(origImage);
+
+shrunkImageSize=[floor(origImageSize(1)/shrinkFactor) floor(origImageSize(2)/shrinkFactor)];
+shrunkImage=zeros(shrunkImageSize(1),shrunkImageSize(2));
+
+for i=[1:shrunkImageSize(1)]
+    for j=[]
+end
+
+disp(shrunkImageSize);

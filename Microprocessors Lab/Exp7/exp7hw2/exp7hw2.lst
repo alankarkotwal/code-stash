@@ -1,0 +1,117 @@
+A51 MACRO ASSEMBLER  EXP7HW2                                                              09/21/2014 19:58:20 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp7\exp7hw2\exp7hw2.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp7\exp7hw2\e
+                      xp7hw2.asm SET(SMALL) DEBUG PRINT(.\exp7hw2.lst) OBJECT(Z:\home\aloo\Documents\Acads\Sem5\EE337 Mi
+                      croprocessors Lab\Exp7\exp7hw2\exp7hw2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; Experiment 7 Homework Question 2
+                       2     ; Write the code for repeatedly reading a 10 bit word from the ADC, formatting it ac-
+                       3     ; cording to the requirements of the 12 bit DAC and writing it to the DAC through the
+                       4     ; SPI interface.
+                       5     
+  00C3                 6     SPCON  EQU 0C3h
+  00C4                 7     SPSTA  EQU 0C4h
+  00C5                 8     SPDAT  EQU 0C5h
+  00A2                 9     SS_ADC EQU P2.2
+  00A0                10     SS_DAC EQU P2.0
+                      11     
+0000                  12     ORG 000h
+0000 020100           13     LJMP start
+0100                  14     ORG 100h
+0100                  15     start:
+                      16     
+0100 75C37F           17     MOV SPCON,#01111111b
+                      18     
+0103                  19     loop:
+0103 C2A2             20             CLR SS_ADC
+0105 75C501           21             MOV SPDAT,#01h
+0108                  22             stop1:
+0108 A8C4             23                     MOV R0,SPSTA
+010A 530080           24                     ANL 000h,#080h
+010D B880F8           25                     CJNE R0,#080h,stop1
+0110 75C580           26             MOV SPDAT,#080h
+0113                  27             stop2:
+0113 A8C4             28                     MOV R0,SPSTA
+0115 530080           29                     ANL 000h,#080h
+0118 B880F8           30                     CJNE R0,#080h,stop2
+011B E5C5             31             MOV A,SPDAT
+011D 5403             32             ANL A,#003h
+011F 23               33             RL A
+0120 23               34             RL A
+0121 4430             35             ORL A,#030h
+0123 F5F0             36             MOV B,A
+0125 75C500           37             MOV SPDAT,#000h
+0128                  38             stop3:
+0128 A8C4             39                     MOV R0,SPSTA
+012A 530080           40                     ANL 000h,#080h
+012D B880F8           41                     CJNE R0,#080h,stop3
+0130 E5C5             42             MOV A,SPDAT
+0132 F9               43             MOV R1,A
+0133 54C0             44             ANL A,#0C0h
+0135 03               45             RR A
+0136 03               46             RR A
+0137 03               47             RR A
+0138 03               48             RR A
+0139 03               49             RR A
+013A 03               50             RR A
+013B E9               51             MOV A,R1
+013C 23               52             RL A
+013D 23               53             RL A
+013E 42F0             54             ORL B,A
+0140 D2A2             55             SETB SS_ADC
+                      56             
+A51 MACRO ASSEMBLER  EXP7HW2                                                              09/21/2014 19:58:20 PAGE     2
+
+0142 C2A0             57             CLR SS_DAC
+0144 85F0C5           58             MOV SPDAT,B
+0147                  59             stop4:
+0147 A8C4             60                     MOV R0,SPSTA
+0149 530080           61                     ANL 000h,#080h
+014C B880F8           62                     CJNE R0,#080h,stop4
+014F F5C5             63             MOV SPDAT,A
+0151                  64             stop5:
+0151 A8C4             65                     MOV R0,SPSTA
+0153 530080           66                     ANL 000h,#080h
+0156 B880F8           67                     CJNE R0,#080h,stop5
+0159 D2A0             68             SETB SS_DAC
+                      69     
+015B 80A6             70             SJMP loop
+                      71     
+015D                  72     endLoop:
+015D 80FE             73             SJMP endLoop                    ; Stay here
+                      74     
+                      75     END
+A51 MACRO ASSEMBLER  EXP7HW2                                                              09/21/2014 19:58:20 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+ENDLOOP. . . . . .  C ADDR   015DH   A   
+LOOP . . . . . . .  C ADDR   0103H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+SPCON. . . . . . .  N NUMB   00C3H   A   
+SPDAT. . . . . . .  N NUMB   00C5H   A   
+SPSTA. . . . . . .  N NUMB   00C4H   A   
+SS_ADC . . . . . .  B ADDR   00A0H.2 A   
+SS_DAC . . . . . .  B ADDR   00A0H.0 A   
+START. . . . . . .  C ADDR   0100H   A   
+STOP1. . . . . . .  C ADDR   0108H   A   
+STOP2. . . . . . .  C ADDR   0113H   A   
+STOP3. . . . . . .  C ADDR   0128H   A   
+STOP4. . . . . . .  C ADDR   0147H   A   
+STOP5. . . . . . .  C ADDR   0151H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

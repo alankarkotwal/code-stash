@@ -1,0 +1,16 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\.uvproj
+Project File Date:  08/24/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling exp5hw.c...
+compiling lcd.c...
+linking...
+Program Size: data=15.1 xdata=153 code=2233
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 0 Warning(s).

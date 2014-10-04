@@ -1,0 +1,61 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\delay_exp1hw\.uvproj
+Project File Date:  07/28/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling main.asm...
+linking...
+BL51 BANKED LINKER/LOCATER V6.22 - SN: Eval Version
+COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2009
+"main.obj" 
+TO "" 
+RAMSIZE(256) 
+*** FATAL ERROR L203: EXPECTED ITEM MISSING
+    POS: 19
+    C:\KEIL\C51\BIN\BL51.EXE main.obj TO  #
+Target not created
+Build target 'Target 1'
+linking...
+BL51 BANKED LINKER/LOCATER V6.22 - SN: Eval Version
+COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2009
+"main.obj" 
+TO "" 
+RAMSIZE(256) 
+*** FATAL ERROR L203: EXPECTED ITEM MISSING
+    POS: 19
+    C:\KEIL\C51\BIN\BL51.EXE main.obj TO  #
+Target not created
+Build target 'Target 1'
+linking...
+Program Size: data=8.0 xdata=0 code=132
+creating hex file from "delay_exp2hw"...
+"delay_exp2hw" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling main.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=173
+creating hex file from "delay_exp2hw"...
+"delay_exp2hw" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling main.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=173
+creating hex file from "delay_exp2hw"...
+"delay_exp2hw" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling main.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=173
+creating hex file from "delay_exp2hw"...
+"delay_exp2hw" - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+assembling main.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=173
+creating hex file from "delay_exp2hw"...
+"delay_exp2hw" - 0 Error(s), 0 Warning(s).

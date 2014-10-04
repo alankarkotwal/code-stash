@@ -1,0 +1,5 @@
+".\delay.obj",
+".\lcd.obj",
+".\main.obj" 
+TO "exp8hw" 
+RAMSIZE(256) 

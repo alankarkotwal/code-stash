@@ -1,0 +1,106 @@
+A51 MACRO ASSEMBLER  EXP4HW2                                                              08/18/2014 12:55:41 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN ..\exp4hw2\exp4hw2.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE ..\exp4hw2\exp4hw2.asm SET(SMALL) DEBUG PRINT(.\exp4hw2.lst) OBJECT(..\exp
+                      4hw2\exp4hw2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; Experiment 4 Homework Problem 2
+                       2     ; Write a program which will control the duty cycle of ON and OFF time of any of the
+                       3     ; LEDs on the board. The ON time should be the 4 bit number read from slide switches
+                       4     ; in milliseconds. The sum of ON and OFF times should always be 20 milliseconds.
+                       5     
+  0090                 6     port EQU 090h
+                       7     
+0000                   8     ORG 000h
+0000 020100            9     LJMP start
+000B                  10     ORG 00Bh
+000B 120118           11     LCALL timer0_isr
+000E 32               12     RETI
+0100                  13     ORG 100h
+0100                  14     start:
+                      15     
+0100 7581C0           16     MOV SP,#0C0h
+                      17     
+0103 75900F           18     MOV     port,#00Fh                              ; Set switches as inputs, LEDs as outputs.
+                      19     
+0106 D2AF             20     SETB EA                                         ; Interrupt and timer settings.
+0108 D2A9             21     SETB ET0
+010A 758901           22     MOV TMOD,#001h
+010D 758CF8           23     MOV TH0,#0F8h
+0110 758A2F           24     MOV TL0,#02Fh
+0113 D28C             25     SETB TR0                                        ; Start timer for first run.
+                      26     
+0115 C3               27     CLR C                                           ; We'll use carry for indicating whether th
+                             e program is in the
+                      28                                                             ; 'off' state or 'on' state of the 
+                             duty cycle.
+                      29     
+0116                  30     loop:
+0116 80FE             31             SJMP loop
+                      32     
+0118                  33     timer0_isr:
+0118 DD1E             34             DJNZ R5,skip                    ; Check if time is up.
+011A                  35             change:
+011A E590             36                     MOV A,port                      ; Read switches.
+011C 540F             37                     ANL A,#00Fh
+011E 6012             38                     JZ zero
+0120 6390F0           39                     XRL port,#0F0h          ; Toggle LEDs.
+0123 B3               40                     CPL C                           ; Complement state.
+0124 5003             41                     JNC off
+0126                  42                     on:
+0126 FD               43                             MOV R5,A                ; If on, set the value read as the delay.
+0127 800F             44                     SJMP skip
+0129                  45                     off:
+0129 F5F0             46                             MOV B,A
+012B 7414             47                             MOV A,#014h
+012D 95F0             48                             SUBB A,B
+012F FD               49                             MOV R5,A                ; If off, set 20-value read as delay.
+0130 8006             50                     SJMP skip
+0132                  51             zero:
+0132 C3               52                     CLR C
+0133 53900F           53                     ANL port,#00Fh
+0136 7D14             54                     MOV R5,#014h
+0138                  55             skip:
+A51 MACRO ASSEMBLER  EXP4HW2                                                              08/18/2014 12:55:41 PAGE     2
+
+0138 758CF8           56                     MOV TH0,#0F8h
+013B 758A2F           57                     MOV TL0,#02Fh
+013E D28C             58                     SETB TR0
+0140 22               59     RET
+                      60     
+                      61     END
+A51 MACRO ASSEMBLER  EXP4HW2                                                              08/18/2014 12:55:41 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+CHANGE . . . . . .  C ADDR   011AH   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ET0. . . . . . . .  B ADDR   00A8H.1 A   
+LOOP . . . . . . .  C ADDR   0116H   A   
+OFF. . . . . . . .  C ADDR   0129H   A   
+ON . . . . . . . .  C ADDR   0126H   A   
+PORT . . . . . . .  N NUMB   0090H   A   
+SKIP . . . . . . .  C ADDR   0138H   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+START. . . . . . .  C ADDR   0100H   A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TIMER0_ISR . . . .  C ADDR   0118H   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+ZERO . . . . . . .  C ADDR   0132H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

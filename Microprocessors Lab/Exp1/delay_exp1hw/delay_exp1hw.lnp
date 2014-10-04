@@ -1,0 +1,3 @@
+".\main.obj" 
+TO "delay_exp1hw.exe" 
+RAMSIZE(256) 

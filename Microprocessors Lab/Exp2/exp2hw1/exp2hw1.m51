@@ -1,0 +1,79 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/01/2014  17:11:05  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE C:\users\aloo\My Documents\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2hw1\main.obj
+>>  TO C:\users\aloo\My Documents\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2hw1\exp2hw1 PRINT (.\exp2hw1.m
+>> 51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  C:\users\aloo\My Documents\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2hw1\main.obj (MAIN)
+
+
+LINK MAP OF MODULE:  C:\users\aloo\My Documents\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2hw1\exp2hw1 (MAI
+>> N)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0128H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  C:\users\aloo\My Documents\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2hw1\exp2hw1 
+>> (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  D:00F0H         SYMBOL        B
+  C:0121H         SYMBOL        BACK
+  C:0114H         SYMBOL        CONVERTNIBBLE
+  C:010AH         SYMBOL        CONVERTTOHEX
+  C:0108H         SYMBOL        ENDLOOP
+  C:011FH         SYMBOL        INLETTERS
+  C:011BH         SYMBOL        INNUMBERS
+  D:0081H         SYMBOL        SP
+  C:0100H         SYMBOL        START
+  C:0000H         LINE#         2
+  C:0100H         LINE#         6
+  C:0103H         LINE#         7
+  C:0105H         LINE#         8
+  C:0108H         LINE#         11
+  C:010AH         LINE#         14
+  C:010BH         LINE#         15
+  C:010EH         LINE#         16
+  C:0110H         LINE#         17
+  C:0111H         LINE#         18
+  C:0112H         LINE#         19
+  C:0114H         LINE#         21
+  C:0116H         LINE#         22
+  C:0117H         LINE#         23
+  C:0118H         LINE#         24
+  C:0119H         LINE#         25
+  C:011BH         LINE#         27
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/01/2014  17:11:05  PAGE 2
+
+
+  C:011DH         LINE#         28
+  C:011FH         LINE#         30
+  C:0121H         LINE#         32
+  C:0122H         LINE#         33
+  C:0124H         LINE#         34
+  C:0125H         LINE#         35
+  C:0127H         LINE#         36
+  -------         ENDMOD        MAIN
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 002BH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=296
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,177 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/01/2014  14:18:17  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE ..\exp6q\exp6q.obj TO ..\exp6q\exp6q PRINT (.\exp6q.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  ..\exp6q\exp6q.obj (EXP6Q)
+
+
+LINK MAP OF MODULE:  ..\exp6q\exp6q (EXP6Q)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     05B2H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  ..\exp6q\exp6q (EXP6Q)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXP6Q
+  D:00F0H         SYMBOL        B
+  C:0598H         SYMBOL        DELAY_LCD
+  B:00A8H.7       SYMBOL        EA
+  C:0539H         SYMBOL        ENDLOOP
+  B:00A8H.4       SYMBOL        ES
+  C:0578H         SYMBOL        LCD_COMMAND
+  D:00A0H         SYMBOL        LCD_DATA
+  B:0080H.2       SYMBOL        LCD_EN
+  C:053BH         SYMBOL        LCD_INIT
+  B:0080H.0       SYMBOL        LCD_RS
+  B:0080H.1       SYMBOL        LCD_RW
+  C:0587H         SYMBOL        LCD_SENDDATA
+  C:0528H         SYMBOL        LOOP
+  C:059CH         SYMBOL        LOOP1
+  C:059AH         SYMBOL        LOOP2
+  D:0080H         SYMBOL        P0
+  D:0090H         SYMBOL        P1
+  D:00A0H         SYMBOL        P2
+  D:00D0H         SYMBOL        PSW
+  C:003DH         SYMBOL        RECIEVE
+  B:0098H.4       SYMBOL        REN
+  C:0042H         SYMBOL        RETURNFROMINTERRUPT
+  B:0098H.0       SYMBOL        RI
+  D:0099H         SYMBOL        SBUF
+  D:0098H         SYMBOL        SCON
+  C:05A1H         SYMBOL        SERIAL_STRING
+  C:0500H         SYMBOL        START
+  C:0537H         SYMBOL        START_TX
+  B:0098H.3       SYMBOL        TB8
+  D:008DH         SYMBOL        TH1
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/01/2014  14:18:17  PAGE 2
+
+
+  B:0098H.1       SYMBOL        TI
+  D:0089H         SYMBOL        TMOD
+  B:0088H.6       SYMBOL        TR1
+  C:0026H         SYMBOL        TRANSMIT
+  C:0000H         LINE#         22
+  C:0023H         LINE#         24
+  C:0026H         LINE#         26
+  C:0027H         LINE#         27
+  C:0028H         LINE#         28
+  C:002BH         LINE#         29
+  C:002DH         LINE#         30
+  C:002FH         LINE#         31
+  C:0030H         LINE#         32
+  C:0033H         LINE#         33
+  C:0034H         LINE#         34
+  C:0035H         LINE#         35
+  C:0037H         LINE#         36
+  C:0039H         LINE#         37
+  C:003BH         LINE#         38
+  C:003DH         LINE#         40
+  C:003FH         LINE#         41
+  C:0042H         LINE#         43
+  C:0044H         LINE#         44
+  C:0046H         LINE#         45
+  C:0500H         LINE#         49
+  C:0502H         LINE#         51
+  C:0504H         LINE#         52
+  C:0506H         LINE#         53
+  C:0508H         LINE#         54
+  C:050AH         LINE#         55
+  C:050CH         LINE#         56
+  C:050EH         LINE#         58
+  C:0511H         LINE#         59
+  C:0514H         LINE#         61
+  C:0516H         LINE#         62
+  C:0518H         LINE#         64
+  C:051BH         LINE#         65
+  C:051DH         LINE#         67
+  C:051FH         LINE#         69
+  C:0522H         LINE#         71
+  C:0524H         LINE#         72
+  C:0526H         LINE#         73
+  C:0528H         LINE#         76
+  C:052AH         LINE#         77
+  C:052CH         LINE#         78
+  C:052EH         LINE#         79
+  C:0530H         LINE#         80
+  C:0533H         LINE#         81
+  C:0535H         LINE#         82
+  C:0537H         LINE#         86
+  C:0539H         LINE#         89
+  C:053BH         LINE#         94
+  C:053EH         LINE#         95
+  C:0540H         LINE#         96
+  C:0542H         LINE#         97
+  C:0544H         LINE#         98
+  C:0546H         LINE#         99
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/01/2014  14:18:17  PAGE 3
+
+
+  C:0548H         LINE#         100
+  C:054AH         LINE#         102
+  C:054DH         LINE#         103
+  C:054FH         LINE#         104
+  C:0551H         LINE#         105
+  C:0553H         LINE#         106
+  C:0555H         LINE#         107
+  C:0557H         LINE#         109
+  C:0559H         LINE#         110
+  C:055CH         LINE#         111
+  C:055EH         LINE#         112
+  C:0560H         LINE#         113
+  C:0562H         LINE#         114
+  C:0564H         LINE#         115
+  C:0566H         LINE#         117
+  C:0568H         LINE#         119
+  C:056BH         LINE#         120
+  C:056DH         LINE#         121
+  C:056FH         LINE#         122
+  C:0571H         LINE#         123
+  C:0573H         LINE#         124
+  C:0575H         LINE#         126
+  C:0577H         LINE#         128
+  C:0578H         LINE#         132
+  C:057AH         LINE#         133
+  C:057CH         LINE#         134
+  C:057EH         LINE#         135
+  C:0580H         LINE#         136
+  C:0582H         LINE#         137
+  C:0584H         LINE#         138
+  C:0586H         LINE#         140
+  C:0587H         LINE#         143
+  C:0589H         LINE#         144
+  C:058BH         LINE#         145
+  C:058DH         LINE#         146
+  C:058FH         LINE#         147
+  C:0591H         LINE#         148
+  C:0593H         LINE#         149
+  C:0595H         LINE#         150
+  C:0597H         LINE#         151
+  C:0598H         LINE#         155
+  C:059AH         LINE#         156
+  C:059CH         LINE#         157
+  C:059EH         LINE#         158
+  C:05A0H         LINE#         159
+  -------         ENDMOD        EXP6Q
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00D9H BYTE (10%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=1458
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

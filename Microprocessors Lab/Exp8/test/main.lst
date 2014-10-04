@@ -1,0 +1,265 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              09/29/2014 16:37:44 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.exe Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.
+                    -c BROWSE DEBUG OBJECTEXTEND PRINT(.\main.lst) TABS(2) OBJECT(Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab
+                    -\Exp8\test\main.obj)
+
+line level    source
+
+   1          #include <stdio.h>
+   2          #include "lcd.h"
+   3          
+   4          typedef unsigned char uchar;
+   5          
+   6          sfr SSCON = 0x93;
+   7          sfr SSCS  = 0x94;
+   8          sfr SSDAT = 0x95;
+   9          sfr IEN=0xB1;
+  10          
+  11          code uchar* days[]={"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
+  12          code uchar* months[]={"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
+  13          
+  14          #define CR2  7
+  15          #define SSIE 6
+  16          #define STA  5
+  17          #define STO  4
+  18          #define SI   3
+  19          #define AA   2
+  20          #define CR1  1
+  21          #define CR0  0
+  22          
+  23          char twi_address=0x68;                          // Variable for TWI address
+  24          
+  25          void twi_init();
+  26          void twi_write(char*, int);
+  27          void twi_read(char*, int);
+  28          void twi_close();
+  29          void ds1307_write(char*);
+  30          void ds1307_read(int*);
+  31          
+  32          int array[8];
+  33          char str[8];
+  34          char write[]={0x00, 0x32, 0x16, 0x01, 0x29, 0x09, 0x14, 0x00};
+  35          int ind;
+  36          
+  37          int main() {
+  38   1        init_lcd();
+  39   1        twi_init();
+  40   1        ds1307_write(write);
+  41   1        while(1) {
+  42   2          ds1307_read(array);
+  43   2          lcd_command(LCD_first);
+  44   2          /*for(ind=0;ind<8;ind++) {
+  45   2            sprintf(str, "%2x", array[ind]);
+  46   2            lcd_string(str);
+  47   2          }*/
+  48   2          lcd_string(days[array[03]-1]);
+  49   2          lcd_string(", ");
+  50   2          sprintf(str, "%2x", array[04]);
+  51   2          lcd_string(str);
+  52   2          lcd_string(" ");
+  53   2          lcd_string(months[array[05]-1]);
+C51 COMPILER V9.52.0.0   MAIN                                                              09/29/2014 16:37:44 PAGE 2   
+
+  54   2          lcd_string(" 20");
+  55   2          sprintf(str, "%2x", array[06]);
+  56   2          lcd_string(str);
+  57   2          lcd_command(LCD_last);
+  58   2          lcd_string("    ");
+  59   2          sprintf(str, "%2x", array[02]&~(1<<6));
+  60   2          if(array[02]&~(1<<6)<0x10) lcd_string("0");
+  61   2          lcd_string(str);
+  62   2          lcd_string(":");
+  63   2          sprintf(str, "%2x", array[01]);
+  64   2          if(array[01]<0x10) lcd_string("0");
+  65   2          lcd_string(str);
+  66   2          lcd_string(":");
+  67   2          sprintf(str, "%x", array[00]);
+  68   2          if(array[00]<0x10) lcd_string("0");
+  69   2          lcd_string(str);
+  70   2        }
+  71   1      }
+  72          
+  73          void ds1307_write(char* arr) {
+  74   1        int i;                                        // Index for reading array
+  75   1        SSCON &= ~(1<<STO);                           // Clear impending STOP 
+  76   1        SSCON |= (1<<STA);                            // Send a START
+  77   1        SSCON &= ~(1<<SI);                            // Clear SI
+  78   1        while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+  79   1        SSCON &= ~(1<<STA);                           // Clear START condition
+  80   1        SSDAT = (twi_address<<1) | 0;                 // Load address and write direction bit 
+  81   1        SSCON &= ~(1<<SI);                            // Clear SI
+  82   1        while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+  83   1        SSDAT = 0x00;                                 // Send DS1307 read location
+  84   1        SSCON &= ~(1<<SI);                            // Clear SI
+  85   1        while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+  86   1        for(i=0;i<8;i++) {
+  87   2          SSDAT = arr[i];                             // Send setting byte
+  88   2          SSCON &= ~(1<<SI);                          // Clear SI
+  89   2          while(!(SSCON&(1<<SI)));                    // Wait for SI to be set
+  90   2        }
+  91   1        SSCON |= 1<<STO;                              // Finally send a STOP
+  92   1        SSCON &= ~(1<<SI);                            // Clear SI
+  93   1      }
+  94          
+  95          void ds1307_read(int* arr) {                    // Make sure you allocate enough memory for arr
+  96   1        int i;                                        // Index for reading array
+  97   1        SSCON &= ~(1<<STO);                           // Clear impending STOP
+  98   1        SSCON |= (1<<STA);                            // Send a START
+  99   1        while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+ 100   1        SSCON &= ~(1<<STA);                           // Clear START condition
+ 101   1        SSDAT = (twi_address<<1) | 0;                 // Load address and write direction bit 
+ 102   1        SSCON &= ~(1<<SI);                            // Clear SI
+ 103   1        while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+ 104   1        SSDAT = 0x00;                                 // Send DS1307 read location
+ 105   1        SSCON &= ~(1<<SI);                            // Clear SI
+ 106   1        while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+ 107   1        SSCON |= (1<<STA);                            // Send repeated START
+ 108   1        SSCON &= ~(1<<SI);                            // Clear SI
+ 109   1        while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+ 110   1        SSCON &= ~(1<<STA);                           // Clear START condition
+ 111   1        SSDAT = (twi_address<<1) | 1;                 // Load address and read direction bit
+ 112   1        SSCON &= ~(1<<SI);                            // Clear SI
+ 113   1        while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+ 114   1        SSCON |= (1<<AA);                             // Assert acknowledgement
+ 115   1        SSCON &= ~(1<<SI);                            // Clear SI
+C51 COMPILER V9.52.0.0   MAIN                                                              09/29/2014 16:37:44 PAGE 3   
+
+ 116   1        for(i=0;i<7;i++) {
+ 117   2          while(!(SSCON&(1<<SI)));                    // Wait for SI to be set
+ 118   2          arr[i] = SSDAT;                             // Read recieved
+ 119   2          if(i==6) SSCON &= ~(1<<AA);                 // Return NOT ACK for last data byte
+ 120   2          SSCON &= ~(1<<SI);                          // Clear SI
+ 121   2        }
+ 122   1        while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+ 123   1        arr[7] = SSDAT;                               // Read in last byte ...
+ 124   1        SSCON |= (1<<STO);                            // ... and send a STOP
+ 125   1        SSCON &= ~(1<<SI);                            // Clear SI
+ 126   1      }
+ 127          
+ 128          // General TWI routines. Use for debugging.
+ 129          
+ 130          void twi_init() {
+ 131   1        //EA=1;                                       // Enable global interrupts
+ 132   1        //IEN |= 0x02;                                // Enable serial interrupts
+ 133   1      
+ 134   1        SSCON |= (1<<CR2);                            // Set bit frequency to 25 kHz
+ 135   1        SSCON &= ~(1<<STA | 1<<STO | 1<<SI | 1<<AA);  // Clearing STA, STO, SI, disable slave mode AA
+ 136   1        SSCON |= (1<<SSIE);                           // Enable TWI
+ 137   1      }
+ 138          
+ 139          /*void twi_write(char* arr, int len) {          // Read array arr of length len from the TWI bus
+ 140            int i;                                        // Index for sending array
+ 141            SSCON |= (1<<STA);                            // Send a START
+ 142            while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+ 143            SSCON &= ~(1<<SI);                            // Clear SI
+ 144            SSCON &= ~(1<<STA);                           // Clear START condition
+ 145            SSDAT = (twi_address<<1) | 0;                 // Load address and write direction bit 
+ 146            while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+ 147            SSCON &= ~(1<<SI);                            // Clear SI
+ 148            for(i=0;i<len;i++) {
+ 149              SSDAT=arr[i];                               // Send array element
+ 150              while(!(SSCON&(1<<SI)));                    // Wait for SI to be set
+ 151              SSCON &= ~(1<<SI);                          // Clear SI
+ 152            }
+ 153            SSCON |= (1<<STO);                            // Send a STOP to stop TWI
+ 154            while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+ 155            while(SSCON&(~(1<<STO)));                     // Wait for STO to be cleared
+ 156            SSCON &= ~(1<<SI);                            // Clear SI
+ 157          }
+ 158          
+ 159          void twi_read(char* arr, int len) {             // Write array arr of length len on the TWI bus
+ 160            int i;                                        // Index for sending array
+ 161            SSCON |= (1<<STA);                            // Send a START
+ 162            while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+ 163            SSCON &= ~(1<<SI);                            // Clear SI
+ 164            while(!(SSCON&(1<<SI)));                      // Wait for SI to be set, no SSDAT action means repeated START is tran
+             -smitted
+ 165            SSCON &= ~(1<<SI);                            // Clear SI
+ 166            SSCON &= ~(1<<STA);                           // Clear START condition
+ 167            SSDAT = (twi_address<<1) | 1;                 // Load address and read direction bit  
+ 168            while(!(SSCON&(1<<SI)));                      // Wait for SI to be set
+ 169            SSCON &= ~(1<<SI);                            // Clear SI
+ 170            SSCON |= (1<<AA);                             // Assert acknowledgement get first byte and return ACK
+ 171            for(i=0;i<len-1;i++) {
+ 172              arr[i]=SSDAT;
+ 173            }
+ 174            SSCON &= ~(1<<AA);                            // Clear acknowledgement to get last byte and return NOT ACK
+ 175            SSCON &= ~(1<<STO);                           // Send a STOP to stop TWI
+ 176          }
+C51 COMPILER V9.52.0.0   MAIN                                                              09/29/2014 16:37:44 PAGE 4   
+
+ 177          
+ 178          void twi_close() {
+ 179            SSCON &= 0x00;
+ 180          } */
+ 181          
+ 182          // In case you want to use interrupts:
+ 183          /*void twi_interrupt() interrupt 8 using 1 {      // Interrupt vectored by SSCON::SI
+ 184            switch(SSCS) {
+ 185              case 0x08: {                                // START condition transmitted
+ 186                SSCON &= ~(1<<STA);                       // Clear START
+ 187                SSDAT = (twi_address<<1) | twi_rw;        // Load SSDAT with address and direction
+ 188                SSCON |= (1<<AA);                         // Force Acknowledge
+ 189                twi_start=1;                              // I transmitted a START
+ 190                break;
+ 191              }
+ 192              case 0x10: {                                // Repeated START condition transmitted
+ 193                SSDAT = (twi_address<<1) | twi_rw;        // Load SSDAT with address and direction
+ 194                break;
+ 195              }
+ 196              case 0x18: {                                // Repeated START condition transmitted
+ 197                SSDAT = (twi_address<<1) | twi_rw;        // Load SSDAT with address and direction
+ 198                break;
+ 199              }
+ 200              case 0x20: {                                // Repeated START condition transmitted
+ 201                SSDAT = (twi_address<<1) | twi_rw;        // Load SSDAT with address and direction
+ 202                break;
+ 203              }
+ 204              case 0x38: {                                // Repeated START condition transmitted
+ 205                SSDAT = (twi_address<<1) | twi_rw;        // Load SSDAT with address and direction
+ 206                break;
+ 207              }
+ 208            }
+ 209          }
+ 210          
+ 211          void twi_write(char* arr, int len) {
+ 212            int index;
+ 213            twi_rw=0;                                     // We're writing
+ 214            for(index=0;index<len;index++) {
+ 215              SSCON |= (1<<STA);                          // Send a START
+ 216              twi_busy=1;                                 // TWI is busy
+ 217              twi_data=arr[index];                        // Set byte to send
+ 218              while(twi_busy);                            // Wait till sent
+ 219            }
+ 220          }
+ 221          
+ 222          void twi_read(char* arr, int len) {             // @TODO
+ 223            int index;
+ 224            twi_rw=1;
+ 225            for(index=0;index<len;index++) {
+ 226              SSCON |= (1<<STA);
+ 227              twi_busy=1;
+ 228              twi_data=arr[index];
+ 229              while(twi_busy);
+ 230            }
+ 231          }*/
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    651    ----
+   CONSTANT SIZE    =    158    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+C51 COMPILER V9.52.0.0   MAIN                                                              09/29/2014 16:37:44 PAGE 5   
+
+   DATA SIZE        =     35       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

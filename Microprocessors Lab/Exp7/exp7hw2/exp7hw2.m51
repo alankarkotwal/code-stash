@@ -1,0 +1,105 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/21/2014  19:58:20  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp7\exp7hw2\exp7hw2.obj TO Z:\home
+>> \aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp7\exp7hw2\exp7hw2 PRINT (.\exp7hw2.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp7\exp7hw2\exp7hw2.obj (EXP7HW2)
+
+
+LINK MAP OF MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp7\exp7hw2\exp7hw2 (EXP7HW2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     015FH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp7\exp7hw2\exp7hw2 (EXP7HW2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXP7HW2
+  D:00F0H         SYMBOL        B
+  C:015DH         SYMBOL        ENDLOOP
+  C:0103H         SYMBOL        LOOP
+  D:00A0H         SYMBOL        P2
+  N:00C3H         SYMBOL        SPCON
+  N:00C5H         SYMBOL        SPDAT
+  N:00C4H         SYMBOL        SPSTA
+  B:00A0H.2       SYMBOL        SS_ADC
+  B:00A0H.0       SYMBOL        SS_DAC
+  C:0100H         SYMBOL        START
+  C:0108H         SYMBOL        STOP1
+  C:0113H         SYMBOL        STOP2
+  C:0128H         SYMBOL        STOP3
+  C:0147H         SYMBOL        STOP4
+  C:0151H         SYMBOL        STOP5
+  C:0000H         LINE#         13
+  C:0100H         LINE#         17
+  C:0103H         LINE#         20
+  C:0105H         LINE#         21
+  C:0108H         LINE#         23
+  C:010AH         LINE#         24
+  C:010DH         LINE#         25
+  C:0110H         LINE#         26
+  C:0113H         LINE#         28
+  C:0115H         LINE#         29
+  C:0118H         LINE#         30
+  C:011BH         LINE#         31
+  C:011DH         LINE#         32
+  C:011FH         LINE#         33
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/21/2014  19:58:20  PAGE 2
+
+
+  C:0120H         LINE#         34
+  C:0121H         LINE#         35
+  C:0123H         LINE#         36
+  C:0125H         LINE#         37
+  C:0128H         LINE#         39
+  C:012AH         LINE#         40
+  C:012DH         LINE#         41
+  C:0130H         LINE#         42
+  C:0132H         LINE#         43
+  C:0133H         LINE#         44
+  C:0135H         LINE#         45
+  C:0136H         LINE#         46
+  C:0137H         LINE#         47
+  C:0138H         LINE#         48
+  C:0139H         LINE#         49
+  C:013AH         LINE#         50
+  C:013BH         LINE#         51
+  C:013CH         LINE#         52
+  C:013DH         LINE#         53
+  C:013EH         LINE#         54
+  C:0140H         LINE#         55
+  C:0142H         LINE#         57
+  C:0144H         LINE#         58
+  C:0147H         LINE#         60
+  C:0149H         LINE#         61
+  C:014CH         LINE#         62
+  C:014FH         LINE#         63
+  C:0151H         LINE#         65
+  C:0153H         LINE#         66
+  C:0156H         LINE#         67
+  C:0159H         LINE#         68
+  C:015BH         LINE#         70
+  C:015DH         LINE#         73
+  -------         ENDMOD        EXP7HW2
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0062H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=351
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,153 @@
+A51 MACRO ASSEMBLER  EXP4Q2                                                               08/18/2014 14:28:30 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN ..\exp4q2\exp4q2.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE ..\exp4q2\exp4q2.asm SET(SMALL) DEBUG PRINT(.\exp4q2.lst) OBJECT(..\exp4q2
+                      \exp4q2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; Experiment 4 Labwork Problem 2
+                       2     ; The DC motor drives a slotted wheel, which interrupts an infra red light beam from an
+                       3     ; LED to a photo detector. The circuit for this has been given in a document uploaded
+                       4     ; to moodle. By counting the number of light interruptions per second, the speed of the
+                       5     ; DC motor can be estimated. Configure T0 as a counter to count the number of pulses
+                       6     ; produced by the toothed wheel on the DC motor. Use T1 to count these pulses for
+                       7     ; exactly 1 second. Drive the DC motor using an H bridge with duty cycle controlled as
+                       8     ; in the home work problem-2. Display the 4 most significant digits of this count on the
+                       9     ; LEDs on the board.
+                      10     
+  0090                11     port EQU 090h
+  0080                12     pin EQU P0.0
+                      13     
+0000                  14     ORG 000h
+0000 020100           15     LJMP start
+001B                  16     ORG 01Bh
+001B 12012A           17     LCALL timer1_isr
+001E 32               18     RETI
+0100                  19     ORG 100h
+0100                  20     start:
+                      21     
+0100 7581C0           22     MOV SP,#0C0h
+                      23     
+0103 75900F           24     MOV     port,#00Fh                                      ; Set switches as inputs, LEDs as o
+                             utputs.
+0106 C280             25     CLR pin                                                 ; Output pin set as output.
+                      26     
+0108 D2AF             27     SETB EA                                                 ; Interrupt and timer settings.
+010A D2AB             28     SETB ET1
+010C 758914           29     MOV TMOD,#014h                                  ; Timer 0 as counter, timer 1 as timer in m
+                             ode 1.
+010F 758DF8           30     MOV TH1,#0F8h
+0112 758B2F           31     MOV TL1,#02Fh
+0115 D28C             32     SETB TR0                                                ; Start the counter.
+0117 D28E             33     SETB TR1                                                ; Start timer for first run.
+                      34     
+0119 C3               35     CLR C                                                   ; We'll use carry for indicating wh
+                             ether the program is in the
+                      36                                                                     ; 'off' state or 'on' state
+                              of the duty cycle.
+                      37     
+011A 7865             38     MOV R0,#065h                                    ; We'll use this to time 1s. Since each cyc
+                             le is 20ms, we need
+                      39                                                                     ; to run 50 times, reading 
+                             from the switches 100 times. 101 = 65h.
+                      40     
+011C 7D01             41     MOV R5,#001h
+                      42                                                                     
+                      43     
+011E                  44     loop:
+011E 30AF02           45             JNB EA,display
+0121 80FB             46             SJMP loop
+                      47     
+0123                  48     display:
+0123 E58A             49             MOV A,TL0
+0125 C4               50             SWAP A
+0126 F590             51             MOV port,A
+A51 MACRO ASSEMBLER  EXP4Q2                                                               08/18/2014 14:28:30 PAGE     2
+
+                      52     
+0128                  53     endLoop:
+0128 80FE             54             SJMP endLoop
+                      55     
+012A                  56     timer1_isr:
+012A DD21             57             DJNZ R5,skip                            ; Check if time is up.
+012C                  58             change:
+012C D802             59                     DJNZ R0,continue
+012E 8027             60                     SJMP terminate
+0130                  61                     continue:
+0130 E590             62                             MOV A,port                      ; Read switches.
+0132 540F             63                             ANL A,#00Fh
+0134 6011             64                             JZ zero
+0136 B280             65                             CPL pin                         ; Toggle LEDs.
+0138 B3               66                             CPL C                           ; Complement state.
+0139 5003             67                             JNC off
+013B                  68                             on:
+013B FD               69                                     MOV R5,A                ; If on, set the value read as the 
+                             delay.
+013C 800F             70                             SJMP skip
+013E                  71                             off:
+013E F5F0             72                                     MOV B,A
+0140 7414             73                                     MOV A,#014h
+0142 95F0             74                                     SUBB A,B
+0144 FD               75                                     MOV R5,A                ; If off, set 20-value read as dela
+                             y.
+0145 8006             76                             SJMP skip
+0147                  77                             zero:
+0147 C3               78                                     CLR C
+0148 53900F           79                                     ANL port,#00Fh
+014B 7D14             80                                     MOV R5,#014h
+014D                  81                             skip:
+014D 758DF8           82                                     MOV TH1,#0F8h
+0150 758B2F           83                                     MOV TL1,#02Fh
+0153 D28E             84                                     SETB TR1
+0155 8006             85                             SJMP return
+0157                  86                     terminate:
+0157 C2AF             87                             CLR EA
+0159 C28C             88                             CLR TR0
+015B D280             89                             SETB pin
+015D                  90     return:
+015D 22               91     RET
+                      92     
+                      93     END
+A51 MACRO ASSEMBLER  EXP4Q2                                                               08/18/2014 14:28:30 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+CHANGE . . . . . .  C ADDR   012CH   A   
+CONTINUE . . . . .  C ADDR   0130H   A   
+DISPLAY. . . . . .  C ADDR   0123H   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ENDLOOP. . . . . .  C ADDR   0128H   A   
+ET1. . . . . . . .  B ADDR   00A8H.3 A   
+LOOP . . . . . . .  C ADDR   011EH   A   
+OFF. . . . . . . .  C ADDR   013EH   A   
+ON . . . . . . . .  C ADDR   013BH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+PIN. . . . . . . .  B ADDR   0080H.0 A   
+PORT . . . . . . .  N NUMB   0090H   A   
+RETURN . . . . . .  C ADDR   015DH   A   
+SKIP . . . . . . .  C ADDR   014DH   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+START. . . . . . .  C ADDR   0100H   A   
+TERMINATE. . . . .  C ADDR   0157H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TIMER1_ISR . . . .  C ADDR   012AH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+ZERO . . . . . . .  C ADDR   0147H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

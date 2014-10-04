@@ -1,0 +1,26 @@
+function enlargedImage = nearestNeighborInterpolation(imageName)
+
+origImage = imread(imageName);
+origImageSize = size(origImage);
+
+enlargedImageSize = [3*origImageSize(1)-2 2*origImageSize(2)-1];
+enlargedImage = zeros(enlargedImageSize(1),enlargedImageSize(2),'like');
+
+for i = 1:(enlargedImageSize(1))
+    for j = 1:(enlargedImageSize(2))
+        xCoord = (i-1)*(origImageSize(1)-1)/(3*origImageSize(1)-3)+1;
+        yCoord = (j-1)*(origImageSize(2)-1)/(2*origImageSize(2)-2)+1;
+        if (xCoord-floor(xCoord)) >= (ceil(xCoord)-xCoord)
+            xCoord = ceil(xCoord);
+        else
+            xCoord = floor(xCoord);
+        end
+        if (yCoord-floor(yCoord)) >= (ceil(yCoord)-yCoord)
+            yCoord = ceil(yCoord);
+        else
+            yCoord = floor(yCoord);
+        end
+        disp([origImage(xCoord,yCoord)])
+        enlargedImage(i,j) = origImage(xCoord,yCoord);
+    end
+end

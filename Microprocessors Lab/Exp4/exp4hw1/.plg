@@ -1,0 +1,334 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+.uvproj
+Project File Date:  08/18/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(5): warning C290: missing return value
+linking...
+Program Size: data=9.0 xdata=0 code=16
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+linking...
+Program Size: data=9.0 xdata=0 code=19
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(4): error C141: syntax error near '.0'
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(5): warning C206: 'softwareDelay': missing function-prototype
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(5): error C267: 'softwareDelay': requires ANSI-style prototype
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(6): error C141: syntax error near '.0'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(10): error C231: 'softwareDelay': redefinition
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(11): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(11): error C202: 'i': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(11): error C202: 'i': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(11): error C202: 'i': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(11): error C141: syntax error near ')'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(12): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(12): error C202: 'i': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(12): error C202: 'i': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(12): error C141: syntax error near ')'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(16): error C231: 'softwareDelay': redefinition
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(5): warning C206: 'softwareDelay': missing function-prototype
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(5): error C267: 'softwareDelay': requires ANSI-style prototype
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(6): error C141: syntax error near '.0'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(10): error C231: 'softwareDelay': redefinition
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(18): error C231: 'softwareDelay': redefinition
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(8): error C141: syntax error near '.0'
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+linking...
+Program Size: data=11.0 xdata=0 code=85
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(10): warning C294: unreachable code
+linking...
+Program Size: data=11.0 xdata=0 code=83
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(12): warning C294: unreachable code
+linking...
+Program Size: data=11.0 xdata=0 code=83
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(12): warning C294: unreachable code
+linking...
+Program Size: data=11.0 xdata=0 code=77
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(11): warning C294: unreachable code
+linking...
+Program Size: data=11.0 xdata=0 code=77
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(11): warning C294: unreachable code
+linking...
+Program Size: data=11.0 xdata=0 code=77
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(11): warning C294: unreachable code
+linking...
+Program Size: data=11.0 xdata=0 code=77
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(11): warning C294: unreachable code
+linking...
+Program Size: data=11.0 xdata=0 code=77
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(31): error C141: syntax error near '.0'
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(35): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): warning C294: unreachable code
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INIT_LCD?EXP5HW
+Program Size: data=11.0 xdata=0 code=90
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(12): warning C294: unreachable code
+compiling lcd.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\lcd.c(4): error C202: 'P2': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\lcd.c(5): error C202: 'P0': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\lcd.c(6): error C202: 'P0': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\lcd.c(7): error C202: 'P0': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(12): warning C294: unreachable code
+compiling lcd.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\lcd.c(8): warning C206: 'software_delay': missing function-prototype
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\lcd.c(8): error C267: 'software_delay': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(10): warning C294: unreachable code
+compiling lcd.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _SOFTWARE_DELAY
+    MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\lcd.obj (LCD)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INIT_LCD?LCD
+Program Size: data=13.0 xdata=0 code=171
+Target not created
+Build target 'Target 1'
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _SOFTWARE_DELAY
+    MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\lcd.obj (LCD)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INIT_LCD?LCD
+Program Size: data=13.0 xdata=0 code=171
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(10): warning C294: unreachable code
+compiling lcd.c...
+compiling delay.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INIT_LCD?LCD
+Program Size: data=11.0 xdata=0 code=166
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(11): warning C294: unreachable code
+compiling lcd.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\lcd.c(20): error C141: syntax error near ')'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\lcd.c(21): error C141: syntax error near 'data'
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(6): warning C206: 'lcd_init': missing function-prototype
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(12): warning C294: unreachable code
+compiling lcd.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INIT_LCD?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DATA?LCD
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  LCD_INIT
+    MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.obj (EXP5HW)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  LCD_INIT
+    MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.obj (EXP5HW)
+    ADDRESS: 0884H
+Program Size: data=11.0 xdata=0 code=164
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(12): warning C294: unreachable code
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DATA?LCD
+Program Size: data=11.0 xdata=0 code=164
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(15): warning C294: unreachable code
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DATA?LCD
+Program Size: data=11.0 xdata=0 code=180
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(15): warning C294: unreachable code
+linking...
+Program Size: data=11.0 xdata=0 code=188
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=11.0 xdata=0 code=188
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(15): warning C294: unreachable code
+compiling lcd.c...
+linking...
+Program Size: data=11.0 xdata=0 code=188
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): warning C294: unreachable code
+compiling lcd.c...
+linking...
+Program Size: data=11.0 xdata=0 code=202
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(15): warning C294: unreachable code
+linking...
+Program Size: data=11.0 xdata=0 code=188
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(5): error C141: syntax error near 'h'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C202: 'curr_hp': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(19): error C202: 'curr_dur': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(20): error C202: 'curr_dur': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C202: 'curr_hp': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(19): error C202: 'curr_dur': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(20): error C202: 'curr_dur': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C202: 'curr_hp': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(18): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(18): error C202: 'curr_dur': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(19): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(19): error C202: 'curr_note': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(21): error C202: 'curr_dur': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(22): error C202: 'curr_dur': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C202: 'curr_hp': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(18): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(18): error C202: 'curr_dur': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(19): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(19): error C202: 'curr_note': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(21): error C202: 'curr_dur': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(22): error C202: 'curr_dur': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C202: 'curr_hp': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(18): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(18): error C202: 'curr_dur': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(19): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(19): error C202: 'curr_note': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(21): error C202: 'curr_dur': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(22): error C202: 'curr_dur': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C202: 'curr_hp': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(18): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(18): error C202: 'curr_dur': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(19): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(19): error C202: 'curr_note': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(21): error C202: 'curr_dur': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(22): error C202: 'curr_dur': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(17): error C202: 'curr_hp': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(18): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(18): error C202: 'curr_dur': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(19): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(19): error C202: 'curr_note': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(21): error C202: 'curr_dur': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(22): error C202: 'curr_dur': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling exp5hw.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.c(28): warning C294: unreachable code
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DATA?LCD
+Program Size: data=115.0 xdata=0 code=458
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw" - 0 Error(s), 2 Warning(s).

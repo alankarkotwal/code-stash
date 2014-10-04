@@ -1,0 +1,14 @@
+function outputImage = unsharpMasking(origImage, sd, scale)
+
+filter = fspecial('gaussian', [3 3], sd);
+blurredImage = imfilter(origImage, filter, 'same');
+
+imshow(origImage);
+imshow(blurredImage);
+
+invertedImage = imcomplement(blurredImage);
+scaledImage = scale*invertedImage;
+
+
+
+outputImage = origImage - scaledImage;

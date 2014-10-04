@@ -1,0 +1,3 @@
+"..\exp4q1\exp4q1.obj" 
+TO "..\exp4q1\exp4q1" 
+PRINT(".\exp4q1.m51") RAMSIZE(256) 

@@ -1,0 +1,5 @@
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.obj",
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\lcd.obj",
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\delay.obj" 
+TO "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" 
+PRINT(".\test.m51") RAMSIZE(256) 

@@ -1,0 +1,76 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 08/01/2014 17:11:04 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN C:\users\aloo\My Documents\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2hw1\main.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE C:\users\aloo\My Documents\Documents\Acads\Sem5\EE337 Microprocessors Lab\
+                      Exp2\exp2hw1\main.asm SET(SMALL) DEBUG PRINT(.\main.lst) OBJECT(C:\users\aloo\My Documents\Documen
+                      ts\Acads\Sem5\EE337 Microprocessors Lab\Exp2\exp2hw1\main.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 000h
+0000 020100            2     LJMP start
+0100                   3     ORG 100h
+                       4     
+0100                   5     start:
+0100 7581C0            6             MOV SP,#0C0h                                            ; Allocate stack memory
+0103 749E              7             MOV A,#09Eh                                                     ; Move the byte to 
+                             be converted to Accumulator
+0105 12010A            8             LCALL convertToHex                                      ; Call subroutine
+                       9             
+0108                  10             endLoop:                                                        ; Infinite loop to 
+                             end the program
+0108 80FE             11                     JMP endLoop
+                      12     
+010A                  13             convertToHex:                                           ; Start subroutine definiti
+                             on
+010A F9               14                     MOV R1,A
+010B 53010F           15                     ANL 001h,#00Fh                                  ; Get lower nibble in R1
+010E 54F0             16                     ANL A,#0F0h
+0110 C4               17                     SWAP A                                                  ; Get higher nibble
+                              in A, swap and move to R2
+0111 FA               18                     MOV R2,A
+0112 7802             19                     MOV R0,#002h
+0114                  20                     convertNibble:
+0114 7409             21                             MOV A,#009h
+0116 C3               22                             CLR C
+0117 96               23                             SUBB A,@R0                                      ; Check if the hex 
+                             representation is a 'number' or a 'letter'
+0118 E6               24                             MOV A,@R0
+0119 4004             25                             JC inLetters
+011B                  26                             inNumbers:
+011B 2430             27                                     ADD A,#030h                             ; For 'numbers'
+011D 8002             28                                     JMP back
+011F                  29                             inLetters:
+011F 2437             30                                     ADD A,#037h                             ; Add 'letters'
+0121                  31                             back:
+0121 F6               32                                     MOV @R0,A
+0122 D8F0             33                                     DJNZ R0,convertNibble   ; Do this for both nibbles
+0124 EA               34                     MOV A,R2
+0125 89F0             35                     MOV B,R1
+0127 22               36             RET
+                      37     END
+A51 MACRO ASSEMBLER  MAIN                                                                 08/01/2014 17:11:04 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+BACK . . . . . . .  C ADDR   0121H   A   
+CONVERTNIBBLE. . .  C ADDR   0114H   A   
+CONVERTTOHEX . . .  C ADDR   010AH   A   
+ENDLOOP. . . . . .  C ADDR   0108H   A   
+INLETTERS. . . . .  C ADDR   011FH   A   
+INNUMBERS. . . . .  C ADDR   011BH   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+START. . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

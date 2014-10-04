@@ -1,0 +1,642 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/28/2014  17:32:19  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\delay.obj, Z:\home\aloo
+>> \Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\lcd.obj, Z:\home\aloo\Documents\Acads\Sem5\EE337 Micropro
+>> cessors Lab\Exp8\exp8q1\main.obj, Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\watch.obj, 
+>> Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\twi_lib.obj TO Z:\home\aloo\Documents\Acads\S
+>> em5\EE337 Microprocessors Lab\Exp8\exp8q1\exp8q1 PRINT (.\exp8q1.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\delay.obj (DELAY)
+  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\lcd.obj (LCD)
+  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\main.obj (MAIN)
+  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\watch.obj (WATCH)
+  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\twi_lib.obj (TWI_LIB)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?IILDX)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?ILDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?OFFXADD)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (PUTCHAR)
+
+
+LINK MAP OF MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\exp8q1 (DELAY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            REG     0008H     0008H     ABSOLUTE     "REG BANK 1"
+            DATA    0010H     000DH     UNIT         ?DT?MAIN
+            DATA    001DH     0003H     UNIT         ?DT?TWI_LIB
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+            BIT     0021H.1   0000H.1   UNIT         ?BI?_TWI_SEND_MESSAGE_POLLING?TWI_LIB
+            BIT     0021H.2   0000H.1   UNIT         ?BI?_TWI_SEND_MESSAGE_INTERRUPT?TWI_LIB
+            BIT     0021H.3   0000H.1   UNIT         ?BI?TWI_LIB
+                    0021H.4   0000H.4                *** GAP ***
+            DATA    0022H     0014H     UNIT         _DATA_GROUP_
+            DATA    0036H     0011H     UNIT         ?DT?WATCH
+            DATA    0047H     0005H     UNIT         ?DT?_DISP_WATCH?WATCH
+            DATA    004CH     0005H     UNIT         ?DT?_TWI_SEND_MESSAGE_POLLING?TWI_LIB
+            DATA    0051H     0005H     UNIT         ?DT?_TWI_SEND_MESSAGE_INTERRUPT?TWI_LIB
+            IDATA   0056H     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     0007H     UNIT         ?XD?TWI_LIB
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/28/2014  17:32:19  PAGE 2
+
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0040H                  *** GAP ***
+            CODE    0043H     0003H     ABSOLUTE     
+                    0046H     07BAH                  *** GAP ***
+            CODE    0800H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    0B5CH     01ABH     UNIT         ?PR?_DISP_WATCH?WATCH
+            CODE    0D07H     0133H     UNIT         ?PR?TWI_DECODE_STATUS?TWI_LIB
+            CODE    0E3AH     010AH     UNIT         ?C?LIB_CODE
+            CODE    0F44H     00A1H     UNIT         ?CO?WATCH
+            CODE    0FE5H     008CH     UNIT         ?C_C51STARTUP
+            CODE    1071H     005FH     UNIT         ?PR?_TWI_GETCHAR?TWI_LIB
+            CODE    10D0H     004DH     UNIT         ?PR?_TWI_PUTCHAR?TWI_LIB
+            CODE    111DH     004CH     UNIT         ?PR?_TWI_SEND_MESSAGE_POLLING?TWI_LIB
+            CODE    1169H     0045H     UNIT         ?PR?MAIN?MAIN
+            CODE    11AEH     0039H     UNIT         ?PR?_TWI_SEND_MESSAGE_INTERRUPT?TWI_LIB
+            CODE    11E7H     002FH     UNIT         ?PR?_SOFTWARE_DELAY?DELAY
+            CODE    1216H     002FH     UNIT         ?PR?_LCD_STRING?LCD
+            CODE    1245H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    126CH     001EH     UNIT         ?PR?TWI_INTERRUPT?TWI_LIB
+            CODE    128AH     001CH     UNIT         ?PR?INIT_LCD?LCD
+            CODE    12A6H     001CH     UNIT         ?PR?_LCD_COMMAND?LCD
+            CODE    12C2H     001CH     UNIT         ?PR?_LCD_DATA?LCD
+            CODE    12DEH     0016H     UNIT         ?C_INITSEG
+            CODE    12F4H     0004H     UNIT         ?PR?TWI_LIB_INIT?TWI_LIB
+            CODE    12F8H     0003H     UNIT         ?CO?MAIN
+            CODE    12FBH     0001H     UNIT         ?PR?UPDATE_WATCH?WATCH
+
+
+
+OVERLAY MAP OF MODULE:   Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\exp8q1 (DELAY)
+
+
+SEGMENT                                            BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT                           START    LENGTH     START    LENGTH
+-----------------------------------------------------------------------------------
+?PR?TWI_INTERRUPT?TWI_LIB                       -----    -----      -----    -----
+  +--> ?PR?TWI_DECODE_STATUS?TWI_LIB
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                                   -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                                   -----    -----      -----    -----
+  +--> ?PR?INIT_LCD?LCD
+  +--> ?PR?TWI_LIB_INIT?TWI_LIB
+  +--> ?PR?_TWI_PUTCHAR?TWI_LIB
+  +--> ?PR?_TWI_GETCHAR?TWI_LIB
+  +--> ?CO?MAIN
+  +--> ?PR?PRINTF?PRINTF
+  +--> ?PR?_LCD_COMMAND?LCD
+  +--> ?PR?_LCD_STRING?LCD
+
+?PR?INIT_LCD?LCD                                -----    -----      -----    -----
+  +--> ?PR?_LCD_COMMAND?LCD
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/28/2014  17:32:19  PAGE 3
+
+
+
+?PR?_LCD_COMMAND?LCD                            -----    -----      -----    -----
+  +--> ?PR?_SOFTWARE_DELAY?DELAY
+
+?PR?_SOFTWARE_DELAY?DELAY                       -----    -----      0027H    0002H
+
+?PR?_TWI_GETCHAR?TWI_LIB                        -----    -----      0022H    0006H
+
+?PR?PRINTF?PRINTF                               0020H.0  0001H.1    0022H    0014H
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+?PR?_LCD_STRING?LCD                             -----    -----      0022H    0005H
+  +--> ?PR?_LCD_DATA?LCD
+
+?PR?_LCD_DATA?LCD                               -----    -----      -----    -----
+  +--> ?PR?_SOFTWARE_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\exp8q1 (DELAY)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:11E7H         PUBLIC        _software_delay
+  -------         PROC          _SOFTWARE_DELAY
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         DO            
+  D:0027H         SYMBOL        j
+  -------         ENDDO         
+  -------         ENDDO         
+  C:11E7H         LINE#         3
+  C:11E7H         LINE#         4
+  C:11EAH         LINE#         5
+  C:11F7H         LINE#         6
+  C:11FCH         LINE#         7
+  C:1200H         LINE#         9
+  C:120EH         LINE#         10
+  C:1215H         LINE#         11
+  -------         ENDPROC       _SOFTWARE_DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        LCD
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:1216H         PUBLIC        _lcd_string
+  C:12C2H         PUBLIC        _lcd_data
+  C:128AH         PUBLIC        init_lcd
+  C:12A6H         PUBLIC        _lcd_command
+  -------         PROC          INIT_LCD
+  C:128AH         LINE#         3
+  C:128AH         LINE#         4
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/28/2014  17:32:19  PAGE 4
+
+
+  C:1291H         LINE#         5
+  C:1298H         LINE#         6
+  C:129FH         LINE#         7
+  -------         ENDPROC       INIT_LCD
+  -------         PROC          _LCD_COMMAND
+  D:0006H         SYMBOL        cmd
+  C:12A6H         LINE#         10
+  C:12A6H         LINE#         11
+  C:12A8H         LINE#         12
+  C:12ABH         LINE#         13
+  C:12AEH         LINE#         14
+  C:12B1H         LINE#         15
+  C:12B8H         LINE#         16
+  C:12BBH         LINE#         17
+  -------         ENDPROC       _LCD_COMMAND
+  -------         PROC          _LCD_DATA
+  D:0006H         SYMBOL        dat
+  C:12C2H         LINE#         20
+  C:12C2H         LINE#         21
+  C:12C4H         LINE#         22
+  C:12C7H         LINE#         23
+  C:12CAH         LINE#         24
+  C:12CDH         LINE#         25
+  C:12D4H         LINE#         26
+  C:12D7H         LINE#         27
+  -------         ENDPROC       _LCD_DATA
+  -------         PROC          _LCD_STRING
+  D:0022H         SYMBOL        ptr
+  -------         DO            
+  D:0025H         SYMBOL        i
+  -------         ENDDO         
+  C:1216H         LINE#         30
+  C:121CH         LINE#         31
+  C:1221H         LINE#         32
+  C:1233H         LINE#         33
+  C:123AH         LINE#         34
+  C:1242H         LINE#         35
+  C:1244H         LINE#         36
+  -------         ENDPROC       _LCD_STRING
+  -------         ENDMOD        LCD
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:0010H         PUBLIC        string
+  D:0013H         PUBLIC        watch_state
+  C:1169H         PUBLIC        main
+  D:001BH         PUBLIC        temp
+  -------         PROC          MAIN
+  C:1169H         LINE#         14
+  C:1169H         LINE#         15
+  C:116CH         LINE#         16
+  C:116FH         LINE#         18
+  C:1172H         LINE#         20
+  C:1172H         LINE#         21
+  C:1179H         LINE#         22
+  C:1182H         LINE#         23
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/28/2014  17:32:19  PAGE 5
+
+
+  C:119AH         LINE#         24
+  C:119DH         LINE#         25
+  C:11A3H         LINE#         26
+  C:11ACH         LINE#         28
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        WATCH
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:12FBH         PUBLIC        update_watch
+  C:0FD7H         PUBLIC        first_offsets
+  D:0036H         PUBLIC        _temp
+  C:0FB3H         PUBLIC        months
+  C:0B5CH         PUBLIC        _disp_watch
+  C:0F9EH         PUBLIC        days
+  D:0039H         PUBLIC        dayData
+  C:0FDEH         PUBLIC        lengths
+  -------         PROC          _DISP_WATCH
+  D:0047H         SYMBOL        watch_state
+  -------         DO            
+  D:004AH         SYMBOL        index
+  -------         ENDDO         
+  C:0B5CH         LINE#         16
+  C:0B62H         LINE#         18
+  C:0B69H         LINE#         19
+  C:0B8CH         LINE#         20
+  C:0B95H         LINE#         21
+  C:0BADH         LINE#         22
+  C:0BB0H         LINE#         23
+  C:0BB8H         LINE#         24
+  C:0BC1H         LINE#         25
+  C:0BE4H         LINE#         26
+  C:0BEDH         LINE#         27
+  C:0C05H         LINE#         28
+  C:0C08H         LINE#         29
+  C:0C10H         LINE#         31
+  C:0C17H         LINE#         33
+  C:0C2FH         LINE#         34
+  C:0C32H         LINE#         35
+  C:0C3AH         LINE#         37
+  C:0C43H         LINE#         38
+  C:0C5BH         LINE#         39
+  C:0C5EH         LINE#         40
+  C:0C66H         LINE#         42
+  C:0C6FH         LINE#         43
+  C:0C87H         LINE#         44
+  C:0C8AH         LINE#         45
+  C:0C92H         LINE#         47
+  C:0CA8H         LINE#         48
+  C:0CB4H         LINE#         49
+  C:0CC9H         LINE#         50
+  C:0CF3H         LINE#         51
+  C:0CFCH         LINE#         52
+  C:0D06H         LINE#         53
+  C:0D06H         LINE#         54
+  C:0D06H         LINE#         55
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/28/2014  17:32:19  PAGE 6
+
+
+  -------         ENDPROC       _DISP_WATCH
+  -------         PROC          UPDATE_WATCH
+  C:12FBH         LINE#         57
+  C:12FBH         LINE#         59
+  -------         ENDPROC       UPDATE_WATCH
+  -------         ENDMOD        WATCH
+
+  -------         MODULE        TWI_LIB
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:001DH         PUBLIC        twi_err
+  D:0095H         PUBLIC        SSDAT
+  C:11AEH         PUBLIC        _twi_send_message_interrupt
+  C:12F4H         PUBLIC        twi_lib_init
+  C:111DH         PUBLIC        _twi_send_message_polling
+  D:0093H         PUBLIC        SSCON
+  D:00B1H         PUBLIC        IEN1
+  D:0094H         PUBLIC        SSSTA
+  C:1071H         PUBLIC        _twi_getchar
+  X:0000H         PUBLIC        twi_message
+  C:0D07H         PUBLIC        twi_decode_status
+  C:126CH         PUBLIC        twi_interrupt
+  D:001EH         PUBLIC        twi_nb_transmited
+  C:10D0H         PUBLIC        _twi_putchar
+  D:001FH         PUBLIC        twi_recptr
+  X:0006H         PUBLIC        twi_slave_data
+  B:0021H.3       PUBLIC        twi_busy
+  -------         PROC          TWI_LIB_INIT
+  C:12F4H         LINE#         100
+  C:12F4H         LINE#         101
+  C:12F4H         LINE#         102
+  C:12F7H         LINE#         103
+  -------         ENDPROC       TWI_LIB_INIT
+  -------         PROC          TWI_DECODE_STATUS
+  C:0D07H         LINE#         124
+  C:0D07H         LINE#         125
+  C:0D07H         LINE#         126
+  C:0D35H         LINE#         127
+  C:0D35H         LINE#         130
+  C:0D35H         LINE#         131
+  C:0D37H         LINE#         132
+  C:0D3AH         LINE#         133
+  C:0D3BH         LINE#         138
+  C:0D3BH         LINE#         139
+  C:0D3EH         LINE#         140
+  C:0D46H         LINE#         141
+  C:0D4DH         LINE#         142
+  C:0D4DH         LINE#         143
+  C:0D50H         LINE#         147
+  C:0D50H         LINE#         148
+  C:0D53H         LINE#         149
+  C:0D5BH         LINE#         150
+  C:0D62H         LINE#         151
+  C:0D62H         LINE#         152
+  C:0D65H         LINE#         157
+  C:0D65H         LINE#         158
+  C:0D68H         LINE#         159
+  C:0D78H         LINE#         160
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/28/2014  17:32:19  PAGE 7
+
+
+  C:0D7BH         LINE#         161
+  C:0D84H         LINE#         162
+  C:0D84H         LINE#         163
+  C:0D87H         LINE#         164
+  C:0D87H         LINE#         165
+  C:0D87H         LINE#         166
+  C:0D87H         LINE#         167
+  C:0D89H         LINE#         171
+  C:0D89H         LINE#         179
+  C:0D89H         LINE#         180
+  C:0D8BH         LINE#         181
+  C:0D95H         LINE#         182
+  C:0DA0H         LINE#         183
+  C:0DA0H         LINE#         184
+  C:0DAEH         LINE#         185
+  C:0DAEH         LINE#         186
+  C:0DB0H         LINE#         188
+  C:0DB0H         LINE#         189
+  C:0DB3H         LINE#         190
+  C:0DB6H         LINE#         191
+  C:0DB8H         LINE#         192
+  C:0DB8H         LINE#         193
+  C:0DB9H         LINE#         197
+  C:0DB9H         LINE#         198
+  C:0DB9H         LINE#         199
+  C:0DB9H         LINE#         200
+  C:0DB9H         LINE#         201
+  C:0DBBH         LINE#         206
+  C:0DBBH         LINE#         207
+  C:0DBDH         LINE#         208
+  C:0DC0H         LINE#         212
+  C:0DC1H         LINE#         218
+  C:0DC1H         LINE#         219
+  C:0DCAH         LINE#         220
+  C:0DD4H         LINE#         222
+  C:0DD4H         LINE#         223
+  C:0DD7H         LINE#         224
+  C:0DDAH         LINE#         225
+  C:0DDAH         LINE#         226
+  C:0DDBH         LINE#         230
+  C:0DDEH         LINE#         232
+  C:0DE0H         LINE#         233
+  C:0DE3H         LINE#         234
+  C:0DE4H         LINE#         238
+  C:0DE4H         LINE#         240
+  C:0DFBH         LINE#         241
+  C:0DFDH         LINE#         242
+  C:0E0DH         LINE#         243
+  C:0E10H         LINE#         244
+  C:0E11H         LINE#         248
+  C:0E11H         LINE#         249
+  C:0E28H         LINE#         250
+  C:0E2BH         LINE#         251
+  C:0E2DH         LINE#         252
+  C:0E30H         LINE#         253
+  C:0E31H         LINE#         349
+  C:0E31H         LINE#         350
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/28/2014  17:32:19  PAGE 8
+
+
+  C:0E34H         LINE#         351
+  C:0E36H         LINE#         352
+  C:0E39H         LINE#         353
+  C:0E39H         LINE#         354
+  C:0E39H         LINE#         355
+  -------         ENDPROC       TWI_DECODE_STATUS
+  -------         PROC          _TWI_SEND_MESSAGE_POLLING
+  D:0007H         SYMBOL        slave_addr
+  B:0021H.1       SYMBOL        rw
+  D:004DH         SYMBOL        nbbytes
+  D:004EH         SYMBOL        info
+  C:111DH         LINE#         359
+  C:111DH         LINE#         360
+  C:111DH         LINE#         361
+  C:1122H         LINE#         362
+  C:1128H         LINE#         363
+  C:112CH         LINE#         364
+  C:1138H         LINE#         365
+  C:113DH         LINE#         366
+  C:1140H         LINE#         367
+  C:1143H         LINE#         368
+  C:1146H         LINE#         369
+  C:1146H         LINE#         370
+  C:1148H         LINE#         371
+  C:114AH         LINE#         372
+  C:114DH         LINE#         373
+  C:1150H         LINE#         374
+  C:1150H         LINE#         375
+  C:1155H         LINE#         376
+  C:1158H         LINE#         377
+  C:115BH         LINE#         378
+  C:115DH         LINE#         379
+  C:1160H         LINE#         380
+  C:1163H         LINE#         381
+  C:1163H         LINE#         382
+  C:1166H         LINE#         383
+  C:1168H         LINE#         384
+  -------         ENDPROC       _TWI_SEND_MESSAGE_POLLING
+  -------         PROC          _TWI_SEND_MESSAGE_INTERRUPT
+  D:0007H         SYMBOL        slave_addr
+  B:0021H.2       SYMBOL        rw
+  D:0052H         SYMBOL        nbytes
+  D:0053H         SYMBOL        info
+  C:11AEH         LINE#         411
+  C:11AEH         LINE#         412
+  C:11AEH         LINE#         413
+  C:11B3H         LINE#         414
+  C:11B9H         LINE#         415
+  C:11BDH         LINE#         416
+  C:11C9H         LINE#         417
+  C:11CEH         LINE#         418
+  C:11D1H         LINE#         419
+  C:11D4H         LINE#         420
+  C:11D4H         LINE#         421
+  C:11D6H         LINE#         422
+  C:11D8H         LINE#         423
+  C:11DBH         LINE#         424
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/28/2014  17:32:19  PAGE 9
+
+
+  C:11DEH         LINE#         425
+  C:11E1H         LINE#         426
+  C:11E1H         LINE#         427
+  C:11E4H         LINE#         428
+  C:11E6H         LINE#         429
+  -------         ENDPROC       _TWI_SEND_MESSAGE_INTERRUPT
+  -------         PROC          _TWI_PUTCHAR
+  D:0007H         SYMBOL        addr
+  D:0005H         SYMBOL        b
+  C:10D0H         LINE#         488
+  C:10D0H         LINE#         489
+  C:10D0H         LINE#         490
+  C:10D5H         LINE#         491
+  C:10D8H         LINE#         492
+  C:10DDH         LINE#         493
+  C:10E3H         LINE#         494
+  C:10E3H         LINE#         496
+  C:10E6H         LINE#         497
+  C:10EBH         LINE#         498
+  C:10EEH         LINE#         499
+  C:10F1H         LINE#         500
+  C:10F6H         LINE#         501
+  C:10FCH         LINE#         502
+  C:10FCH         LINE#         503
+  C:10FEH         LINE#         504
+  C:1101H         LINE#         505
+  C:1106H         LINE#         506
+  C:110BH         LINE#         507
+  C:110BH         LINE#         508
+  C:110EH         LINE#         509
+  C:1111H         LINE#         510
+  C:1114H         LINE#         511
+  C:1114H         LINE#         512
+  C:1114H         LINE#         514
+  C:1114H         LINE#         515
+  C:1117H         LINE#         516
+  C:111AH         LINE#         517
+  C:111CH         LINE#         518
+  -------         ENDPROC       _TWI_PUTCHAR
+  -------         PROC          _TWI_GETCHAR
+  D:0007H         SYMBOL        addr
+  -------         DO            
+  D:0022H         SYMBOL        ret
+  -------         ENDDO         
+  C:1071H         LINE#         521
+  C:1071H         LINE#         522
+  C:1071H         LINE#         525
+  C:1077H         LINE#         526
+  C:107CH         LINE#         527
+  C:1081H         LINE#         528
+  C:1084H         LINE#         529
+  C:1089H         LINE#         530
+  C:108FH         LINE#         531
+  C:108FH         LINE#         532
+  C:1092H         LINE#         533
+  C:1098H         LINE#         534
+  C:109BH         LINE#         535
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/28/2014  17:32:19  PAGE 10
+
+
+  C:109EH         LINE#         536
+  C:10A3H         LINE#         537
+  C:10A9H         LINE#         538
+  C:10A9H         LINE#         539
+  C:10ACH         LINE#         540
+  C:10AFH         LINE#         541
+  C:10B4H         LINE#         542
+  C:10B9H         LINE#         543
+  C:10B9H         LINE#         544
+  C:10C0H         LINE#         545
+  C:10C3H         LINE#         546
+  C:10C6H         LINE#         547
+  C:10CBH         LINE#         548
+  C:10CBH         LINE#         549
+  C:10CBH         LINE#         551
+  C:10CBH         LINE#         552
+  C:10CFH         LINE#         553
+  -------         ENDPROC       _TWI_GETCHAR
+  -------         PROC          TWI_INTERRUPT
+  C:126CH         LINE#         573
+  C:1279H         LINE#         575
+  C:127CH         LINE#         576
+  C:127FH         LINE#         577
+  -------         ENDPROC       TWI_INTERRUPT
+  -------         ENDMOD        TWI_LIB
+
+  -------         MODULE        ?C?CLDPTR
+  C:0E3AH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0E53H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTOPTR
+  C:0E80H         PUBLIC        ?C?CSTOPTR
+  -------         ENDMOD        ?C?CSTOPTR
+
+  -------         MODULE        ?C?IILDX
+  C:0EA2H         PUBLIC        ?C?IILDX
+  -------         ENDMOD        ?C?IILDX
+
+  -------         MODULE        ?C?ILDOPTR
+  C:0EB8H         PUBLIC        ?C?ILDOPTR
+  -------         ENDMOD        ?C?ILDOPTR
+
+  -------         MODULE        ?C?OFFXADD
+  C:0EF0H         PUBLIC        ?C?OFFXADD
+  -------         ENDMOD        ?C?OFFXADD
+
+  -------         MODULE        ?C?CCASE
+  C:0EFCH         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PRINTF
+  D:0022H         PUBLIC        ?_PRINTF517?BYTE
+  D:0022H         PUBLIC        ?_PRINTF?BYTE
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/28/2014  17:32:19  PAGE 11
+
+
+  D:0022H         PUBLIC        ?_SPRINTF517?BYTE
+  D:0022H         PUBLIC        ?_SPRINTF?BYTE
+  C:0862H         PUBLIC        _PRINTF
+  C:0862H         PUBLIC        _PRINTF517
+  C:085CH         PUBLIC        _SPRINTF
+  C:085CH         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?CSTPTR
+  C:0F22H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:0F34H         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        PUTCHAR
+  C:1245H         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DISP_WATCH?WATCH
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UPDATE_WATCH?WATCH
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_SEND_MESSAGE_POLLING?TWI_LIB
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_SEND_MESSAGE_INTERRUPT?TWI_LIB
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 05E5H BYTE (73%) *
+******************************************************************************
+
+Program Size: data=86.4 xdata=7 code=2818
+LINK/LOCATE RUN COMPLETE.  4 WARNING(S),  0 ERROR(S)

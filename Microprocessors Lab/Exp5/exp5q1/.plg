@@ -1,0 +1,50 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+.uvproj
+Project File Date:  08/24/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling exp5q2.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2.c(3): error C141: syntax error near '.4', expected ';'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2.c(16): error C202: 'timer0_reloadValue': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2.c(17): error C202: 'timer0_reloadValue': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling exp5q2.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2.c(16): error C202: 'timer0_reloadValue': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2.c(17): error C202: 'timer0_reloadValue': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling exp5q2.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2.c(53): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2.c(53): error C202: 'j': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2.c(54): error C202: 'j': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling exp5q2.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2.c(32): error C141: syntax error near 'int'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2.c(32): error C202: 'j': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2.c(54): error C202: 'j': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling exp5q2.c...
+linking...
+Program Size: data=121.0 xdata=0 code=659
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling exp5q2.c...
+linking...
+Program Size: data=121.0 xdata=0 code=661
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling exp5q2.c...
+linking...
+Program Size: data=121.0 xdata=0 code=663
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5q2\exp5q2" - 0 Error(s), 0 Warning(s).

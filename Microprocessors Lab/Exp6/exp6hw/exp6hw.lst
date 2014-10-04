@@ -1,0 +1,113 @@
+A51 MACRO ASSEMBLER  EXP6HW                                                               08/31/2014 16:01:43 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN .\exp6hw.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp6\exp6hw\ex
+                      p6hw.asm SET(SMALL) DEBUG PRINT(.\exp6hw.lst) OBJECT(.\exp6hw.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; We want to use T1 in auto-reload 8 bit mode (mode 2). This mode puts no software load
+                       2     ; on the processor. All actions such as re-loading the timer etc. are done automatically in
+                       3     ; hardware. Therefore once the timer is configured, it goes merrily along, providing its ou
+                             tput
+                       4     ; to the serial communications block.
+                       5     ; Write a program which does the following:
+                       6     ; • Configure the serial port for 8 bit data + Even Parity (11 bit frame) with baud rate
+                       7     ; adjusted to 1200 using T1. Serial port interrupts are to be enabled.
+                       8     ; • Write an interrupt service routine for serial communication, which clears TF and trans-
+                       9     ; mits the character ‘A’ whenever the serial port interrupt occurs and TF is found set.
+                      10     ; Parity bit should not be hard coded for ‘A’. It should be evaluated by adding 0 to the
+                      11     ; character being sent and checking the parity flag. (Then you will be able to use this
+                      12     ; routine for any character, not just ‘A’). After writing the character, the ISR should in-
+                      13     ; crement a global counter (initialized by the main program) and create a software delay
+                      14     ; of about 10 ms. (This will be useful for triggering the oscilloscope properly when you
+                      15     ; observe the output during the lab).
+                      16     ; The main program initializes the global counter to 0. After that it goes in an endless
+                      17     ; loop, checking the counter. Every time it finds that the counter has reached 50 (decimal)
+                             ,
+                      18     ; it should reset the counter to 0 and toggle an on-board LED.
+                      19     ; Assemble the program, download it to your kit and run it. Find the rate at which the LED 
+                             is
+                      20     ; blinking by timing it for 10 cycles.
+                      21     
+0000                  22     ORG 000h
+0000 020100           23     LJMP start
+0023                  24     ORG 023h
+0023 C299             25     CLR TI
+0025 08               26     INC R0
+0026 7441             27     MOV A,#'A'
+0028 30D004           28     JNB PSW.0,clear
+002B D29B             29     SETB TB8
+002D 8002             30     SJMP send
+002F                  31     clear:
+002F C29B             32     CLR TB8
+0031                  33     send:
+0031 F599             34     MOV SBUF,A
+0033 7E27             35     MOV R6,#39
+0035                  36     delayLoop1:
+0035 7DFF             37             MOV R5,#0FFh
+0037                  38             delayLoop2:
+0037 DDFE             39                     DJNZ R5,delayLoop2
+0039 DEFA             40                     DJNZ R6,delayLoop1
+003B 32               41     RETI
+0100                  42     ORG 100h
+0100                  43     start:
+                      44     
+0100 758DCC           45     MOV TH1,#204
+0103 758920           46     MOV TMOD,#020h
+                      47     
+0106 D2AF             48     SETB EA
+0108 D2AC             49     SETB ES
+                      50     
+010A 7598C0           51     MOV SCON,#0C0h
+                      52     
+010D 7800             53     MOV R0,#000h
+                      54     
+A51 MACRO ASSEMBLER  EXP6HW                                                               08/31/2014 16:01:43 PAGE     2
+
+010F 75900F           55     MOV P1,#00Fh
+                      56     
+0112 D28E             57     SETB TR1
+                      58     
+0114 759941           59     MOV SBUF,#'A'
+                      60     
+0117                  61     loop:
+0117 B850FD           62             CJNE R0,#050h,loop
+011A 7800             63             MOV R0,#000h
+011C 6390F0           64             XRL 090h,#0F0h
+011F 80F6             65             SJMP loop
+                      66     
+                      67     END
+A51 MACRO ASSEMBLER  EXP6HW                                                               08/31/2014 16:01:43 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CLEAR. . . . . . .  C ADDR   002FH   A   
+DELAYLOOP1 . . . .  C ADDR   0035H   A   
+DELAYLOOP2 . . . .  C ADDR   0037H   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ES . . . . . . . .  B ADDR   00A8H.4 A   
+LOOP . . . . . . .  C ADDR   0117H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+PSW. . . . . . . .  D ADDR   00D0H   A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+SEND . . . . . . .  C ADDR   0031H   A   
+START. . . . . . .  C ADDR   0100H   A   
+TB8. . . . . . . .  B ADDR   0098H.3 A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

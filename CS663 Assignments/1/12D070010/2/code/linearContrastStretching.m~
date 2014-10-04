@@ -1,0 +1,15 @@
+function outputImage = linearContrastStretching(imageName)
+
+origImage = imread(imageName);
+origImageSize = size(origImage);
+
+outputImage = uint8(zeros(origImageSize(1),origImageSize(2)));
+
+minPixelValue = min(min(origImage));
+maxPixelValue = max(max(origImage));
+
+for i = 1:(origImageSize(1))
+    for j = 1:(origImageSize(2))
+        outputImage(i,j) = double(outputImage(i,j) - minPixelValue)/double(maxPixelValue - minPixelValue);
+    end
+end

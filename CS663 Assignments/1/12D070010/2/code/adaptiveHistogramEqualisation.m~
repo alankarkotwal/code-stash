@@ -1,0 +1,15 @@
+function adaptiveHistogramEqualisation(origImage, windowSize)
+
+origImageSize = size(origImage);
+
+outputImage = zeros(origImageSize(1),origImageSize(2));
+
+for i = 1:(origImageSize(1))
+    for j = 1:(origImageSize(2))
+        windowMinX = max(1,i-windowSize);
+        windowMinY = max(1,j-windowSize);
+        windowMaxX = max(1,i-windowSize);
+        windowMinX = max(1,i-windowSize);
+        outputImage(i,j) = (double(origImage(i,j)) - minPixelValue)/(maxPixelValue - minPixelValue)*255;
+    end
+end

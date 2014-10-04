@@ -1,0 +1,87 @@
+C51 COMPILER V9.52.0.0   EXP5HW                                                            08/25/2014 13:45:12 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE EXP5HW
+OBJECT MODULE PLACED IN Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp5hw.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.exe Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp5\exp5hw\exp
+                    -5hw.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\exp5hw.lst) TABS(2) OBJECT(Z:\home\aloo\Documents\Acads\Sem5\EE337 Micropr
+                    -ocessors Lab\Exp5\exp5hw\exp5hw.obj)
+
+line level    source
+
+   1          #include<regx51.h>
+   2          #include<stdio.h>
+   3          #include"lcd.h"
+   4          #include"delay.h"
+   5          
+   6          const int half_periods[]={3900, 3681, 3476, 3279, 3096, 2925, 2757, 2600, 2456, 2319, 2189, 2066};
+   7          const int durations[]   ={200, 100, 100, 100, 200, 100, 100, 200, 100, 200, 100, 100, 200, 100, 100, 100, 2
+             -00, 00};
+   8          const int notes[]       ={0, 2, 4, 5, 7, 9, 11, 16, 64, 16, 11, 9, 7, 5, 4, 2, 0, 0};
+   9          int note_index=0;
+  10          
+  11          int curr_hp, curr_dur, curr_note, note_high, note_low;
+  12          
+  13          void main() {
+  14   1        char ascii[5];
+  15   1        P2=0x00;
+  16   1        software_delay(2);
+  17   1        init_lcd();
+  18   1        software_delay(3);
+  19   1        lcd_command(LCD_first);
+  20   1        software_delay(1);
+  21   1        while(1) {
+  22   2          curr_dur=durations[note_index];
+  23   2          if(curr_dur==0) break;
+  24   2          curr_note=notes[note_index];
+  25   2          note_high=curr_note & 0xF0;
+  26   2          note_high=note_high/16;
+  27   2          note_low=curr_note & 0x0F;
+  28   2          curr_hp=half_periods[note_low];
+  29   2          switch(note_high) {
+  30   3            case 0:
+  31   3              break;
+  32   3            case 1:
+  33   3              curr_hp=curr_hp/2;
+  34   3              break;
+  35   3            case 2:
+  36   3              curr_hp=0xFF;
+  37   3              break;
+  38   3            default:
+  39   3              break;
+  40   3          }
+  41   2          lcd_string("Note=");
+  42   2          sprintf(ascii,"%x",curr_note);
+  43   2          lcd_string(ascii);
+  44   2          lcd_string(", D=");
+  45   2          sprintf(ascii,"%x",curr_dur);
+  46   2          lcd_string(ascii);
+  47   2          lcd_command(LCD_last);
+  48   2          lcd_string("Oct=");
+  49   2          sprintf(ascii,"%x",note_high);
+  50   2          lcd_string(ascii);
+  51   2          lcd_string(", HP=");
+  52   2          sprintf(ascii,"%x",curr_hp);
+C51 COMPILER V9.52.0.0   EXP5HW                                                            08/25/2014 13:45:12 PAGE 2   
+
+  53   2          lcd_string(ascii);
+  54   2          note_index=note_index+1;
+  55   2          lcd_command(LCD_first);
+  56   2          software_delay(5*curr_dur);
+  57   2        }
+  58   1        while(1);
+  59   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    516    ----
+   CONSTANT SIZE    =     25    ----
+   XDATA SIZE       =    108       5
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

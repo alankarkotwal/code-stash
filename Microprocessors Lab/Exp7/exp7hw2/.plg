@@ -1,0 +1,39 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+.uvproj
+Project File Date:  09/14/2014
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+compiling lcd.c...
+lcd.h(5): warning C318: can't open file 'delay.h'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\lcd.c(15): warning C206: 'software_delay': missing function-prototype
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\lcd.c(15): error C267: 'software_delay': requires ANSI-style prototype
+compiling main.c...
+twi_lib.h(128): error C129: missing ';' before 'twi_putchar'
+lcd.h(5): warning C318: can't open file 'delay.h'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\main.c(11): warning C312: misplaced endif control
+compiling twi_lib.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\twi_lib.c(16): warning C318: can't open file 'config.h'
+twi_lib.h(128): error C129: missing ';' before 'twi_putchar'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\twi_lib.c(587): error C320: Define SDA_SOFT (SDA soft I/O pin) in config.h
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\twi_lib.c(591): error C320: Define SCL_SOFT (SCL soft I/O pin) in config.h
+Target not created
+Rebuild target 'Target 1'
+compiling lcd.c...
+lcd.h(5): warning C318: can't open file 'delay.h'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\lcd.c(15): warning C206: 'software_delay': missing function-prototype
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\lcd.c(15): error C267: 'software_delay': requires ANSI-style prototype
+compiling main.c...
+twi_lib.h(128): error C129: missing ';' before 'twi_putchar'
+lcd.h(5): warning C318: can't open file 'delay.h'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\main.c(11): warning C312: misplaced endif control
+compiling twi_lib.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\twi_lib.c(16): warning C318: can't open file 'config.h'
+twi_lib.h(128): error C129: missing ';' before 'twi_putchar'
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\twi_lib.c(587): error C320: Define SDA_SOFT (SDA soft I/O pin) in config.h
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\twi_lib.c(591): error C320: Define SCL_SOFT (SCL soft I/O pin) in config.h
+Target not created

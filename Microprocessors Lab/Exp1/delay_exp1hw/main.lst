@@ -1,0 +1,133 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 07/28/2014 14:29:30 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN main.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE main.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 C294              1     CLR P1.4
+0002 C295              2     CLR P1.5
+0004 C296              3     CLR P1.6
+0006 C297              4     CLR P1.7
+0008 7881              5     MOV R0,#0081H
+000A 7982              6     MOV R1,#0082H
+000C 76FF              7     MOV @R0,#00FFh
+000E 77FF              8     MOV @R1,#00FFh
+                       9     
+                      10     
+0010                  11     loop:
+0010 D294             12             SETB P1.4
+0012 D295             13             SETB P1.5
+0014 D296             14             SETB P1.6
+0016 D297             15             SETB P1.7
+0018 120082           16             LCALL delay1
+001B 120082           17             LCALL delay1
+001E 120082           18             LCALL delay1
+0021 120082           19             LCALL delay1
+0024 120082           20             LCALL delay1
+0027 120082           21             LCALL delay1
+002A 120082           22             LCALL delay1
+002D 120082           23             LCALL delay1
+0030 120082           24             LCALL delay1
+0033 120082           25             LCALL delay1
+0036 120082           26             LCALL delay1
+0039 120082           27             LCALL delay1
+003C 120082           28             LCALL delay1
+003F 120082           29             LCALL delay1
+0042 120082           30             LCALL delay1
+0045 120082           31             LCALL delay1
+0048 C294             32             CLR P1.4
+004A C295             33             CLR P1.5
+004C C296             34             CLR P1.6
+004E C297             35             CLR P1.7
+0050 120082           36             LCALL delay1
+0053 120082           37             LCALL delay1
+0056 120082           38             LCALL delay1
+0059 120082           39             LCALL delay1
+005C 120082           40             LCALL delay1
+005F 120082           41             LCALL delay1
+0062 120082           42             LCALL delay1
+0065 120082           43             LCALL delay1
+0068 120082           44             LCALL delay1
+006B 120082           45             LCALL delay1
+006E 120082           46             LCALL delay1
+0071 120082           47             LCALL delay1
+0074 120082           48             LCALL delay1
+0077 120082           49             LCALL delay1
+007A 120082           50             LCALL delay1
+007D 120082           51             LCALL delay1
+0080 808E             52             JMP loop
+                      53     
+                      54     
+0082                  55     delay1:
+0082 E6               56             MOV A,@R0
+0083 FB               57             MOV R3,A
+0084 E7               58             MOV A,@R1
+A51 MACRO ASSEMBLER  MAIN                                                                 07/28/2014 14:29:30 PAGE     2
+
+0085 FA               59             MOV R2,A
+0086                  60             loop11:
+0086 7AFF             61                     MOV R2,#00FFh
+0088                  62                     loop12:
+0088 DAFE             63                             DJNZ R2,loop12
+008A DBFA             64                             DJNZ R3,loop11
+008C 22               65             RET
+                      66     
+                      67     
+008D                  68     delay2:
+008D 7B00             69             MOV R3,#0H
+008F E6               70             MOV A,@R0
+0090 FC               71             MOV R4,A
+0091 E7               72             MOV A,@R1
+0092 FD               73             MOV R5,A
+0093                  74             loop21:
+0093 7A00             75                     MOV R2,#0H
+0095                  76                     loop22:
+0095 EB               77                             MOV A,R3
+0096 B5810A           78                             CJNE A,81H,higherBitNotReached ;Iff higher bit is not equal to 81H
+0099 B582F9           79                             CJNE A,82H,loop22 ;CJNE A,R5,loop22 wasn't allowed
+009C 0B               80             back:   INC R3
+009D EB               81                             MOV A,R3
+009E B581F2           82                             CJNE A,81H,loop21 ;CJNE A,R4,loop22 wasn't allowed
+00A1 8007             83                             JMP return
+00A3                  84             higherBitNotReached:
+00A3 0A               85                     INC R2
+00A4 EA               86                     MOV A,R2
+00A5 B4FFEB           87                     CJNE A,#00FFh,loop21 ;CJNE A,R5,loop22 wasn't allowed
+00A8 80F2             88                     JMP back
+00AA 22               89             return: RET
+                      90     
+                      91     
+00AB                  92     endLoop:
+00AB 80FE             93             JMP endLoop
+                      94     
+                      95     
+                      96     END
+A51 MACRO ASSEMBLER  MAIN                                                                 07/28/2014 14:29:30 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E              T Y P E  V A L U E   ATTRIBUTES
+
+BACK. . . . . . . .  C ADDR   009CH   A   
+DELAY1. . . . . . .  C ADDR   0082H   A   
+DELAY2. . . . . . .  C ADDR   008DH   A   
+ENDLOOP . . . . . .  C ADDR   00ABH   A   
+HIGHERBITNOTREACHED  C ADDR   00A3H   A   
+LOOP. . . . . . . .  C ADDR   0010H   A   
+LOOP11. . . . . . .  C ADDR   0086H   A   
+LOOP12. . . . . . .  C ADDR   0088H   A   
+LOOP21. . . . . . .  C ADDR   0093H   A   
+LOOP22. . . . . . .  C ADDR   0095H   A   
+P1. . . . . . . . .  D ADDR   0090H   A   
+RETURN. . . . . . .  C ADDR   00AAH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,139 @@
+% Face recognition
+% ORL dataset in images/1
+% Yale dataset in images/2
+% Mode 1 is ORL is Yale
+
+clc;
+
+% Timing
+tic
+
+% Settings
+trainImageFolders = ['images/1/01/'; 'images/1/02/'; 'images/1/03/'; 'images/1/04/'; 'images/1/05/'; 'images/1/06/'; 'images/1/07/'; 'images/1/08/'; 'images/1/09/'; ...
+                     'images/1/10/'; 'images/1/11/'; 'images/1/12/'; 'images/1/13/'; 'images/1/14/'; 'images/1/15/'; 'images/1/16/'; 'images/1/17/'; ...
+                     'images/1/18/'; 'images/1/19/'; 'images/1/20/'; 'images/1/21/'; 'images/1/22/'; 'images/1/23/'; 'images/1/24/'; 'images/1/25/'; ...
+                     'images/1/26/'; 'images/1/27/'; 'images/1/28/'; 'images/1/29/'; 'images/1/30/'; 'images/1/31/'; 'images/1/32/'; 'images/1/33/'; ...
+                     'images/1/34/'; 'images/1/35/'];
+nTrainFolders = 35;
+testImageFolders1 = ['images/1/01/'; 'images/1/02/'; 'images/1/03/'; 'images/1/04/'; 'images/1/05/'; 'images/1/06/'; 'images/1/07/'; 'images/1/08/'; 'images/1/09/'; ...
+                     'images/1/10/'; 'images/1/11/'; 'images/1/12/'; 'images/1/13/'; 'images/1/14/'; 'images/1/15/'; 'images/1/16/'; 'images/1/17/'; ...
+                     'images/1/18/'; 'images/1/19/'; 'images/1/20/'; 'images/1/21/'; 'images/1/22/'; 'images/1/23/'; 'images/1/24/'; 'images/1/25/'; ...
+                     'images/1/26/'; 'images/1/27/'; 'images/1/28/'; 'images/1/29/'; 'images/1/30/'; 'images/1/31/'; 'images/1/32/'; 'images/1/33/'; ...
+                     'images/1/34/'; 'images/1/35/'];
+testImageFolders2 = ['images/1/36/'; 'images/1/37/'; 'images/1/38/'; 'images/1/39/'; 'images/1/40/'];
+nTestFolders1 = 35;
+nTestFolders2 = 5;
+trainImagesInit =   ['1.pgm '; '2.pgm '; '3.pgm '; '4.pgm '; '5.pgm ']; 
+testImagesInit1 =   ['6.pgm '; '7.pgm '; '8.pgm '; '9.pgm '; '10.pgm'];
+testImagesInit2 =   ['1.pgm '; '2.pgm '; '3.pgm '; '4.pgm '; '5.pgm '; '6.pgm '; '7.pgm '; '8.pgm '; '9.pgm '; '10.pgm'];
+trainImages = cellstr(trainImagesInit);
+testImages1 = cellstr(testImagesInit1);
+testImages2 = cellstr(testImagesInit2);
+nTrainImages = 5;
+nTestImages1 = 5;
+nTestImages2 = 10;
+sizeX = 112;
+sizeY = 92;
+k=150;
+maxKInd = 13;
+people1 = 1:nTestFolders1;
+identities1 = kron(people1, ones([1 nTestImages1]));
+people2 = nTestFolders1+1:nTestFolders1+nTestFolders2;
+identities2 = kron(people2, ones([1 nTestImages2]));
+identities = [identities1 identities2];
+
+% Main code
+
+% Generate X matrix from the images
+X = zeros([sizeX*sizeY nTrainFolders*nTrainImages]);
+
+for i = 1:nTrainFolders
+    for j = 1:nTrainImages
+        image = imread([trainImageFolders(i,:) trainImages{j}]);
+        X(:,nTrainImages*i-nTrainImages+j) = image(:);
+    end
+end
+
+% Mean subtraction
+mean = transpose(sum(transpose(X)))/(nTrainFolders*nTrainImages);
+%meanImage = reshape(mean, sizeX, sizeY);
+%imshow(meanImage/max(max(meanImage)));
+X = X - kron(mean, ones([1 nTrainFolders*nTrainImages]));
+
+% Generate XT*X and find its eigenvectors
+L = transpose(X)*X;
+[W,D] = eig(L);
+
+% Get eigenvectors and eigenvalues of C and normalize them
+V = X*W;
+norms = sqrt(sum(V.^2));
+V = V ./ kron(norms, ones([sizeX*sizeY 1]));
+
+% Sort eigenvectors by their eigenvalues
+[D,sortOrder]=sort(diag(D), 'descend');
+Vs = V(:, sortOrder);
+
+falsePositives = zeros(maxKInd);
+falseNegatives = zeros(maxKInd);
+
+% Keep the highest k eigenvectors and find their coefficients
+Vr = Vs(:, 1:k);
+coeffs = transpose(Vr)*X;
+
+% Now get the testing images from the first testing dataset
+XTest1 = zeros([sizeX*sizeY nTestFolders1*nTestImages1]);
+
+for i = 1:nTestFolders1
+    for j = 1:nTestImages1
+        image = imread([testImageFolders1(i,:) testImages1{j}]);
+        XTest1(:,nTestImages1*i-nTestImages1+j) = double(image(:))-mean;
+    end
+end
+
+testCoeffs1 = transpose(transpose(Vr)*XTest1);
+predIdentities1 = transpose(dsearchn(transpose(coeffs), testCoeffs1(:,:)));
+
+% Now get the testing images from the second testing dataset
+XTest2 = zeros([sizeX*sizeY nTestFolders2*nTestImages2]);
+
+for i = 1:nTestFolders2
+    for j = 1:nTestImages2
+        image = imread([testImageFolders2(i,:) testImages2{j}]);
+        XTest2(:,nTestImages2*i-nTestImages2+j) = double(image(:))-mean;
+    end
+end
+
+testCoeffs2 = transpose(transpose(Vr)*XTest2);
+predIdentities2 = transpose(dsearchn(transpose(coeffs), testCoeffs2(:,:)));
+
+diffVectors1 = transpose(testCoeffs1) - coeffs(:,predIdentities1(:));
+distances1 = sqrt(sum(diffVectors1 .* diffVectors1));
+
+diffVectors2 = transpose(testCoeffs2) - coeffs(:,predIdentities2(:));
+distances2 = sqrt(sum(diffVectors2 .* diffVectors2));
+
+% Get the threshold for out-of-database images.
+thresh = 2938;
+
+falseNegative = 0;
+for i = 1:nTestFolders1*nTestImages1
+    if(distances1(i)>thresh)
+        falseNegative = falseNegative+1;
+    end
+end
+
+falsePositive = 0;
+for i = 1:nTestFolders2*nTestImages2
+    if(distances2(i)<thresh)
+        falsePositive = falsePositive+1;
+    end
+end
+
+disp('False negatives and positives respectively for k=');
+disp(k);
+disp('Threshold=');
+disp(thresh);
+disp([falseNegative falsePositive]);
+
+% Timing
+toc

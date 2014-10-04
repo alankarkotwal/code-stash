@@ -1,0 +1,109 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/16/2014  19:30:49  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp4\exp4hw1\exp4hw1.obj TO Z:\home
+>> \aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp4\exp4hw1\exp4hw1 PRINT (.\exp4hw1.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp4\exp4hw1\exp4hw1.obj (EXP4HW1)
+
+
+LINK MAP OF MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp4\exp4hw1\exp4hw1 (EXP4HW1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0156H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp4\exp4hw1\exp4hw1 (EXP4HW1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXP4HW1
+  D:00F0H         SYMBOL        B
+  B:0090H.4       SYMBOL        C1T1
+  B:0090H.5       SYMBOL        C1T2
+  B:0090H.6       SYMBOL        C2T1
+  B:0090H.7       SYMBOL        C2T2
+  C:012CH         SYMBOL        CHANGE
+  B:00A8H.7       SYMBOL        EA
+  C:0128H         SYMBOL        ENDLOOP
+  B:00A8H.1       SYMBOL        ET0
+  C:011DH         SYMBOL        LOOP
+  C:014AH         SYMBOL        NEXT
+  D:0090H         SYMBOL        P1
+  N:0090H         SYMBOL        PORT
+  C:014DH         SYMBOL        SKIP
+  D:0081H         SYMBOL        SP
+  C:0100H         SYMBOL        START
+  C:011FH         SYMBOL        TERMINATE
+  D:008CH         SYMBOL        TH0
+  C:012AH         SYMBOL        TIMER0_ISR
+  D:008AH         SYMBOL        TL0
+  D:0089H         SYMBOL        TMOD
+  B:0088H.4       SYMBOL        TR0
+  C:0000H         LINE#         14
+  C:000BH         LINE#         16
+  C:000EH         LINE#         17
+  C:0100H         LINE#         21
+  C:0103H         LINE#         23
+  C:0106H         LINE#         24
+  C:0109H         LINE#         26
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/16/2014  19:30:49  PAGE 2
+
+
+  C:010BH         LINE#         27
+  C:010DH         LINE#         29
+  C:0110H         LINE#         31
+  C:0112H         LINE#         32
+  C:0114H         LINE#         33
+  C:0116H         LINE#         34
+  C:0119H         LINE#         35
+  C:011AH         LINE#         36
+  C:011BH         LINE#         37
+  C:011DH         LINE#         40
+  C:011FH         LINE#         43
+  C:0121H         LINE#         44
+  C:0123H         LINE#         45
+  C:0125H         LINE#         46
+  C:0128H         LINE#         48
+  C:012AH         LINE#         51
+  C:012CH         LINE#         53
+  C:012EH         LINE#         54
+  C:0130H         LINE#         55
+  C:0132H         LINE#         56
+  C:0135H         LINE#         57
+  C:0136H         LINE#         58
+  C:0137H         LINE#         60
+  C:0139H         LINE#         61
+  C:013BH         LINE#         62
+  C:013CH         LINE#         63
+  C:013FH         LINE#         64
+  C:0140H         LINE#         65
+  C:0143H         LINE#         66
+  C:0146H         LINE#         67
+  C:0148H         LINE#         68
+  C:014AH         LINE#         70
+  C:014BH         LINE#         71
+  C:014DH         LINE#         74
+  C:0150H         LINE#         75
+  C:0153H         LINE#         76
+  C:0155H         LINE#         78
+  -------         ENDMOD        EXP4HW1
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 005DH BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=342
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,5 @@
+function outputImage = histogramEqualisation(origImage)
+
+origImageSize = 
+imageCDF = imgcdf(origImage);
+

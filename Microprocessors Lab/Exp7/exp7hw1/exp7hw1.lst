@@ -1,0 +1,46 @@
+A51 MACRO ASSEMBLER  EXP7HW1                                                              09/14/2014 22:06:46 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN .\exp7hw1.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp7\exp7hw1\e
+                      xp7hw1.asm SET(SMALL) DEBUG PRINT(.\exp7hw1.lst) OBJECT(.\exp7hw1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; Experiment 7 Homework Question 1
+                       2     ; Write the code for configuring the peripheral clock and the SPI interface of Pt51 as the
+                       3     ; master device.
+                       4     
+  00C3                 5     SPCON EQU 0C3H
+  00C4                 6     SPSTA EQU 0C4H
+                       7     
+0000                   8     ORG 000h
+0000 020100            9     LJMP start
+0100                  10     ORG 100h
+0100                  11     start:
+                      12     
+0100 43C35D           13     ORL SPCON,#05Dh
+                      14     
+0103                  15     endLoop:
+0103 80FE             16             SJMP endLoop                    ; Stay here
+                      17     
+                      18     END
+A51 MACRO ASSEMBLER  EXP7HW1                                                              09/14/2014 22:06:46 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ENDLOOP. . . . . .  C ADDR   0103H   A   
+SPCON. . . . . . .  N NUMB   00C3H   A   
+SPSTA. . . . . . .  N NUMB   00C4H   A   
+START. . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

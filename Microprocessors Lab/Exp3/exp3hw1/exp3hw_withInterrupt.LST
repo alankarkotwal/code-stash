@@ -1,0 +1,109 @@
+A51 MACRO ASSEMBLER  EXP3HW_WITHINTERRUPT                                                 08/11/2014 14:17:23 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN exp3hw_withInterrupt.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE exp3hw_withInterrupt.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; Experiment 3 Homework Problem 1, with interrupts
+                       2     ; Write a subroutine which will use a 16 bit value stored at 81H/82H in the indirectly
+                       3     ; addressable memory to program the timer T0 in order to generate a delay proportional
+                       4     ; to this count.
+                       5     ; Write a program which will use the above subroutine to blink LEDs (as in Lab-1) such
+                       6     ; that these are ON for one second and OFF for one second endlessly. Adjust the timer
+                       7     ; count and the number of times the delay subroutine is called to make the ON and OFF
+                       8     ; period as close to 1 second as possible. (Measure the time over a large number of cycles
+                       9     ; to make this adjustment).
+                      10     
+0000                  11     ORG 000h                                                                                ; J
+                             ump to start at 000h
+0000 020200           12     LJMP start
+000B                  13     ORG 00Bh
+000B 12022E           14     LCALL timer0_isr
+000E 32               15     RETI
+0200                  16     ORG 200h                                                                                ; S
+                             tart writing at 200h
+0200                  17     start:
+                      18     
+0200 75900F           19     MOV P1,#00Fh                                                                    ; Higher fo
+                             ur bits outputs, lower four bits inputs
+                      20     
+0203 E590             21     MOV A,P1                                                                                ; C
+                             lear higher four bits, LEDs
+0205 540F             22     ANL A,#00Fh
+0207 F590             23     MOV P1,A
+0209 7881             24     MOV R0,#081h                                                                    ; Move dela
+                             y value into indirect 081h and 082h
+020B 76FF             25     MOV @R0,#0FFh                                                                   ; Higher by
+                             te in 082h, lower byte in 081h
+020D 08               26     INC R0
+020E 76FF             27     MOV @R0,#0FFh
+                      28     
+0210 758901           29     MOV TMOD,#001h
+0213 D2AF             30     SETB EA
+0215 D2A9             31     SETB ET0
+                      32     
+0217 7D04             33     MOV R5,#004h
+                      34     
+0219 12021E           35     LCALL delay_timer
+                      36     
+021C                  37     loop:
+021C 80FE             38             SJMP loop
+                      39     
+021E                  40     delay_timer:
+021E C28D             41             CLR TF0
+0220 7881             42             MOV R0,#081h
+0222 E6               43             MOV A,@R0
+0223 F4               44             CPL A
+0224 F58A             45             MOV TL0,A
+0226 08               46             INC R0
+0227 E6               47             MOV A,@R0
+0228 F4               48             CPL A   
+0229 F58C             49             MOV TH0,A
+022B D28C             50             SETB TR0
+022D 22               51     RET
+                      52     
+A51 MACRO ASSEMBLER  EXP3HW_WITHINTERRUPT                                                 08/11/2014 14:17:23 PAGE     2
+
+022E                  53     timer0_isr:
+022E DD08             54             DJNZ R5,skip
+0230                  55             toggle:
+0230 E590             56                     MOV A,P1
+0232 64F0             57                     XRL A,#0F0h
+0234 F590             58                     MOV P1,A
+0236 7D04             59                     MOV R5,#004h
+0238                  60             skip:
+0238 511E             61                     ACALL delay_timer
+023A 22               62     RET
+                      63     
+                      64     END
+A51 MACRO ASSEMBLER  EXP3HW_WITHINTERRUPT                                                 08/11/2014 14:17:23 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY_TIMER. . . .  C ADDR   021EH   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ET0. . . . . . . .  B ADDR   00A8H.1 A   
+LOOP . . . . . . .  C ADDR   021CH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+SKIP . . . . . . .  C ADDR   0238H   A   
+START. . . . . . .  C ADDR   0200H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TIMER0_ISR . . . .  C ADDR   022EH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TOGGLE . . . . . .  C ADDR   0230H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

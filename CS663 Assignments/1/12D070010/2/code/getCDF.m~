@@ -1,0 +1,9 @@
+function CDF = getCDF(image)
+
+imageHistogram = imghist(image);
+CDF = zeros(1,255);
+
+CDF(1) = imageHistogram(1);
+for i = 2:256
+    CDF(i) = imageHistogram(i) + icdf(i-1);
+end

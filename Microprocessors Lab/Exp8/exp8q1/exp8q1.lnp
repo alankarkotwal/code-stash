@@ -1,0 +1,7 @@
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\delay.obj",
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\lcd.obj",
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\main.obj",
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\watch.obj",
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\twi_lib.obj" 
+TO "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\exp8q1\exp8q1" 
+PRINT(".\exp8q1.m51") RAMSIZE(256) 
