@@ -1,0 +1,134 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              10/09/2014 15:44:45 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\main.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.exe Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.
+                    -c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\main.lst) TABS(2) OBJECT(.\main.obj)
+
+line level    source
+
+   1          #include <stdio.h>
+   2          #include "lcd.h"
+   3          
+   4          typedef unsigned char uchar;
+   5          
+   6          sbit mode = P1^0;
+   7          sbit inc  = P1^3;
+   8          
+   9          code uchar* days[]={"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
+  10          code uchar* months[]={"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
+  11          
+  12          void ds1307_write(char*);
+  13          void ds1307_read(int*);
+  14          void disp_watch(int, int);
+  15          void read2disp();
+  16          void disp2write();
+  17          
+  18          char str[2];
+  19          int dispArray[]         = {0x00, 0x00, 0x03, 0x02, 0x01, 0x06, 0x01, 0x02, 0x09, 0x09, 0x01, 0x04};
+  20          code int maxs[]         = {0x05, 0x09, 0x05, 0x09, 0x02, 0x03, 0x07, 0x03, 0x09, 0x0C, 0x09, 0x09};
+  21          code int mins[]         = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x01, 0x01, 0x00, 0x00};
+  22          code int lengths[]      = {3, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1};
+  23          code int places[]       = {LCD_first+0, LCD_first+5, LCD_first+6, LCD_first+8, LCD_first+14, LCD_first+15,
+             - LCD_last+4, LCD_last+5, LCD_last+7, LCD_last+8, LCD_last+10, LCD_last+11};
+  24          code int daysInAMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+  25          code int stateIndices[] = {0, 6, 7, 8, 9, 10, 11, 12, 4, 5, 2, 3, 0, 1};
+  26          
+  27          int oldMode, oldInc, state;
+  28          
+  29          int main() {
+  30   1        init_lcd();
+  31   1        oldMode = mode;
+  32   1        oldInc  = inc;
+  33   1        state   = 0;
+  34   1        while(1) {
+  35   2          if((int)mode != oldMode) {
+  36   3            state   = ((state)>11)?0:state+1;
+  37   3            oldInc  = inc;
+  38   3            oldMode = mode;
+  39   3          }
+  40   2          if(state != 0) {
+  41   3            if((int)inc != oldInc) {
+  42   4              dispArray[stateIndices[state]] = (dispArray[stateIndices[state]]==maxs[stateIndices[state]])?mins[stat
+             -eIndices[state]]:dispArray[stateIndices[state]]+1;
+  43   4              oldInc = inc;
+  44   4            }
+  45   3            disp_watch(1, state-1);
+  46   3            software_delay(250);
+  47   3            disp_watch(0, state-1);
+  48   3            software_delay(250);
+  49   3          }
+  50   2          else {
+  51   3            disp_watch(0, 0);
+  52   3          }
+C51 COMPILER V9.52.0.0   MAIN                                                              10/09/2014 15:44:45 PAGE 2   
+
+  53   2        }
+  54   1      }
+  55          
+  56          void disp_watch(int disapp, int disappIndex) {
+  57   1        int index;
+  58   1        lcd_command(LCD_first);
+  59   1        lcd_string(days[dispArray[06]-1]);
+  60   1        lcd_string(", ");
+  61   1        sprintf(str, "%x", dispArray[7]);
+  62   1        str[1] = '\0';
+  63   1        lcd_string(str);
+  64   1        sprintf(str, "%x", dispArray[8]);
+  65   1        str[1] = '\0';
+  66   1        lcd_string(str);
+  67   1        lcd_string(" ");
+  68   1        lcd_string(months[dispArray[9]-1]);
+  69   1        lcd_string(" 20");
+  70   1        sprintf(str, "%x", dispArray[10]);
+  71   1        str[1] = '\0';
+  72   1        lcd_string(str);
+  73   1        sprintf(str, "%x", dispArray[11]);
+  74   1        str[1] = '\0';
+  75   1        lcd_string(str);
+  76   1        lcd_command(LCD_last);
+  77   1        lcd_string("    ");
+  78   1        sprintf(str, "%x", dispArray[4]);
+  79   1        str[1] = '\0';
+  80   1        lcd_string(str);
+  81   1        sprintf(str, "%x", dispArray[5]);
+  82   1        str[1] = '\0';
+  83   1        lcd_string(str);
+  84   1        lcd_string(":");
+  85   1        sprintf(str, "%x", dispArray[2]);
+  86   1        str[1] = '\0';
+  87   1        lcd_string(str);
+  88   1        sprintf(str, "%x", dispArray[3]);
+  89   1        str[1] = '\0';
+  90   1        lcd_string(str);
+  91   1        lcd_string(":");
+  92   1        sprintf(str, "%x", dispArray[0]);
+  93   1        str[1] = '\0';
+  94   1        lcd_string(str);
+  95   1        sprintf(str, "%x", dispArray[1]);
+  96   1        str[1] = '\0';
+  97   1        lcd_string(str);
+  98   1        if(disapp==1) {
+  99   2          lcd_command(places[disappIndex]);
+ 100   2          for(index=0;index<lengths[disappIndex];index++) {
+ 101   3            lcd_string(" ");
+ 102   3          }
+ 103   2        }
+ 104   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1238    ----
+   CONSTANT SIZE    =    300    ----
+   XDATA SIZE       =     32       6
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+C51 COMPILER V9.52.0.0   MAIN                                                              10/09/2014 15:44:45 PAGE 3   
+
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

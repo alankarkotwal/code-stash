@@ -1,0 +1,1858 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\.uvproj
+Project File Date:  09/28/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(39): error C231: 'ds1307_read': redefinition
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(60): error C231: 'ds1307_read': redefinition
+Target not created
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(41): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=43.0 xdata=0 code=543
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(32): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=43.0 xdata=0 code=554
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(32): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=43.0 xdata=0 code=554
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=41.0 xdata=0 code=598
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(26): error C213: left side of asn-op not an lvalue
+Target not created
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(25): error C213: left side of asn-op not an lvalue
+Target not created
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(25): error C213: left side of asn-op not an lvalue
+Target not created
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(57): error C174: return-expression on void-function
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=38.0 xdata=0 code=652
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=38.0 xdata=0 code=674
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(28): warning C206: 'sprintf': missing function-prototype
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(28): error C267: 'sprintf': requires ANSI-style prototype
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(29): error C141: syntax error near 'while'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(30): error C141: syntax error near 'while'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=65.1 xdata=0 code=1697
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(3): warning C318: can't open file 'lcd.h6'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=65.1 xdata=0 code=1697
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+C:\Keil\C51\Inc\Atmel\regx51.h(15): error C231: 'P0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(16): error C231: 'SP': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(17): error C231: 'DPL': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(18): error C231: 'DPH': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(19): error C231: 'PCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(20): error C231: 'TCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(21): error C231: 'TMOD': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(22): error C231: 'TL0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(23): error C231: 'TL1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(24): error C231: 'TH0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(25): error C231: 'TH1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(26): error C231: 'P1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(27): error C231: 'SCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(28): error C231: 'SBUF': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(29): error C231: 'P2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(31): error C231: 'P3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(33): error C231: 'PSW': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(34): error C231: 'ACC': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(35): error C231: 'B': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(40): error C231: 'P0_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(41): error C231: 'P0_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(42): error C231: 'P0_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(43): error C231: 'P0_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(44): error C231: 'P0_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(45): error C231: 'P0_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(46): error C231: 'P0_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(47): error C231: 'P0_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(65): error C231: 'IT0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(67): error C231: 'IT1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(69): error C231: 'TR0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(70): error C231: 'TF0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(71): error C231: 'TR1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(72): error C231: 'TF1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(92): error C231: 'P1_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(93): error C231: 'P1_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(94): error C231: 'P1_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(95): error C231: 'P1_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(96): error C231: 'P1_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(97): error C231: 'P1_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(98): error C231: 'P1_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(99): error C231: 'P1_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(104): error C231: 'RI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(105): error C231: 'TI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(106): error C231: 'RB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(107): error C231: 'TB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(108): error C231: 'REN': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(109): error C231: 'SM2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(110): error C231: 'SM1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(116): error C231: 'P2_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(117): error C231: 'P2_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(118): error C231: 'P2_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(119): error C231: 'P2_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(120): error C231: 'P2_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(121): error C231: 'P2_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(122): error C231: 'P2_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(123): error C231: 'P2_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(128): error C231: 'EX0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(129): error C231: 'ET0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(130): error C231: 'EX1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(131): error C231: 'ET1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(132): error C231: 'ES': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(133): error C231: 'ET2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(135): error C231: 'EA': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(140): error C231: 'P3_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(141): error C231: 'P3_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(142): error C231: 'P3_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(143): error C231: 'P3_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(144): error C231: 'P3_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(145): error C231: 'P3_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(146): error C231: 'P3_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(147): error C231: 'P3_7': redefinition
+lcd.h(5): warning C318: can't open file 'delay.h'
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+lcd.h(4): warning C318: can't open file 'delay.h'
+compiling lcd.c...
+lcd.h(4): warning C318: can't open file 'delay.h'
+lcd.c(11): error C202: 'P2': undefined identifier
+lcd.c(12): error C202: 'P0': undefined identifier
+lcd.c(13): error C202: 'P0': undefined identifier
+lcd.c(14): error C202: 'P0': undefined identifier
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+C:\Keil\C51\Inc\Atmel\regx51.h(15): error C231: 'P0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(16): error C231: 'SP': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(17): error C231: 'DPL': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(18): error C231: 'DPH': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(19): error C231: 'PCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(20): error C231: 'TCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(21): error C231: 'TMOD': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(22): error C231: 'TL0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(23): error C231: 'TL1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(24): error C231: 'TH0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(25): error C231: 'TH1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(26): error C231: 'P1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(27): error C231: 'SCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(28): error C231: 'SBUF': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(29): error C231: 'P2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(31): error C231: 'P3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(33): error C231: 'PSW': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(34): error C231: 'ACC': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(35): error C231: 'B': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(40): error C231: 'P0_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(41): error C231: 'P0_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(42): error C231: 'P0_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(43): error C231: 'P0_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(44): error C231: 'P0_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(45): error C231: 'P0_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(46): error C231: 'P0_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(47): error C231: 'P0_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(65): error C231: 'IT0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(67): error C231: 'IT1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(69): error C231: 'TR0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(70): error C231: 'TF0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(71): error C231: 'TR1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(72): error C231: 'TF1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(92): error C231: 'P1_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(93): error C231: 'P1_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(94): error C231: 'P1_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(95): error C231: 'P1_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(96): error C231: 'P1_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(97): error C231: 'P1_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(98): error C231: 'P1_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(99): error C231: 'P1_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(104): error C231: 'RI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(105): error C231: 'TI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(106): error C231: 'RB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(107): error C231: 'TB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(108): error C231: 'REN': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(109): error C231: 'SM2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(110): error C231: 'SM1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(116): error C231: 'P2_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(117): error C231: 'P2_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(118): error C231: 'P2_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(119): error C231: 'P2_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(120): error C231: 'P2_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(121): error C231: 'P2_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(122): error C231: 'P2_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(123): error C231: 'P2_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(128): error C231: 'EX0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(129): error C231: 'ET0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(130): error C231: 'EX1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(131): error C231: 'ET1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(132): error C231: 'ES': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(133): error C231: 'ET2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(135): error C231: 'EA': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(140): error C231: 'P3_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(141): error C231: 'P3_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(142): error C231: 'P3_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(143): error C231: 'P3_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(144): error C231: 'P3_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(145): error C231: 'P3_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(146): error C231: 'P3_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(147): error C231: 'P3_7': redefinition
+compiling lcd.c...
+C:\Keil\C51\Inc\Atmel\regx51.h(15): error C231: 'P0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(16): error C231: 'SP': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(17): error C231: 'DPL': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(18): error C231: 'DPH': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(19): error C231: 'PCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(20): error C231: 'TCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(21): error C231: 'TMOD': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(22): error C231: 'TL0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(23): error C231: 'TL1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(24): error C231: 'TH0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(25): error C231: 'TH1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(26): error C231: 'P1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(27): error C231: 'SCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(28): error C231: 'SBUF': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(29): error C231: 'P2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(31): error C231: 'P3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(33): error C231: 'PSW': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(34): error C231: 'ACC': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(35): error C231: 'B': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(40): error C231: 'P0_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(41): error C231: 'P0_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(42): error C231: 'P0_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(43): error C231: 'P0_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(44): error C231: 'P0_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(45): error C231: 'P0_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(46): error C231: 'P0_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(47): error C231: 'P0_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(65): error C231: 'IT0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(67): error C231: 'IT1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(69): error C231: 'TR0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(70): error C231: 'TF0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(71): error C231: 'TR1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(72): error C231: 'TF1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(92): error C231: 'P1_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(93): error C231: 'P1_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(94): error C231: 'P1_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(95): error C231: 'P1_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(96): error C231: 'P1_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(97): error C231: 'P1_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(98): error C231: 'P1_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(99): error C231: 'P1_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(104): error C231: 'RI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(105): error C231: 'TI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(106): error C231: 'RB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(107): error C231: 'TB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(108): error C231: 'REN': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(109): error C231: 'SM2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(110): error C231: 'SM1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(116): error C231: 'P2_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(117): error C231: 'P2_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(118): error C231: 'P2_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(119): error C231: 'P2_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(120): error C231: 'P2_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(121): error C231: 'P2_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(122): error C231: 'P2_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(123): error C231: 'P2_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(128): error C231: 'EX0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(129): error C231: 'ET0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(130): error C231: 'EX1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(131): error C231: 'ET1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(132): error C231: 'ES': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(133): error C231: 'ET2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(135): error C231: 'EA': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(140): error C231: 'P3_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(141): error C231: 'P3_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(142): error C231: 'P3_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(143): error C231: 'P3_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(144): error C231: 'P3_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(145): error C231: 'P3_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(146): error C231: 'P3_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(147): error C231: 'P3_7': redefinition
+Target not created
+Rebuild target 'Target 1'
+compiling main.c...
+C:\Keil\C51\Inc\Atmel\regx51.h(15): error C231: 'P0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(16): error C231: 'SP': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(17): error C231: 'DPL': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(18): error C231: 'DPH': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(19): error C231: 'PCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(20): error C231: 'TCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(21): error C231: 'TMOD': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(22): error C231: 'TL0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(23): error C231: 'TL1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(24): error C231: 'TH0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(25): error C231: 'TH1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(26): error C231: 'P1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(27): error C231: 'SCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(28): error C231: 'SBUF': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(29): error C231: 'P2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(31): error C231: 'P3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(33): error C231: 'PSW': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(34): error C231: 'ACC': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(35): error C231: 'B': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(40): error C231: 'P0_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(41): error C231: 'P0_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(42): error C231: 'P0_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(43): error C231: 'P0_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(44): error C231: 'P0_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(45): error C231: 'P0_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(46): error C231: 'P0_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(47): error C231: 'P0_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(65): error C231: 'IT0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(67): error C231: 'IT1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(69): error C231: 'TR0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(70): error C231: 'TF0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(71): error C231: 'TR1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(72): error C231: 'TF1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(92): error C231: 'P1_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(93): error C231: 'P1_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(94): error C231: 'P1_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(95): error C231: 'P1_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(96): error C231: 'P1_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(97): error C231: 'P1_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(98): error C231: 'P1_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(99): error C231: 'P1_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(104): error C231: 'RI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(105): error C231: 'TI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(106): error C231: 'RB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(107): error C231: 'TB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(108): error C231: 'REN': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(109): error C231: 'SM2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(110): error C231: 'SM1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(116): error C231: 'P2_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(117): error C231: 'P2_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(118): error C231: 'P2_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(119): error C231: 'P2_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(120): error C231: 'P2_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(121): error C231: 'P2_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(122): error C231: 'P2_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(123): error C231: 'P2_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(128): error C231: 'EX0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(129): error C231: 'ET0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(130): error C231: 'EX1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(131): error C231: 'ET1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(132): error C231: 'ES': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(133): error C231: 'ET2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(135): error C231: 'EA': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(140): error C231: 'P3_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(141): error C231: 'P3_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(142): error C231: 'P3_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(143): error C231: 'P3_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(144): error C231: 'P3_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(145): error C231: 'P3_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(146): error C231: 'P3_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(147): error C231: 'P3_7': redefinition
+compiling lcd.c...
+C:\Keil\C51\Inc\Atmel\regx51.h(15): error C231: 'P0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(16): error C231: 'SP': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(17): error C231: 'DPL': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(18): error C231: 'DPH': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(19): error C231: 'PCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(20): error C231: 'TCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(21): error C231: 'TMOD': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(22): error C231: 'TL0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(23): error C231: 'TL1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(24): error C231: 'TH0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(25): error C231: 'TH1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(26): error C231: 'P1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(27): error C231: 'SCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(28): error C231: 'SBUF': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(29): error C231: 'P2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(31): error C231: 'P3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(33): error C231: 'PSW': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(34): error C231: 'ACC': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(35): error C231: 'B': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(40): error C231: 'P0_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(41): error C231: 'P0_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(42): error C231: 'P0_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(43): error C231: 'P0_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(44): error C231: 'P0_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(45): error C231: 'P0_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(46): error C231: 'P0_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(47): error C231: 'P0_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(65): error C231: 'IT0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(67): error C231: 'IT1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(69): error C231: 'TR0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(70): error C231: 'TF0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(71): error C231: 'TR1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(72): error C231: 'TF1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(92): error C231: 'P1_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(93): error C231: 'P1_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(94): error C231: 'P1_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(95): error C231: 'P1_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(96): error C231: 'P1_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(97): error C231: 'P1_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(98): error C231: 'P1_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(99): error C231: 'P1_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(104): error C231: 'RI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(105): error C231: 'TI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(106): error C231: 'RB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(107): error C231: 'TB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(108): error C231: 'REN': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(109): error C231: 'SM2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(110): error C231: 'SM1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(116): error C231: 'P2_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(117): error C231: 'P2_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(118): error C231: 'P2_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(119): error C231: 'P2_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(120): error C231: 'P2_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(121): error C231: 'P2_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(122): error C231: 'P2_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(123): error C231: 'P2_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(128): error C231: 'EX0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(129): error C231: 'ET0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(130): error C231: 'EX1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(131): error C231: 'ET1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(132): error C231: 'ES': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(133): error C231: 'ET2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(135): error C231: 'EA': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(140): error C231: 'P3_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(141): error C231: 'P3_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(142): error C231: 'P3_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(143): error C231: 'P3_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(144): error C231: 'P3_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(145): error C231: 'P3_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(146): error C231: 'P3_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(147): error C231: 'P3_7': redefinition
+Target not created
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(35): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(36): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(37): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(38): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(39): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(40): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(41): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(42): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(43): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(44): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(45): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(46): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(47): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(48): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(49): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(50): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(51): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(52): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(53): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(54): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(56): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(57): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(58): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(59): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(61): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(62): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(63): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(64): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(73): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(74): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(75): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(80): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(81): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(82): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(83): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(84): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(85): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(86): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(88): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(89): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(90): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(92): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(93): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(94): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(95): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(100): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(101): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(102): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(103): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(104): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(105): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(106): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(107): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(108): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(109): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(111): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(113): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(114): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(118): error C202: 'SSCON': undefined identifier
+compiling lcd.c...
+compiling delay.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INIT_LCD?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_STRING?LCD
+Program Size: data=72.1 xdata=0 code=1875
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_STRING?LCD
+Program Size: data=70.1 xdata=0 code=1878
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=65.1 xdata=0 code=1887
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(32): warning C182: pointer to different objects
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(38): warning C235: parameter 1: different types
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=57.1 xdata=0 code=1834
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=57.1 xdata=0 code=1834
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=57.1 xdata=0 code=1834
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=57.1 xdata=0 code=1826
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=57.1 xdata=0 code=1831
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=57.1 xdata=0 code=1831
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=57.1 xdata=0 code=1831
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(39): warning C280: 'arr': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=67.1 xdata=0 code=1847
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(39): warning C280: 'arr': unreferenced local variable
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(40): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=69.1 xdata=0 code=1883
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(41): warning C280: 'arr': unreferenced local variable
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(42): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=64.1 xdata=0 code=1892
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(41): warning C280: 'arr': unreferenced local variable
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(42): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TWI_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TWI_CLOSE?MAIN
+Program Size: data=64.1 xdata=0 code=1892
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(41): warning C280: 'arr': unreferenced local variable
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(42): warning C280: 'i': unreferenced local variable
+linking...
+Program Size: data=54.1 xdata=0 code=1678
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1718
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=54.1 xdata=0 code=1718
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=54.1 xdata=0 code=1718
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1726
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1726
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1724
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1724
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1737
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1728
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1757
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1720
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1729
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1729
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1729
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1729
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(99): error C202: 'IEN1': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1720
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1733
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1742
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1742
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1720
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1738
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1742
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1745
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1723
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1723
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+C:\Keil\C51\Inc\Atmel\regx51.h(15): error C231: 'P0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(16): error C231: 'SP': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(17): error C231: 'DPL': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(18): error C231: 'DPH': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(19): error C231: 'PCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(20): error C231: 'TCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(21): error C231: 'TMOD': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(22): error C231: 'TL0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(23): error C231: 'TL1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(24): error C231: 'TH0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(25): error C231: 'TH1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(26): error C231: 'P1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(27): error C231: 'SCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(28): error C231: 'SBUF': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(29): error C231: 'P2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(31): error C231: 'P3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(33): error C231: 'PSW': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(34): error C231: 'ACC': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(35): error C231: 'B': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(40): error C231: 'P0_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(41): error C231: 'P0_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(42): error C231: 'P0_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(43): error C231: 'P0_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(44): error C231: 'P0_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(45): error C231: 'P0_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(46): error C231: 'P0_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(47): error C231: 'P0_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(65): error C231: 'IT0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(67): error C231: 'IT1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(69): error C231: 'TR0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(70): error C231: 'TF0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(71): error C231: 'TR1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(72): error C231: 'TF1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(92): error C231: 'P1_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(93): error C231: 'P1_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(94): error C231: 'P1_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(95): error C231: 'P1_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(96): error C231: 'P1_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(97): error C231: 'P1_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(98): error C231: 'P1_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(99): error C231: 'P1_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(104): error C231: 'RI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(105): error C231: 'TI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(106): error C231: 'RB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(107): error C231: 'TB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(108): error C231: 'REN': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(109): error C231: 'SM2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(110): error C231: 'SM1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(116): error C231: 'P2_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(117): error C231: 'P2_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(118): error C231: 'P2_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(119): error C231: 'P2_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(120): error C231: 'P2_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(121): error C231: 'P2_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(122): error C231: 'P2_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(123): error C231: 'P2_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(128): error C231: 'EX0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(129): error C231: 'ET0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(130): error C231: 'EX1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(131): error C231: 'ET1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(132): error C231: 'ES': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(133): error C231: 'ET2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(135): error C231: 'EA': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(140): error C231: 'P3_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(141): error C231: 'P3_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(142): error C231: 'P3_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(143): error C231: 'P3_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(144): error C231: 'P3_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(145): error C231: 'P3_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(146): error C231: 'P3_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(147): error C231: 'P3_7': redefinition
+Target not created
+Build target 'Target 1'
+compiling main.c...
+C:\Keil\C51\Inc\Atmel\regx51.h(15): error C231: 'P0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(16): error C231: 'SP': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(17): error C231: 'DPL': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(18): error C231: 'DPH': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(19): error C231: 'PCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(20): error C231: 'TCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(21): error C231: 'TMOD': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(22): error C231: 'TL0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(23): error C231: 'TL1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(24): error C231: 'TH0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(25): error C231: 'TH1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(26): error C231: 'P1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(27): error C231: 'SCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(28): error C231: 'SBUF': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(29): error C231: 'P2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(31): error C231: 'P3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(33): error C231: 'PSW': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(34): error C231: 'ACC': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(35): error C231: 'B': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(40): error C231: 'P0_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(41): error C231: 'P0_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(42): error C231: 'P0_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(43): error C231: 'P0_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(44): error C231: 'P0_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(45): error C231: 'P0_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(46): error C231: 'P0_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(47): error C231: 'P0_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(65): error C231: 'IT0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(67): error C231: 'IT1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(69): error C231: 'TR0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(70): error C231: 'TF0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(71): error C231: 'TR1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(72): error C231: 'TF1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(92): error C231: 'P1_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(93): error C231: 'P1_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(94): error C231: 'P1_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(95): error C231: 'P1_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(96): error C231: 'P1_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(97): error C231: 'P1_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(98): error C231: 'P1_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(99): error C231: 'P1_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(104): error C231: 'RI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(105): error C231: 'TI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(106): error C231: 'RB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(107): error C231: 'TB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(108): error C231: 'REN': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(109): error C231: 'SM2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(110): error C231: 'SM1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(116): error C231: 'P2_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(117): error C231: 'P2_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(118): error C231: 'P2_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(119): error C231: 'P2_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(120): error C231: 'P2_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(121): error C231: 'P2_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(122): error C231: 'P2_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(123): error C231: 'P2_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(128): error C231: 'EX0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(129): error C231: 'ET0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(130): error C231: 'EX1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(131): error C231: 'ET1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(132): error C231: 'ES': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(133): error C231: 'ET2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(135): error C231: 'EA': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(140): error C231: 'P3_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(141): error C231: 'P3_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(142): error C231: 'P3_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(143): error C231: 'P3_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(144): error C231: 'P3_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(145): error C231: 'P3_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(146): error C231: 'P3_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(147): error C231: 'P3_7': redefinition
+compiling lcd.c...
+C:\Keil\C51\Inc\Atmel\regx51.h(15): error C231: 'P0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(16): error C231: 'SP': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(17): error C231: 'DPL': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(18): error C231: 'DPH': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(19): error C231: 'PCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(20): error C231: 'TCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(21): error C231: 'TMOD': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(22): error C231: 'TL0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(23): error C231: 'TL1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(24): error C231: 'TH0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(25): error C231: 'TH1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(26): error C231: 'P1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(27): error C231: 'SCON': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(28): error C231: 'SBUF': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(29): error C231: 'P2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(31): error C231: 'P3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(33): error C231: 'PSW': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(34): error C231: 'ACC': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(35): error C231: 'B': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(40): error C231: 'P0_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(41): error C231: 'P0_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(42): error C231: 'P0_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(43): error C231: 'P0_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(44): error C231: 'P0_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(45): error C231: 'P0_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(46): error C231: 'P0_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(47): error C231: 'P0_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(65): error C231: 'IT0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(67): error C231: 'IT1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(69): error C231: 'TR0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(70): error C231: 'TF0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(71): error C231: 'TR1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(72): error C231: 'TF1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(92): error C231: 'P1_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(93): error C231: 'P1_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(94): error C231: 'P1_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(95): error C231: 'P1_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(96): error C231: 'P1_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(97): error C231: 'P1_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(98): error C231: 'P1_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(99): error C231: 'P1_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(104): error C231: 'RI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(105): error C231: 'TI': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(106): error C231: 'RB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(107): error C231: 'TB8': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(108): error C231: 'REN': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(109): error C231: 'SM2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(110): error C231: 'SM1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(116): error C231: 'P2_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(117): error C231: 'P2_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(118): error C231: 'P2_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(119): error C231: 'P2_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(120): error C231: 'P2_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(121): error C231: 'P2_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(122): error C231: 'P2_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(123): error C231: 'P2_7': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(128): error C231: 'EX0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(129): error C231: 'ET0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(130): error C231: 'EX1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(131): error C231: 'ET1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(132): error C231: 'ES': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(133): error C231: 'ET2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(135): error C231: 'EA': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(140): error C231: 'P3_0': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(141): error C231: 'P3_1': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(142): error C231: 'P3_2': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(143): error C231: 'P3_3': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(144): error C231: 'P3_4': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(145): error C231: 'P3_5': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(146): error C231: 'P3_6': redefinition
+C:\Keil\C51\Inc\Atmel\regx51.h(147): error C231: 'P3_7': redefinition
+Target not created
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(42): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(43): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(44): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(45): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(46): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(47): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(48): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(49): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(50): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(52): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(53): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(54): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(56): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(57): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(58): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(63): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(64): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(65): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(66): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(67): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(68): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(69): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(70): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(71): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(72): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(73): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(74): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(75): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(76): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(77): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(78): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(79): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(80): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(82): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(83): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(84): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(85): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(87): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(88): error C202: 'SSDAT': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(89): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(90): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(91): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(100): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(101): error C202: 'SSCON': undefined identifier
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(102): error C202: 'SSCON': undefined identifier
+compiling lcd.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1723
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1718
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1727
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1749
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1749
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1749
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1749
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1749
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1747
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1759
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1746
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1738
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1711
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1711
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1717
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1720
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_STRING?LCD
+Program Size: data=44.0 xdata=0 code=679
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_STRING?LCD
+Program Size: data=44.0 xdata=0 code=676
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_STRING?LCD
+Program Size: data=44.0 xdata=0 code=679
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_STRING?LCD
+Program Size: data=44.0 xdata=0 code=679
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_STRING?LCD
+Program Size: data=44.0 xdata=0 code=676
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1705
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=57.1 xdata=0 code=1712
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(30): warning C280: 'array': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=57.1 xdata=0 code=1712
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=57.1 xdata=0 code=1712
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(30): warning C280: 'array': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=57.1 xdata=0 code=1712
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(30): warning C280: 'array': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=59.1 xdata=0 code=1722
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(30): warning C280: 'array': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=59.1 xdata=0 code=1722
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(30): warning C280: 'array': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=59.1 xdata=0 code=1728
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_WRITE?MAIN
+Program Size: data=59.1 xdata=0 code=1728
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=59.1 xdata=0 code=1728
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=59.1 xdata=0 code=1764
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=46.0 xdata=0 code=725
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=46.0 xdata=0 code=742
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=46.0 xdata=0 code=742
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=46.0 xdata=0 code=725
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=46.0 xdata=0 code=740
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=46.0 xdata=0 code=740
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=46.0 xdata=0 code=743
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=46.0 xdata=0 code=743
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=46.0 xdata=0 code=743
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_STRING?LCD
+Program Size: data=44.0 xdata=0 code=692
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+Program Size: data=46.0 xdata=0 code=735
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DS1307_READ?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_STRING?LCD
+Program Size: data=44.0 xdata=0 code=692
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1730
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1730
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1730
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1730
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(36): warning C182: pointer to different objects
+linking...
+Program Size: data=62.1 xdata=0 code=1733
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=54.1 xdata=0 code=1730
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_STRING?LCD
+Program Size: data=41.0 xdata=0 code=711
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(65): warning C235: parameter 1: different types
+linking...
+Program Size: data=63.1 xdata=0 code=1734
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=63.1 xdata=0 code=1734
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(36): warning C182: pointer to different objects
+linking...
+Program Size: data=63.1 xdata=0 code=1734
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=55.1 xdata=0 code=1731
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_STRING?LCD
+Program Size: data=36.0 xdata=0 code=736
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(39): error C202: 'i': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_STRING?LCD
+Program Size: data=36.0 xdata=0 code=740
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_STRING?LCD
+Program Size: data=44.0 xdata=0 code=757
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(40): warning C209: '_sprintf': too few actual parameters
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(41): error C141: syntax error near 'lcd_data'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(41): error C141: syntax error near 'lcd_string'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=1782
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=1783
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=1783
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\main.c(9): error C129: missing ';' before '*'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=51.0 xdata=0 code=898
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=51.0 xdata=0 code=898
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=1943
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=1979
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=1990
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2027
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2027
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2036
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2169
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2169
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2172
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=65.1 xdata=0 code=2172
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2179
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2179
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2179
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2179
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2179
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2179
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2201
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2203
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2206
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2242
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2264
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2264
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2279
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2279
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.1 xdata=0 code=2242
+creating hex file from "Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test"...
+"Z:\home\aloo\Documents\Acads\Sem5\EE337 Microprocessors Lab\Exp8\test\test" - 0 Error(s), 0 Warning(s).
