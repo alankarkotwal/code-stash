@@ -1,0 +1,24 @@
+\documentclass[10pt]{report}
+\usepackage{amsmath}
+
+\begin{document}
+\title{CS663 Assignment-4 Question-2}
+\author{KOTWAL ALANKAR SHASHIKANT}
+\maketitle
+
+We have the following relations:
+$$g_1 = f_1 + f_2 * h_2$$
+$$g_2 = f_1 * h_1 + f_2$$
+In the Fourier domain this means
+$$G_1 = F_1 + F_2 H_2$$
+$$G_2 = F_1 H_1 + F_2$$
+Solving these equations simultaneously for $F_1$ and $F_2$ yields:
+$$F_1 = \frac{H_2 G_2 - G_1}{H_1 H_2 - 1}, F_2 = \frac{H_1 G_1 - G_2}{H_1 H_2 - 1}$$
+and $$f_1 = \mathcal{F}^{-1}(F_1), f_2 = \mathcal{F}^{-1}(F_2)$$
+These inverse filters will blow up wherever $H_1H_1$ is close to 1. This is one problem with this technique for reflection removal.
+
+Now the problem here is that the actual images we have will be
+$$g_1 = f_1 + f_2 * h_2 + n_1$$
+$$g_2 = f_1 * h_1 + f_2 + n_2$$
+where the added terms are additive noise. Each image has a different, and independent, noise image and hence it is impossible to estimate both $n_1$ and $n_2$ given just these two images.
+\end{document}
